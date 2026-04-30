@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NorCal SBDC · Brand House · Content</title>
+<link rel="stylesheet" href="https://use.typekit.net/pkl5rjs.css" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,300..500,0..1,0" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F1C2D;
+    --slate: #2C3240;
+    --cobalt: #1B5FAF;
+    --pool: #8FC5D9;
+    --berry: #C23C3C;
+    --evergreen: #00675C;
+    --silver: #D8D8D8;
+    --white: #FDFDFD;
+    --page: #F2F1ED;
+    --ink: #0F1C2D;
+    --mute: #4A5260;
+    --hair: #D4D2CC;
+
+    --sans:  "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+    --serif: "proxima-sera", "Iowan Old Style", Georgia, serif;
+    --mono:  "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    --col: 1320px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap { max-width: var(--col); margin: 0 auto; padding: 0 56px; }
+
+  /* HEADER */
+  .head {
+    padding: 28px 0 0;
+    display: flex; align-items: baseline; justify-content: space-between;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .head .brand { color: var(--ink); font-weight: 500; }
+
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--cobalt);
+  }
+
+  /* HERO */
+  .hero-mark {
+    padding: 84px 0 36px;
+    display: grid;
+    grid-template-columns: 1fr 460px;
+    gap: 80px;
+    align-items: end;
+  }
+  .hero-mark .eyebrow { display: block; margin-bottom: 22px; }
+  .hero-mark h1 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(120px, 14vw, 200px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+  .hero-mark .subtitle { display: block; }
+  .hero-mark .accent-bar {
+    display: block; width: 100%; height: 4px;
+    background: var(--navy); margin: 0 0 22px;
+  }
+  .hero-mark p {
+    margin: 0 0 14px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 22px; line-height: 1.45; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 520px;
+  }
+
+  /* SECTIONS */
+  .section { padding: 100px 0 0; }
+  .section-head {
+    display: grid; grid-template-columns: 360px 1fr; gap: 48px;
+    align-items: end; margin-bottom: 32px;
+  }
+  .section-head h2 {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(40px, 4.4vw, 56px); line-height: 1.0;
+    letter-spacing: -0.02em; color: var(--ink);
+  }
+  .section-head .lede {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 19px; line-height: 1.5; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 600px;
+  }
+  /* Split section — heading + lede on the LEFT (1/4), content on the RIGHT (3/4), same row */
+  .section-split {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .section-split > .split-head { display: flex; flex-direction: column; gap: 18px; }
+  .section-split > .split-head h2 {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(36px, 3.4vw, 44px); line-height: 1.0;
+    letter-spacing: -0.02em; color: var(--ink);
+    text-transform: none;
+  }
+  .section-split > .split-head .lede {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 17px; line-height: 1.5; color: var(--ink);
+    letter-spacing: -0.005em;
+    text-transform: none;
+    max-width: 38ch;
+  }
+  .section-split > .split-body { min-width: 0; }
+
+  /* §01 GENERATOR — solid Navy field, asymmetric tool composition */
+  .generator {
+    margin-top: 100px;
+    background: var(--navy);
+    color: var(--white);
+  }
+  .generator-inner {
+    max-width: var(--col); margin: 0 auto; padding: 80px 56px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    column-gap: 64px;
+    row-gap: 0;
+    align-items: start;
+  }
+  .generator-left {
+    display: flex; flex-direction: column;
+    height: 100%;
+  }
+  .generator-left .lede { margin-bottom: 0; }
+  .generator-left .gen-link-wrap { margin-top: auto; padding-top: 56px; }
+  .generator-right { display: flex; flex-direction: column; gap: 32px; }
+  .generator .eyebrow { color: var(--pool); margin-bottom: 22px; display: block; }
+  .generator h2 {
+    margin: 0 0 24px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(48px, 5vw, 72px); line-height: 0.96;
+    letter-spacing: -0.025em;
+    color: var(--white);
+  }
+  .generator .lede {
+    margin: 0 0 40px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 20px; line-height: 1.45;
+    color: rgba(253, 253, 253, 0.85);
+    max-width: 460px;
+  }
+  .formats {
+    display: flex; flex-wrap: wrap; gap: 14px;
+    margin: 0;
+    justify-content: flex-end;
+  }
+  .format-pill {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 58px;
+    padding: 15px 24px 16px;
+    font-family: var(--sans); font-weight: 600; font-size: 22px; line-height: 1;
+    letter-spacing: -0.005em;
+    color: var(--page);
+    background: transparent;
+    border: 2px solid rgba(247, 241, 230, 0.72);
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+                background-color 220ms ease,
+                color 220ms ease,
+                border-color 220ms ease;
+    will-change: transform;
+    user-select: none;
+    white-space: nowrap;
+  }
+  .format-pill[data-color="cobalt"]   { border-color: var(--cobalt); }
+  .format-pill[data-color="berry"]   { border-color: var(--berry); }
+  .format-pill[data-color="mute"]    { border-color: rgba(247, 241, 230, 0.40); }
+  .format-pill[data-color="pool"]     { border-color: var(--pool); }
+  .format-pill:hover { border-color: var(--page); }
+  .format-pill.active {
+    background: var(--page); color: var(--navy); border-color: var(--page);
+  }
+  .format-pill.active:hover { border-color: var(--page); }
+
+  /* Generate — simple text link, bottom-left */
+  .gen-link {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-family: var(--sans); font-weight: 600; font-size: 17px;
+    letter-spacing: -0.005em;
+    color: var(--white);
+    text-decoration: none;
+    padding: 0;
+    border-bottom: 1px solid rgba(253,253,253,0.32);
+    padding-bottom: 12px;
+    transition: border-color 200ms ease, color 200ms ease;
+    align-self: flex-start;
+  }
+  .gen-link .arr {
+    display: inline-block;
+    transition: transform 220ms cubic-bezier(.2,.7,.2,1);
+  }
+  .gen-link:hover { border-bottom-color: var(--white); }
+  .gen-link:hover .arr { transform: translateX(4px); }
+
+  /* Claude logo lockup */
+  .claude-logo {
+    display: inline-flex; align-items: center;
+    color: var(--ink);
+    height: 22px;
+  }
+  .claude-logo svg { height: 22px; width: auto; display: block; }
+
+  /* Tool panel */
+  .tool {
+    background: var(--white); color: var(--ink);
+    padding: 36px 40px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 28px;
+    min-height: 460px;
+    position: relative;
+    overflow: hidden;
+  }
+  .tool .ai-mark {
+    position: absolute; right: -40px; bottom: -60px;
+    font-family: "Material Symbols Outlined";
+    font-variation-settings: "FILL" 1, "wght" 360, "GRAD" 0, "opsz" 48;
+    font-size: 280px; color: rgba(132, 162, 198, 0.18);
+    line-height: 1;
+    transform: rotate(-12deg);
+    pointer-events: none;
+  }
+  .tool .head-row {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 24px;
+    position: relative; z-index: 2;
+  }
+  .tool .head-row .label {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute); margin: 0 0 6px;
+  }
+  .tool .head-row h3 {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 32px; line-height: 1.05; letter-spacing: -0.015em;
+    color: var(--ink);
+    max-width: 9ch;
+  }
+  /* Claude lockup, top-right of tool panel */
+  .claude-lockup {
+    position: relative;
+    z-index: 1;
+    min-width: 148px;
+    padding-top: 3px;
+    text-align: right;
+  }
+  .claude-lockup .powered-label {
+    display: block;
+    margin-bottom: 7px;
+    font-family: var(--mono);
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(16, 26, 43, 0.55);
+  }
+  .claude-wordmark {
+    display: inline-block;
+    height: 22px;
+    width: auto;
+    color: var(--ink);
+  }
+  .tool .body {
+    display: grid; grid-template-columns: 1fr 1.3fr; gap: 32px;
+    position: relative; z-index: 2;
+  }
+  .tool .inputs { display: grid; gap: 0; align-content: start; }
+  .tool .input-row {
+    padding: 14px 0;
+    border-top: 1px solid var(--hair);
+  }
+  .tool .input-row:last-child { border-bottom: 1px solid var(--hair); }
+  .tool .input-row .k {
+    display: block; margin-bottom: 6px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .tool .input-row .v {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 17px; letter-spacing: -0.005em; color: var(--ink);
+  }
+  .tool .output {
+    background: var(--page);
+    padding: 24px 28px;
+    border-top: 4px solid var(--berry);
+    min-height: 220px;
+  }
+  .tool .output .k {
+    display: block; margin-bottom: 14px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .tool .output h4 {
+    margin: 0 0 14px;
+    font-family: var(--serif); font-weight: 300; font-style: italic;
+    font-size: 30px; line-height: 1.05; letter-spacing: -0.005em;
+    color: var(--ink);
+    max-width: 14ch;
+  }
+  .tool .output p {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 15px; line-height: 1.5; color: var(--mute);
+    max-width: 32ch;
+  }
+
+  /* §02 PRINCIPLES — three solid color fields, Pentagram-style */
+  .principles {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+  }
+  .principle {
+    padding: 36px 40px 40px;
+    aspect-ratio: 1.2 / 1;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 24px;
+  }
+  .principle .num {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .principle .name {
+    align-self: end;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(40px, 4vw, 56px); line-height: 0.98;
+    letter-spacing: -0.025em;
+  }
+  .principle p {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 16px; line-height: 1.5;
+    max-width: 30ch;
+  }
+
+  .pr-navy   { background: var(--navy);   color: var(--white); }
+  .pr-navy   .num { color: var(--pool); }
+  .pr-navy   p { color: rgba(253, 253, 253, 0.82); }
+
+  .pr-cobalt { background: var(--cobalt); color: var(--white); }
+  .pr-cobalt .num { color: var(--pool); }
+  .pr-cobalt p { color: rgba(253, 253, 253, 0.82); }
+
+  .pr-evergreen { background: var(--evergreen); color: var(--white); }
+  .pr-evergreen .num { color: rgba(253, 253, 253, 0.7); }
+  .pr-evergreen p { color: rgba(253, 253, 253, 0.82); }
+
+  /* §03 SAMPLES — six post tiles, asymmetric grid */
+  .samples {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-rows: 168px;
+    gap: 16px;
+  }
+  .sample {
+    position: relative; overflow: hidden;
+    padding: 24px 28px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    color: var(--ink);
+  }
+  .sample .lbl {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    position: relative; z-index: 2;
+  }
+  .sample h3 {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 26px; line-height: 1.0; letter-spacing: -0.015em;
+    position: relative; z-index: 2;
+  }
+  .sample p {
+    margin: 10px 0 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 14px; line-height: 1.45;
+    max-width: 32ch;
+    position: relative; z-index: 2;
+  }
+  .sample .stat {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 84px; line-height: 0.88;
+    letter-spacing: -0.035em;
+    position: relative; z-index: 2;
+  }
+
+  /* Sample variants */
+  .sample.s-paper { background: var(--white); color: var(--ink); box-shadow: inset 0 0 0 1px var(--hair); }
+  .sample.s-paper .lbl { color: var(--mute); }
+  .sample.s-paper p { color: var(--mute); }
+
+  .sample.s-cream { background: var(--page); color: var(--ink); box-shadow: inset 0 0 0 1px var(--hair); }
+  .sample.s-cream .lbl { color: var(--mute); }
+  .sample.s-cream p { color: var(--mute); }
+
+  .sample.s-navy { background: var(--navy); color: var(--white); }
+  .sample.s-navy .lbl { color: var(--pool); }
+  .sample.s-navy p { color: rgba(253, 253, 253, 0.82); }
+
+  .sample.s-cobalt { background: var(--cobalt); color: var(--white); }
+  .sample.s-cobalt .lbl { color: var(--pool); }
+  .sample.s-cobalt p { color: rgba(253, 253, 253, 0.82); }
+
+  .sample.s-berry { background: var(--berry); color: var(--white); }
+  .sample.s-berry .lbl { color: rgba(253, 253, 253, 0.7); }
+  .sample.s-berry p { color: rgba(253, 253, 253, 0.85); }
+
+  .sample.s-evergreen { background: var(--evergreen); color: var(--white); }
+  .sample.s-evergreen .lbl { color: rgba(253, 253, 253, 0.7); }
+  .sample.s-evergreen p { color: rgba(253, 253, 253, 0.85); }
+
+  /* Story sample (photo + grayscale + fog/navy veil) */
+  .sample.s-story {
+    background: var(--navy); color: var(--white);
+    padding: 32px 36px;
+  }
+  .sample.s-story .photo {
+    position: absolute; inset: 0;
+    background-image: url('https://www.norcalsbdc.org/wp-content/uploads/2020/07/Dick-Taylor-Adam-Dick-and-Dustin-Taylor.jpg');
+    background-size: cover; background-position: center 30%;
+    filter: grayscale(100%) contrast(1.05) brightness(0.92);
+    z-index: 0;
+  }
+  .sample.s-story .veil {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg,
+        rgba(15, 28, 45, 0.30) 0%,
+        rgba(15, 28, 45, 0.50) 50%,
+        rgba(15, 28, 45, 0.82) 100%),
+      linear-gradient(180deg,
+        rgba(132, 162, 198, 0.16) 0%,
+        rgba(132, 162, 198, 0) 60%);
+    z-index: 1;
+  }
+  .sample.s-story h3 {
+    font-family: var(--serif); font-weight: 300; font-style: italic;
+    font-size: 44px; line-height: 1.02; letter-spacing: -0.015em;
+    color: var(--white);
+  }
+  .sample.s-story .lbl { color: rgba(253, 253, 253, 0.82); }
+  .sample.s-story p { color: rgba(253, 253, 253, 0.78); }
+
+  /* Sample sizes */
+  .s-large  { grid-column: span 5; grid-row: span 3; }
+  .s-wide   { grid-column: span 7; grid-row: span 2; }
+  .s-medium { grid-column: span 4; grid-row: span 2; }
+  .s-small  { grid-column: span 3; grid-row: span 2; }
+
+  .s-large h3 { font-size: 38px; }
+  .s-wide  h3 { font-size: 30px; }
+
+  /* §04 CHANNELS — clean rows */
+  .channels-list {
+    display: grid; gap: 0;
+  }
+  .channel-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 180px;
+    gap: 32px;
+    padding: 26px 0;
+    border-top: 1px solid var(--hair);
+    align-items: baseline;
+  }
+  .channel-row:last-child { border-bottom: 1px solid var(--hair); }
+  .channel-name {
+    display: flex; align-items: center; gap: 14px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 26px; letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .channel-name .icon {
+    width: 36px; height: 36px;
+    display: grid; place-items: center;
+    background: var(--navy); color: var(--white);
+  }
+  .channel-name .icon svg { width: 18px; height: 18px; fill: currentColor; }
+  .channel-row .desc {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 17px; line-height: 1.5; color: var(--ink);
+    max-width: 56ch; margin: 0;
+  }
+  .channel-meta {
+    display: grid; gap: 8px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--mute);
+    text-align: right;
+  }
+
+  /* §05 RHYTHM — matrix with navy header row */
+  .rhythm {
+    display: grid;
+    grid-template-columns: 180px repeat(3, minmax(0, 1fr));
+    gap: 0;
+  }
+  .rhythm .cell {
+    padding: 22px 24px;
+    border-right: 1px solid var(--hair);
+    border-bottom: 1px solid var(--hair);
+    background: var(--white);
+    min-height: 140px;
+  }
+  .rhythm .cell:nth-child(4n) { border-right: none; }
+  .rhythm .cell.head {
+    background: var(--navy); color: var(--white);
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    min-height: auto; padding: 16px 24px;
+    border-right-color: rgba(253, 253, 253, 0.12);
+  }
+  .rhythm .cell.head:nth-child(4n) { border-right: none; }
+  .rhythm .cell.row-head {
+    background: var(--page);
+  }
+  .rhythm .cell .when {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 22px; letter-spacing: -0.015em; color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .rhythm .cell p {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 14px; line-height: 1.5; color: var(--ink);
+  }
+  .rhythm .cell.row-head p { color: var(--mute); font-size: 13px; }
+
+  /* §06 RESPONSE — solid Navy field with template quote */
+  .response-section {
+    margin-top: 100px;
+    background: var(--navy);
+    color: var(--white);
+  }
+  .response-inner {
+    max-width: var(--col); margin: 0 auto; padding: 80px 56px;
+  }
+  .response-section .eyebrow { color: var(--pool); display: block; margin-bottom: 18px; }
+  .response-section h2 {
+    margin: 0 0 16px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(40px, 4.4vw, 56px); line-height: 1.0;
+    letter-spacing: -0.02em; color: var(--white);
+  }
+  .response-section .lede {
+    margin: 0 0 48px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 20px; line-height: 1.45;
+    color: rgba(253, 253, 253, 0.85);
+    max-width: 580px;
+  }
+  .response-board {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .response-card {
+    background: var(--page); color: var(--ink);
+    padding: 36px 40px 44px;
+    position: relative;
+  }
+  .response-card .lbl {
+    display: block; margin-bottom: 22px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .response-card .quote {
+    font-family: var(--serif); font-weight: 300; font-style: italic;
+    font-size: 26px; line-height: 1.2; letter-spacing: -0.005em;
+    color: var(--ink);
+    border-left: 4px solid var(--berry);
+    padding-left: 24px;
+    max-width: 26ch;
+    margin: 0;
+  }
+  .response-policy {
+    font-family: var(--sans); font-weight: 500;
+    font-size: 15px; line-height: 1.65;
+    color: rgba(253, 253, 253, 0.78);
+    max-width: 56ch;
+    margin: 0;
+  }
+
+  /* DISCLOSURE */
+  details.disclose {
+    margin-top: 32px;
+    border-top: 1px solid var(--hair);
+    border-bottom: 1px solid var(--hair);
+  }
+  details.disclose summary {
+    list-style: none; cursor: pointer;
+    padding: 18px 0;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--evergreen);
+    display: flex; align-items: center; gap: 12px;
+  }
+  details.disclose summary::-webkit-details-marker { display: none; }
+  details.disclose .plus::before { content: "[+]"; }
+  details[open].disclose .plus::before { content: "[–]"; }
+  details.disclose .disclose-body {
+    padding: 0 0 28px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 16px; line-height: 1.55; color: var(--ink);
+    max-width: 760px;
+  }
+  details.disclose .disclose-body p { margin: 0 0 12px; }
+
+  /* COLOPHON */
+  .colophon {
+    margin-top: 120px;
+    padding: 36px 0 56px;
+    border-top: 1px solid var(--hair);
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .colophon .center { text-align: center; }
+  .colophon .right  { text-align: right; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <div class="head">
+    <div class="brand">NorCal SBDC · Brand House</div>
+    <div>Chapter 06</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero-mark">
+    <div>
+      <span class="eyebrow">06 · Voice &amp; Reach</span>
+      <h1>Content</h1>
+    </div>
+    <div class="subtitle">
+      <span class="accent-bar"></span>
+      <p>Guidelines for social media and newsletters so the network posts with one voice. Use the generator for the first draft. An editor approves the final.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- §01 GENERATOR — solid Navy bleed -->
+<section class="generator">
+  <div class="generator-inner">
+    <div class="generator-left">
+      <span class="eyebrow">Tool</span>
+      <h2>Generate the first draft.</h2>
+      <p class="lede">Use the generator for client success stories, social posts, newsletters, workshop recaps, and press releases. It speeds up the first pass. It does not replace the editor.</p>
+
+      <div class="gen-link-wrap">
+        <a class="gen-link" href="#">
+          Open the generator
+          <span class="arr" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="generator-right">
+    <div class="tool">
+      <span class="ai-mark material-symbols-outlined" aria-hidden="true">auto_awesome</span>
+      <div class="head-row">
+        <div>
+          <p class="label">Content generator</p>
+          <h3>Draft with guardrails.</h3>
+        </div>
+        <div class="claude-lockup">
+          <span class="powered-label">Powered by</span>
+          <img class="claude-wordmark" src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Claude_AI_logo.svg" alt="Claude">
+          <span class="claude-logo" aria-label="Claude" style="display:none">
+            <svg viewBox="0 0 689.97997 148.17999" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="img">
+  <g transform="translate(-75.96,-223.53)">
+    <path fill="#D97757" d="m 105.01,322.07 29.14,-16.35 0.49,-1.42 -0.49,-0.79 h -1.42 l -4.87,-0.3 -16.65,-0.45 -14.44,-0.6 -13.99,-0.75 -3.52,-0.75 -3.3,-4.35 0.34,-2.17 2.96,-1.99 4.24,0.37 9.37,0.64 14.06,0.97 10.2,0.6 15.11,1.57 h 2.4 l 0.34,-0.97 -0.82,-0.6 -0.64,-0.6 -14.55,-9.86 -15.75,-10.42 -8.25,-6 -4.46,-3.04 -2.25,-2.85 -0.97,-6.22 4.05,-4.46 5.44,0.37 1.39,0.37 5.51,4.24 11.77,9.11 15.37,11.32 2.25,1.87 0.9,-0.64 0.11,-0.45 -1.01,-1.69 -8.36,-15.11 -8.92,-15.37 -3.97,-6.37 -1.05,-3.82 c -0.37,-1.57 -0.64,-2.89 -0.64,-4.5 l 4.61,-6.26 2.55,-0.82 6.15,0.82 2.59,2.25 3.82,8.74 6.19,13.76 9.6,18.71 2.81,5.55 1.5,5.14 0.56,1.57 h 0.97 v -0.9 l 0.79,-10.54 1.46,-12.94 1.42,-16.65 0.49,-4.69 2.32,-5.62 4.61,-3.04 3.6,1.72 2.96,4.24 -0.41,2.74 -1.76,11.44 -3.45,17.92 -2.25,12 h 1.31 l 1.5,-1.5 6.07,-8.06 10.2,-12.75 4.5,-5.06 5.25,-5.59 3.37,-2.66 h 6.37 l 4.69,6.97 -2.1,7.2 -6.56,8.32 -5.44,7.05 -7.8,10.5 -4.87,8.4 0.45,0.67 1.16,-0.11 17.62,-3.75 9.52,-1.72 11.36,-1.95 5.14,2.4 0.56,2.44 -2.02,4.99 -12.15,3 -14.25,2.85 -21.22,5.02 -0.26,0.19 0.3,0.37 9.56,0.9 4.09,0.22 h 10.01 l 18.64,1.39 4.87,3.22 2.92,3.94 -0.49,3 -7.5,3.82 -10.12,-2.4 -23.62,-5.62 -8.1,-2.02 h -1.12 v 0.67 l 6.75,6.6 12.37,11.17 15.49,14.4 0.79,3.56 -1.99,2.81 -2.1,-0.3 -13.61,-10.24 -5.25,-4.61 -11.89,-10.01 h -0.79 v 1.05 l 2.74,4.01 14.47,21.75 0.75,6.67 -1.05,2.17 -3.75,1.31 -4.12,-0.75 -8.47,-11.89 -8.74,-13.39 -7.05,-12 -0.86,0.49 -4.16,44.81 -1.95,2.29 -4.5,1.72 -3.75,-2.85 -1.99,-4.61 1.99,-9.11 2.4,-11.89 1.95,-9.45 1.76,-11.74 1.05,-3.9 -0.07,-0.26 -0.86,0.11 -8.85,12.15 -13.46,18.19 -10.65,11.4 -2.55,1.01 -4.42,-2.29 0.41,-4.09 2.47,-3.64 14.74,-18.75 8.89,-11.62 5.74,-6.71 -0.04,-0.97 h -0.34 l -39.15,25.42 -6.97,0.9 -3,-2.81 0.37,-4.61 1.42,-1.5 11.77,-8.1 -0.04,0.04 z"/>
+    <path fill="currentColor" d="m 317.73,349.33 c -18.82,0 -31.69,-10.5 -37.76,-26.66 -3.17,-8.42 -4.74,-17.36 -4.61,-26.36 0,-27.11 12.15,-45.94 39,-45.94 18.04,0 29.17,7.87 35.51,26.66 h 7.72 l -1.05,-25.91 c -10.8,-6.97 -24.3,-10.5 -40.72,-10.5 -23.14,0 -42.82,10.35 -53.77,29.02 -5.66,9.86 -8.53,21.07 -8.32,32.44 0,20.74 9.79,39.11 28.16,49.31 10.06,5.37 21.34,8.04 32.74,7.72 17.92,0 32.14,-3.41 44.74,-9.37 l 3.26,-28.57 h -7.87 c -4.72,13.05 -10.35,20.89 -19.69,25.05 -4.57,2.06 -10.35,3.11 -17.32,3.11 z m 81.18,-98.96 0.75,-12.75 h -5.32 l -23.7,7.12 v 3.86 l 10.5,4.87 v 89.17 c 0,6.07 -3.11,7.42 -11.25,8.44 v 6.52 h 40.31 v -6.52 c -8.17,-1.01 -11.25,-2.36 -11.25,-8.44 V 250.4 l -0.04,-0.04 z m 160.31,108.75 h 3.11 l 27.26,-5.17 v -6.67 l -3.82,-0.3 c -6.37,-0.6 -8.02,-1.91 -8.02,-7.12 v -47.55 l 0.75,-15.26 h -4.31 l -25.76,3.71 v 6.52 l 2.51,0.45 c 6.97,1.01 9.04,2.96 9.04,7.84 v 42.37 c -6.67,5.17 -13.05,8.44 -20.62,8.44 -8.4,0 -13.61,-4.27 -13.61,-14.25 v -39.79 l 0.75,-15.26 h -4.42 l -25.8,3.71 v 6.52 l 2.66,0.45 c 6.97,1.01 9.04,2.96 9.04,7.84 v 39.11 c 0,16.57 9.37,24.45 24.3,24.45 11.4,0 20.74,-6.07 27.75,-14.51 l -0.75,14.51 -0.04,-0.04 z M 484.3,306.36 c 0,-21.19 -11.25,-29.32 -31.57,-29.32 -17.92,0 -30.94,7.42 -30.94,19.72 0,3.67 1.31,6.49 3.97,8.44 l 13.65,-1.8 c -0.6,-4.12 -0.9,-6.64 -0.9,-7.69 0,-6.97 3.71,-10.5 11.25,-10.5 11.14,0 16.76,7.84 16.76,20.44 v 4.12 l -28.12,8.44 c -9.37,2.55 -14.7,4.76 -18.26,9.94 -1.89,3.17 -2.8,6.82 -2.62,10.5 0,12 8.25,20.47 22.35,20.47 10.2,0 19.24,-4.61 27.11,-13.35 2.81,8.74 7.12,13.35 14.81,13.35 6.22,0 11.85,-2.51 16.87,-7.42 l -1.5,-5.17 c -2.17,0.6 -4.27,0.9 -6.49,0.9 -4.31,0 -6.37,-3.41 -6.37,-10.09 v -30.97 z m -36,40.76 c -7.69,0 -12.45,-4.46 -12.45,-12.3 0,-5.32 2.51,-8.44 7.87,-10.24 l 22.8,-7.24 v 21.9 c -7.27,5.51 -11.55,7.87 -18.22,7.87 z m 237.36,6.82 v -6.67 l -3.86,-0.3 c -6.37,-0.6 -7.99,-1.91 -7.99,-7.12 v -89.47 l 0.75,-12.75 h -5.36 l -23.7,7.12 v 3.86 l 10.5,4.87 v 29.32 c -5.91,-4.05 -12.98,-6.08 -20.14,-5.77 -23.55,0 -41.92,17.92 -41.92,44.74 0,22.09 13.2,37.35 34.95,37.35 11.25,0 21.04,-5.47 27.11,-13.95 l -0.75,13.95 h 3.15 l 27.26,-5.17 v 0 z m -49.35,-68.02 c 11.25,0 19.69,6.52 19.69,18.52 v 33.75 c -5.18,5.16 -12.23,8 -19.54,7.87 -16.12,0 -24.3,-12.75 -24.3,-29.77 0,-19.12 9.34,-30.37 24.15,-30.37 z M 743.3,302.8 c -2.1,-9.9 -8.17,-15.52 -16.61,-15.52 -12.6,0 -21.34,9.49 -21.34,23.1 0,20.14 10.65,33.19 27.86,33.19 11.48,-0.12 22.04,-6.33 27.71,-16.31 l 5.02,1.35 c -2.25,17.47 -18.07,30.52 -37.5,30.52 -22.8,0 -38.51,-16.87 -38.51,-40.87 0,-24 17.06,-41.21 39.86,-41.21 17.02,0 29.02,10.24 32.89,28.01 l -59.4,18.22 v -8.02 l 40.01,-12.41 v -0.04 z"/>
+  </g>
+</svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="body">
+        <div class="inputs">
+          <div class="input-row">
+            <span class="k">Format</span>
+            <span class="v">Client success story</span>
+          </div>
+          <div class="input-row">
+            <span class="k">Audience</span>
+            <span class="v">Northern California founders</span>
+          </div>
+          <div class="input-row">
+            <span class="k">Voice</span>
+            <span class="v">Helpful, direct, specific</span>
+          </div>
+        </div>
+
+        <div class="output">
+          <span class="k">Draft preview</span>
+          <h4>Dick Taylor Chocolates turned craft into capacity.</h4>
+          <p>Start with the client. Name the progress. Keep the advisor present, but never bigger than the business.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="formats" id="formatPills">
+      <span class="format-pill active" data-color="cream">Client success stories</span>
+      <span class="format-pill" data-color="cobalt">Social posts</span>
+      <span class="format-pill" data-color="berry">Newsletters</span>
+      <span class="format-pill" data-color="mute">Workshop recaps</span>
+      <span class="format-pill" data-color="pool">Press releases</span>
+    </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- §02 PRINCIPLES -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Three principles.</h2>
+      <p class="lede">Every post follows three rules. Authentic in voice. Written for one audience. Private about anything not ours to share.</p>
+    </div>
+
+    <div class="principles">
+      <div class="principle pr-navy">
+        <div class="num">01</div>
+        <div class="name">Authentic.</div>
+        <p>Use your real name. Never post anonymously. Every post reflects who we are as people.</p>
+      </div>
+      <div class="principle pr-cobalt">
+        <div class="num">02</div>
+        <div class="name">Audience.</div>
+        <p>A founder needs different content than a city councilmember. Write to the person on the other side of the screen.</p>
+      </div>
+      <div class="principle pr-evergreen">
+        <div class="num">03</div>
+        <div class="name">Privacy.</div>
+        <p>Never disclose personal, confidential, or proprietary information about clients, advisors, partners, or lenders.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- §03 SAMPLES -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Six post types.</h2>
+      <p class="lede">The working range — client stories, impact numbers, advisor features, event pushes, capital tips, evergreen brand voice. One template each.</p>
+    </div>
+
+    <div class="samples">
+      <article class="sample s-large s-story">
+        <div class="photo" aria-hidden="true"></div>
+        <div class="veil" aria-hidden="true"></div>
+        <span class="lbl">Client Story</span>
+        <div>
+          <h3>Dick Taylor Chocolates turned craft into capacity.</h3>
+          <p>Use Sera for story headlines. Give the client a real narrative, not a placeholder.</p>
+        </div>
+      </article>
+
+      <article class="sample s-wide s-berry">
+        <span class="lbl">Capital Impact</span>
+        <div>
+          <div class="stat">$547M</div>
+          <p>Capital accessed across the NorCal SBDC network in 2025.</p>
+        </div>
+      </article>
+
+      <article class="sample s-medium s-navy">
+        <span class="lbl">Advisor Spotlight</span>
+        <div>
+          <h3>Meet your SBDC advisor.</h3>
+          <p>Specific, local, useful. Not a staff bio copied into a caption.</p>
+        </div>
+      </article>
+
+      <article class="sample s-small s-paper">
+        <span class="lbl">Jobs Stat</span>
+        <div>
+          <div class="stat">3,723</div>
+          <p>Jobs created with NorCal SBDC support in 2025.</p>
+        </div>
+      </article>
+
+      <article class="sample s-medium s-evergreen">
+        <span class="lbl">Capital Readiness</span>
+        <div>
+          <h3>Every consultation is no-fee.</h3>
+          <p>Use tips when they help someone take the next step.</p>
+        </div>
+      </article>
+
+      <article class="sample s-small s-cream">
+        <span class="lbl">Event Post</span>
+        <div>
+          <h3>Free workshop Tuesday in Redding.</h3>
+          <p>Short date, clear topic, direct CTA.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- §04 CHANNELS -->
+  <section class="section">
+    <div class="section-split">
+      <div class="split-head">
+        <h2>By channel.</h2>
+        <p class="lede">Three platforms. Three cadences. One voice. Each channel gets a job so posts do not become generic cross-posts.</p>
+      </div>
+      <div class="split-body">
+    <div class="channels-list">
+
+      <div class="channel-row">
+        <div class="channel-name">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </span>
+          LinkedIn
+        </div>
+        <p class="desc">Impact, proof, partnerships. Long-form posts on client milestones, capital raised, and advisor insight.</p>
+        <div class="channel-meta">
+          <span>Professional · Data-driven</span>
+          <span>2–3 per week</span>
+        </div>
+      </div>
+
+      <div class="channel-row">
+        <div class="channel-name">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </span>
+          Facebook
+        </div>
+        <p class="desc">Local business community. Event promos, client spotlights, advisor features, regional news.</p>
+        <div class="channel-meta">
+          <span>Warm · Community</span>
+          <span>3–5 per week</span>
+        </div>
+      </div>
+
+      <div class="channel-row">
+        <div class="channel-name">
+          <span class="icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.336 3.608 1.311.975.975 1.249 2.242 1.311 3.608.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.062 1.366-.336 2.633-1.311 3.608-.975.975-2.242 1.249-3.608 1.311-1.265.058-1.645.07-4.849.07-3.204 0-3.584-.012-4.849-.07-1.366-.062-2.633-.336-3.608-1.311-.975-.975-1.249-2.242-1.311-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.849c.062-1.366.336-2.633 1.311-3.608C4.519 2.568 5.786 2.294 7.152 2.232 8.417 2.175 8.796 2.163 12 2.163zm0-2.163C8.735 0 8.332.014 7.052.072 5.206.157 3.66.576 2.44 1.797 1.22 3.017.8 4.563.715 6.409.657 7.689.643 8.093.643 11.358s.014 3.668.072 4.948c.085 1.846.505 3.392 1.726 4.612 1.22 1.22 2.766 1.64 4.612 1.725 1.28.058 1.683.072 4.947.072 3.265 0 3.668-.014 4.948-.072 1.846-.085 3.392-.505 4.612-1.725 1.22-1.22 1.64-2.766 1.725-4.612.058-1.28.072-1.683.072-4.948 0-3.265-.014-3.668-.072-4.948-.085-1.846-.505-3.392-1.725-4.612C20.34.576 18.794.157 16.948.072 15.668.014 15.265 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </span>
+          Instagram
+        </div>
+        <p class="desc">Client photos, moments, quote cards. Show the work, not the hype. Every image is a real person doing real work.</p>
+        <div class="channel-meta">
+          <span>Visual · Aspirational</span>
+          <span>3–4 per week</span>
+        </div>
+      </div>
+
+    </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- §05 RHYTHM -->
+  <section class="section">
+    <div class="section-split">
+      <div class="split-head">
+        <h2>Posting rhythm.</h2>
+        <p class="lede">Three cadences down, three pillars across. Every audience sees every pillar, every quarter, on repeat.</p>
+      </div>
+      <div class="split-body">
+    <div class="rhythm">
+      <div class="cell head">Cadence</div>
+      <div class="cell head">People</div>
+      <div class="cell head">Funded</div>
+      <div class="cell head">Connected</div>
+
+      <div class="cell row-head">
+        <div class="when">Weekly</div>
+        <p>Rotate pillars. Never lead with the same pillar twice in a row.</p>
+      </div>
+      <div class="cell"><p>Advisor spotlight or team moment.</p></div>
+      <div class="cell"><p>Capital stat, lending tip, or client win.</p></div>
+      <div class="cell"><p>Event promo, workshop recap, or partner shout-out.</p></div>
+
+      <div class="cell row-head">
+        <div class="when">Bi-weekly</div>
+        <p>One pillar leads the newsletter. The other two support.</p>
+      </div>
+      <div class="cell"><p>Lead story: client or advisor profile.</p></div>
+      <div class="cell"><p>Quick tip on capital access or SBA updates.</p></div>
+      <div class="cell"><p>Program spotlight and upcoming events.</p></div>
+
+      <div class="cell row-head">
+        <div class="when">Quarterly</div>
+        <p>One signature piece earns 4–6 weeks of derivative posts.</p>
+      </div>
+      <div class="cell"><p>Signature client success story.</p></div>
+      <div class="cell"><p>Capital impact report or lender feature.</p></div>
+      <div class="cell"><p>Event recap video or regional snapshot.</p></div>
+    </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- §06 COMMENT RESPONSE — solid Navy bleed -->
+<section class="response-section">
+  <div class="response-inner">
+    <span class="eyebrow">Community</span>
+    <h2>Responding to comments.</h2>
+    <p class="lede">Respond publicly to negative comments. Then move the discussion to a private space.</p>
+
+    <div class="response-board">
+      <div class="response-card">
+        <span class="lbl">Template Response</span>
+        <p class="quote">We are so sorry you've had a negative experience. Please private message us with your email address so we can help you resolve the issue.</p>
+      </div>
+      <p class="response-policy">The [Center Name] SBDC maintains this page to support discussion about news and events related to small business support. We reserve the right to remove content that is commercial, harmful, inappropriate, erroneous, harassing, libelous, threatening, discriminatory, or off-topic. We may block users from posting after a second offense. We are not responsible for content posted by others. Community-contributed content represents the opinion of the author and does not necessarily represent the opinions of [Center Name] SBDC.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- §07 RULES — disclosure -->
+  <section class="section">
+    <details class="disclose">
+      <summary><span class="plus"></span> &nbsp; WHY · CONTENT RULES</summary>
+      <div class="disclose-body">
+        <p>The generator drafts. The editor approves. Never publish a generator output without a human pass — voice, facts, names, and links must be checked.</p>
+        <p>Use Sera italic only for client story headlines and pull quotes. Every other headline is Nova 600. Captions, stats, and CTAs stay in Nova.</p>
+        <p>Numbers belong in Nova at display weight (the $547M tile, the 3,723 jobs tile). Never set numerals in Sera — they read as decoration, not data.</p>
+        <p>Photos are grayscale with a Navy/Fog veil for legibility. Never publish a client photo without permission. Never crop a face out for layout.</p>
+        <p>Cross-posting is not posting. Each channel earns its own write-up — LinkedIn long-form, Facebook community, Instagram visual.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- COLOPHON -->
+  <div class="colophon">
+    <div class="left">NorCal SBDC · Brand House · Chapter 06</div>
+    <div class="center">Content · Voice &amp; Reach</div>
+    <div class="right">v01 · April 2026</div>
+  </div>
+
+</div>
+
+<script>
+  // Magnetic hover for format pills + generate CTA.
+  // The element drifts toward the cursor while hovered, then snaps back on leave.
+  (function () {
+    var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+    var STRENGTH = 0.12; // 0..1, how far it follows (subtle)
+    var MAX = 5;         // px clamp
+
+    function bind(el) {
+      var raf = null;
+      function onMove(e) {
+        var r = el.getBoundingClientRect();
+        var cx = r.left + r.width / 2;
+        var cy = r.top + r.height / 2;
+        var dx = (e.clientX - cx) * STRENGTH;
+        var dy = (e.clientY - cy) * STRENGTH;
+        dx = Math.max(-MAX, Math.min(MAX, dx));
+        dy = Math.max(-MAX, Math.min(MAX, dy));
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(function () {
+          el.style.transform = 'translate3d(' + dx + 'px,' + dy + 'px,0)';
+        });
+      }
+      function onLeave() {
+        if (raf) cancelAnimationFrame(raf);
+        el.style.transform = 'translate3d(0,0,0)';
+      }
+      el.addEventListener('mousemove', onMove);
+      el.addEventListener('mouseleave', onLeave);
+    }
+
+    document.querySelectorAll('.format-pill, .generate-cta').forEach(bind);
+
+    // Click to set active state on pills (visual only).
+    document.querySelectorAll('#formatPills .format-pill').forEach(function (p) {
+      p.addEventListener('click', function () {
+        document.querySelectorAll('#formatPills .format-pill').forEach(function (q) { q.classList.remove('active'); });
+        p.classList.add('active');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>

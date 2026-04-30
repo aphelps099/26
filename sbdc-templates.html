@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NorCal SBDC · Brand House · Templates</title>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin />
+<link rel="stylesheet" href="https://use.typekit.net/pkl5rjs.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0F1C2D;
+    --slate: #2C3240;
+    --cobalt: #1B5FAF;
+    --steel: #5582B9;
+    --fog: #84A2C6;
+    --pool: #8FC5D9;
+    --berry: #C23C3C;
+    --evergreen: #00675C;
+    --silver: #D8D8D8;
+    --white: #FDFDFD;
+    --page: #F2F1ED;
+    --ink: #0F1C2D;
+    --mute: #4A5260;
+    --hair: #D4D2CC;
+
+    --sans:  "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+    --serif: "proxima-sera", Georgia, "Times New Roman", serif;
+    --mono:  "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    --col: 1320px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap { max-width: var(--col); margin: 0 auto; padding: 0 56px; }
+
+  /* ── HEADER ─────────────────────────────────────────────── */
+  .head {
+    padding: 32px 0 0;
+    display: flex; align-items: baseline; justify-content: space-between;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute); font-weight: 500;
+  }
+  .head .brand { color: var(--ink); }
+
+  /* ── HERO — stacked variant (wide title word) ────────────── */
+  .hero-mark {
+    padding: 84px 0 64px;
+  }
+  .hero-mark .eyebrow {
+    display: block;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--cobalt);
+    margin-bottom: 22px;
+  }
+  .hero-mark h1 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(120px, 14vw, 200px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+  .hero-mark .subtitle {
+    display: block;
+    margin-left: auto;
+    max-width: 600px;
+    padding-top: 48px;
+  }
+  .hero-mark .accent-bar {
+    display: block; width: 100%; height: 4px;
+    background: var(--navy); margin: 0 0 22px;
+  }
+  .hero-mark p {
+    margin: 0 0 14px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    max-width: 520px;
+  }
+
+  /* ── CHAPTER SECTIONS — 4/8 grid (from Colors page) ─────── */
+  .ch-section {
+    padding: 56px 0 64px;
+    border-top: 1px solid var(--hair);
+  }
+  .ch-section + .ch-section { padding-top: 56px; }
+  .ch-grid {
+    max-width: var(--col);
+    padding: 0 56px;
+    margin: 0 auto;
+  }
+  .ch-head {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 0;
+  }
+  .ch-label {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+  }
+  .ch-label::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--berry);
+    margin-bottom: 22px;
+  }
+  .ch-h2 {
+    margin: 0 0 16px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(36px, 4vw, 56px);
+    line-height: 1.06;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+  }
+  .ch-lead {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+  }
+
+  /* ── §01 COPY BLOCKS — editorial color panels ────────────── */
+  .tpl-panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .tpl-panel {
+    padding: 36px 40px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px;
+    cursor: pointer;
+    position: relative;
+    transition: opacity 120ms;
+  }
+  .tpl-panel:hover { opacity: 0.92; }
+  .tpl-panel-label {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    margin: 0 0 auto;
+  }
+  .tpl-panel-text {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+  }
+  .tpl-panel-body {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.5;
+    max-width: 36ch;
+  }
+  /* Panel color variants */
+  .tpl-panel.pan-cream {
+    background: #E6E3DA; color: var(--ink);
+  }
+  .tpl-panel.pan-cream .tpl-panel-label { color: var(--mute); }
+  .tpl-panel.pan-cream .tpl-panel-body { color: var(--mute); }
+  .tpl-panel.pan-navy {
+    background: var(--navy); color: var(--white);
+  }
+  .tpl-panel.pan-navy .tpl-panel-label { color: var(--pool); }
+  .tpl-panel.pan-navy .tpl-panel-body { color: rgba(253,253,253,0.82); }
+  .tpl-panel.pan-pool {
+    background: var(--pool); color: var(--navy);
+  }
+  .tpl-panel.pan-pool .tpl-panel-label { color: var(--navy); opacity: 0.6; }
+  .tpl-panel.pan-pool .tpl-panel-body { color: var(--navy); opacity: 0.85; }
+  .tpl-panel.pan-cobalt {
+    background: var(--cobalt); color: var(--white);
+  }
+  .tpl-panel.pan-cobalt .tpl-panel-label { color: var(--pool); }
+  .tpl-panel.pan-cobalt .tpl-panel-body { color: rgba(253,253,253,0.82); }
+  /* Tagline display */
+  .tpl-panel .tpl-tagline-d {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(44px, 5vw, 72px);
+    line-height: 0.96;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin: 0;
+  }
+  .tpl-panel .tpl-tagline-d em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--berry);
+  }
+  /* Impact stat display */
+  .tpl-panel .tpl-stat-num {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(56px, 6vw, 92px);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+  }
+  .tpl-panel .tpl-stat-cap {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--pool);
+    margin-top: 8px;
+  }
+  /* 3-col row */
+  .tpl-panels-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  .tpl-panels-3 .tpl-panel { min-height: 280px; }
+
+  /* ── §02 PRODUCTION FILES — clean card grid ─────────────── */
+  .tpl-files {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 24px;
+  }
+  .tpl-file {
+    padding: 24px 28px 28px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .tpl-file:nth-child(3n+2),
+  .tpl-file:nth-child(3n+3) { padding-left: 28px; }
+  .tpl-file:nth-child(3n+2),
+  .tpl-file:nth-child(3n+3) { border-left: 1px solid var(--hair); }
+  .tpl-file:nth-child(3n+1) { padding-left: 0; }
+  .tpl-file:nth-child(n+4) { border-top: 1px solid var(--hair); padding-top: 24px; }
+  .tpl-file-thumb {
+    width: 100%;
+    height: 220px;
+    margin-bottom: 16px;
+    flex-shrink: 0;
+  }
+  .tpl-file-badge {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    margin-bottom: 8px;
+  }
+  .tpl-file h4 {
+    margin: 0 0 6px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.2;
+    letter-spacing: -0.008em;
+    color: var(--ink);
+  }
+  .tpl-file-desc {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--mute);
+  }
+
+  /* ── §03 CANVA — offset right, mirrors ch-lead ──────────── */
+  .tpl-canva-row {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 80px;
+    padding: 28px 0 32px;
+  }
+  .tpl-canva-body {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+  }
+  .tpl-canva-body strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .tpl-canva-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.005em;
+    color: var(--cobalt);
+    text-decoration: none;
+  }
+  .tpl-canva-link:hover { text-decoration: underline; }
+  .tpl-canva-link .arr {
+    display: inline-block;
+    transition: transform 200ms;
+  }
+  .tpl-canva-link:hover .arr { transform: translateX(3px); }
+
+  /* ── DISCLOSURE — [+] accordion ─────────────────────────── */
+  .disc {
+    padding: 0 0 36px;
+  }
+  .disc details.disclose + details.disclose {
+    border-top: 1px solid var(--hair);
+  }
+  details.disclose { border: none; }
+  details.disclose > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 28px 0;
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr);
+    gap: 32px;
+    align-items: baseline;
+    font-family: var(--mono);
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--evergreen);
+  }
+  details.disclose > summary::-webkit-details-marker { display: none; }
+  details.disclose .pm {
+    font-family: var(--mono);
+    font-size: 14px; font-weight: 500;
+    letter-spacing: 0;
+    color: var(--evergreen);
+  }
+  details.disclose[open] .pm::before { content: "[\2212]"; }
+  details.disclose:not([open]) .pm::before { content: "[+]"; }
+  details.disclose .disclose-body {
+    padding: 0 0 36px 92px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 17px; line-height: 1.55;
+    color: var(--ink);
+    max-width: 920px;
+  }
+  details.disclose .disclose-body p { margin: 0 0 18px; }
+  details.disclose .disclose-body p:last-child { margin-bottom: 0; }
+  details.disclose .disclose-body strong { font-weight: 600; color: var(--ink); }
+  details.disclose .disclose-body em {
+    color: var(--berry);
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  /* ── NEXT CHAPTER — the wipe ─────────────────────────────── */
+  .nx-wipe {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+    padding: 64px 0 72px;
+    position: relative;
+    cursor: pointer;
+  }
+  .nx-wipe-bar {
+    height: 4px;
+    background: var(--berry);
+    margin-bottom: 32px;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .nx-wipe-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 40px;
+  }
+  .nx-wipe-label {
+    font-family: var(--sans);
+    font-size: 14px; font-weight: 500;
+    color: var(--mute);
+    margin-bottom: 14px;
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  .nx-wipe-title {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(56px, 6vw, 96px);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    margin: 0;
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  .nx-wipe-right {
+    text-align: right;
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  .nx-wipe-num {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    color: var(--berry);
+    margin-bottom: 8px;
+  }
+  .nx-wipe-desc {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.45;
+    color: var(--mute);
+    max-width: 280px;
+  }
+
+  /* ── FOOTER ─────────────────────────────────────────────── */
+  .tpl-foot {
+    padding: 36px 0;
+    border-top: 1px solid var(--hair);
+  }
+  .tpl-foot-inner {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+  .tpl-foot-inner a {
+    color: var(--mute); text-decoration: none;
+  }
+  .tpl-foot-inner a:hover { color: var(--cobalt); }
+
+  /* ── TOAST ──────────────────────────────────────────────── */
+  .tpl-toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(16px);
+    background: var(--navy);
+    color: var(--white);
+    font-family: var(--sans);
+    font-size: 14px; font-weight: 600;
+    padding: 12px 28px;
+    opacity: 0;
+    transition: opacity 280ms, transform 280ms;
+    pointer-events: none;
+    z-index: 100;
+  }
+  .tpl-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="wrap">
+  <div class="head">
+    <div><span class="brand">NorCal SBDC</span> &middot; Brand House</div>
+    <div>09 / 13</div>
+  </div>
+
+  <!-- HERO — stacked (wide title) -->
+  <div class="hero-mark">
+    <span class="eyebrow">09 &middot; Tools</span>
+    <h1>Templates.</h1>
+    <div class="subtitle">
+      <span class="accent-bar"></span>
+      <p>Approved copy, production files, and the shared Canva workspace. Grab what you need.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- §01 COPY BLOCKS — editorial panels -->
+<section class="wrap" style="padding-top: 24px; padding-bottom: 0;">
+  <div class="tpl-panels">
+    <div class="tpl-panel pan-cream" data-copy="cb-tag" style="min-height: 380px;">
+      <div class="tpl-panel-label">Tagline</div>
+      <p class="tpl-tagline-d" id="cb-tag">Your business,<br><em>better.</em></p>
+    </div>
+    <div class="tpl-panel pan-navy" data-copy="cb-pitch" style="min-height: 380px;">
+      <div class="tpl-panel-label">Elevator pitch</div>
+      <p class="tpl-panel-body" id="cb-pitch" style="font-size: 20px; line-height: 1.45; max-width: 42ch;">NorCal SBDC provides no-fee, expert business advising to entrepreneurs across Northern California. Last year, our clients raised $547M in capital, created over 42,000 jobs, and built businesses that matter.</p>
+    </div>
+  </div>
+  <div class="tpl-panels">
+    <div class="tpl-panel pan-navy" data-copy="cb-stats" style="min-height: 360px;">
+      <div class="tpl-panel-label">Impact</div>
+      <div>
+        <div class="tpl-stat-num" id="cb-stats">$547M</div>
+        <div class="tpl-stat-cap">Capital raised &middot; 2025 &middot; 42,000+ jobs &middot; 36 counties</div>
+      </div>
+    </div>
+    <div class="tpl-panel pan-cream" data-copy="cb-bio" style="min-height: 360px;">
+      <div class="tpl-panel-label">Social bio</div>
+      <p class="tpl-panel-body" id="cb-bio" style="font-size: 20px; line-height: 1.45;">No-fee, confidential business advising for Northern California. The right people, the right capital, the right connections. Your business, better.</p>
+    </div>
+  </div>
+  <div class="tpl-panels-3">
+    <div class="tpl-panel pan-pool" data-copy="cb-value">
+      <div class="tpl-panel-label">Value prop</div>
+      <p class="tpl-panel-text" id="cb-value" style="font-size: clamp(24px, 2.6vw, 36px); letter-spacing: -0.015em;">We sit down with you, roll up our sleeves, and help you build momentum.</p>
+    </div>
+    <div class="tpl-panel pan-cobalt" data-copy="cb-oneliner">
+      <div class="tpl-panel-label">One-liner</div>
+      <p class="tpl-panel-body" id="cb-oneliner" style="font-size: 18px; line-height: 1.45;">Expert advisors who deliver the people, the capital, and the connections every business needs to grow &mdash; at no fee, ever.</p>
+    </div>
+    <div class="tpl-panel pan-cream" data-copy="cb-nofee">
+      <div class="tpl-panel-label">Closer</div>
+      <p class="tpl-panel-text" id="cb-nofee" style="font-size: clamp(28px, 3vw, 44px);">No fee.<br>Ever.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- §02 PRODUCTION FILES -->
+<section class="ch-section" style="border-top: none;">
+  <div class="ch-grid">
+    <div class="ch-head">
+      <div>
+        <div class="ch-label" style="margin-bottom: 28px;">Production files</div>
+        <h2 class="ch-h2">Pre-built<br>templates.</h2>
+      </div>
+      <div>
+        <p class="ch-lead">Production-ready files for the materials the network sends, prints, and presents most often. Every template carries the brand system.</p>
+      </div>
+    </div>
+
+    <div class="tpl-files">
+      <div class="tpl-file">
+        <div class="tpl-file-thumb" style="background: var(--navy);"></div>
+        <div class="tpl-file-badge">Print</div>
+        <h4>Business Cards</h4>
+        <p class="tpl-file-desc">Front/back layout with name, title, center, and contact. Carries the navy bar and cobalt accent.</p>
+      </div>
+      <div class="tpl-file">
+        <div class="tpl-file-thumb" style="background: var(--slate);"></div>
+        <div class="tpl-file-badge">Print</div>
+        <h4>Letterhead</h4>
+        <p class="tpl-file-desc">Branded header and footer with NorCal lockup. Use for formal correspondence, partner outreach, and lender letters.</p>
+      </div>
+      <div class="tpl-file">
+        <div class="tpl-file-thumb" style="background: var(--pool);"></div>
+        <div class="tpl-file-badge">Print / Digital</div>
+        <h4>Event Flyer</h4>
+        <p class="tpl-file-desc">Single-page event promo with photo slot, date/time block, and registration CTA.</p>
+      </div>
+      <div class="tpl-file">
+        <div class="tpl-file-thumb" style="background: var(--pool); opacity: 0.7;"></div>
+        <div class="tpl-file-badge">Signage</div>
+        <h4>Pop-up Banner</h4>
+        <p class="tpl-file-desc">Retractable banner for conferences, partner events, and center lobbies.</p>
+      </div>
+      <div class="tpl-file">
+        <div class="tpl-file-thumb" style="background: var(--navy);"></div>
+        <div class="tpl-file-badge">Presentation</div>
+        <h4>Slide Deck</h4>
+        <p class="tpl-file-desc">Title, divider, content, and closing slides. Pre-loaded with brand colors and type.</p>
+      </div>
+      <div class="tpl-file">
+        <div class="tpl-file-thumb" style="background: var(--slate);"></div>
+        <div class="tpl-file-badge">Print</div>
+        <h4>Rack Card</h4>
+        <p class="tpl-file-desc">Front/back rack card for lender offices and partner lobbies. Elevator pitch, impact stats, and QR code.</p>
+      </div>
+    </div>
+
+    <div class="tpl-canva-row">
+      <div></div>
+      <div>
+        <p class="tpl-canva-body"><strong>All templates live in Canva.</strong> Duplicate, customize, export. Don't move type, change colors, or adjust the grid.</p>
+        <a class="tpl-canva-link" href="https://www.canva.com" target="_blank" rel="noopener">Open workspace <span class="arr">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- §04 DISCLOSURES -->
+<section class="wrap">
+  <div class="disc">
+    <details class="disclose">
+      <summary>
+        <span class="pm"></span>
+        <span>Template rules</span>
+      </summary>
+      <div class="disclose-body">
+        <p><strong>Don't edit the master.</strong> Always duplicate the template before making changes. The master file is the single source of truth &mdash; if it gets modified, every future piece starts from a broken foundation.</p>
+        <p><strong>Lock the grid.</strong> Type sizes, margins, and column widths are set to match the brand spec. Adjusting them for a single piece means that piece looks different from every other piece in the network. Consistency is the product.</p>
+        <p><strong>Colors are not suggestions.</strong> The palette is closed: navy, cobalt, berry, evergreen, fog, pool. If a template doesn't include a color, that color doesn't belong in that template.</p>
+        <p><strong>Photos follow the photo rules.</strong> If a template has a photo slot, the image must meet the photography chapter guidelines &mdash; real moments, no stock, no staged handshakes. When in doubt, leave the slot empty.</p>
+      </div>
+    </details>
+    <details class="disclose">
+      <summary>
+        <span class="pm"></span>
+        <span>Requesting a new template</span>
+      </summary>
+      <div class="disclose-body">
+        <p><strong>What to include.</strong> Send the format (print, digital, presentation), the dimensions if you know them, a description of what the piece needs to communicate, and the audience.</p>
+        <p><strong>Turnaround.</strong> Standard template requests take one to two weeks. Rush requests (under five business days) require director approval.</p>
+        <p><strong>Where to send it.</strong> Email <em>marketing@norcalsbdc.org</em> with the subject line "Template Request" and your center name. You'll get a proof for review before the template goes into the shared workspace.</p>
+      </div>
+    </details>
+    <details class="disclose">
+      <summary>
+        <span class="pm"></span>
+        <span>Canva workspace access</span>
+      </summary>
+      <div class="disclose-body">
+        <p><strong>Who has access.</strong> All NorCal SBDC center directors, marketing leads, and designated advisors. Access is managed through Canva Teams and tied to your norcalsbdc.org email.</p>
+        <p><strong>How to get access.</strong> Email marketing@norcalsbdc.org with your name, center, and role. Access is typically granted within two business days.</p>
+        <p><strong>What you can do.</strong> View all templates, duplicate them to your own drafts, customize the variable fields (name, center, dates, stats), and export to PDF or PNG. You cannot edit, move, or delete master templates.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+
+<!-- NEXT CHAPTER -->
+<section class="wrap">
+  <a class="nx-wipe" href="norcal-generate.html">
+    <div class="nx-wipe-bar"></div>
+    <div class="nx-wipe-row">
+      <div>
+        <div class="nx-wipe-label">Next chapter</div>
+        <h2 class="nx-wipe-title">Generate.</h2>
+      </div>
+      <div class="nx-wipe-right">
+        <div class="nx-wipe-num">Chapter 10</div>
+        <div class="nx-wipe-desc">On-brand drafts in seconds. Pick a format, answer a few questions, ship.</div>
+      </div>
+    </div>
+  </a>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="wrap tpl-foot">
+  <div class="tpl-foot-inner">
+    <span>&copy; 2026 NorCal SBDC. All rights reserved.</span>
+    <span><a href="https://norcalsbdc.org">norcalsbdc.org</a></span>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div class="tpl-toast" id="toast">Copied to clipboard</div>
+
+<script>
+  // Click-to-copy on panels
+  const toast = document.getElementById('toast');
+  let tt;
+  document.querySelectorAll('[data-copy]').forEach(panel => {
+    panel.addEventListener('click', () => {
+      const el = document.getElementById(panel.getAttribute('data-copy'));
+      if (!el) return;
+      navigator.clipboard.writeText(el.innerText).then(() => {
+        clearTimeout(tt);
+        toast.classList.add('show');
+        tt = setTimeout(() => toast.classList.remove('show'), 1400);
+      });
+    });
+  });
+</script>
+
+<!-- GSAP ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.timeline({
+    scrollTrigger: { trigger: '.nx-wipe', start: 'top 80%', once: true }
+  })
+  .to('.nx-wipe-bar', { scaleX: 1, duration: 0.6, ease: 'power3.inOut' })
+  .to('.nx-wipe-label', { opacity: 1, x: 0, duration: 0.4, ease: 'power2.out' }, '-=0.15')
+  .to('.nx-wipe-title', { opacity: 1, x: 0, duration: 0.6, ease: 'power3.out' }, '-=0.3')
+  .to('.nx-wipe-right', { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' }, '-=0.4');
+</script>
+
+</body>
+</html>

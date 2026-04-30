@@ -1,0 +1,2816 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NorCal SBDC · Brand House · Voice</title>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin />
+<link rel="stylesheet" href="https://use.typekit.net/pkl5rjs.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0F1C2D;
+    --slate: #2C3240;
+    --cobalt: #1B5FAF;
+    --steel: #5582B9;
+    --fog: #84A2C6;
+    --pool: #8FC5D9;
+    --berry: #C23C3C;
+    --evergreen: #00675C;
+    --silver: #D8D8D8;
+    --white: #FDFDFD;
+    --page: #F2F1ED;
+    --ink: #0F1C2D;
+    --mute: #4A5260;
+    --hair: #D4D2CC;
+
+    --sans:  "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+    --serif: "proxima-sera", Georgia, "Times New Roman", serif;
+    --mono:  "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    --col: 1320px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap { max-width: var(--col); margin: 0 auto; padding: 0 56px; }
+
+  /* TYPE SCALE TOKENS
+     hero      = 240px  (trophy moment, hero only)
+     section-h = 76px   (display section heads)
+     tile-h    = 36px   (color tile heads)
+     lede      = 56px   (manifesto opener only)
+     headline  = 22px   (body display — manifesto beats, key messages, words)
+     body      = 16px   (decks, descriptions, captions)
+     micro     = 11px   (mono eyebrows)
+  */
+
+  /* HEADER */
+  .head {
+    padding: 32px 0 0;
+    display: flex; align-items: baseline; justify-content: space-between;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute); font-weight: 500;
+  }
+  .head .brand { color: var(--ink); }
+
+  /* ============================================================
+     CHAPTER SECTION — sample-style strategy-doc layout
+     Side-margin mono label + body column. Repeating pattern for
+     all numbered sections (01 Messaging framework, 02 Voice, 03 Words).
+     ============================================================ */
+  .ch-section {
+    padding: 80px 0 88px;
+    border-top: 1px solid var(--hair);
+    border-bottom: 1px solid var(--hair);
+  }
+  .ch-section + .ch-section {
+    border-top: 1px solid var(--hair);
+    padding-top: 120px;
+  }
+  .ch-grid {
+    max-width: var(--col);
+    padding: 0 56px;
+    margin: 0 auto;
+  }
+  .ch-head {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 80px;
+    align-items: start;
+    margin-bottom: 0;
+  }
+  .ch-head-right { padding-top: 0; }
+  .ch-label {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+  }
+  .ch-label::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--berry);
+    margin-bottom: 22px;
+  }
+  .ch-h2 {
+    margin: 0 0 28px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(48px, 5.4vw, 80px);
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+  }
+  .ch-h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--berry);
+  }
+  .ch-lead {
+    margin: 0 0 28px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+  }
+  .ch-lead em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--berry);
+  }
+  .ch-lead strong {
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .ch-cards {
+    display: grid;
+    gap: 0;
+    margin-top: 24px;
+    border-top: 1px solid var(--ink);
+  }
+  .ch-cards.col-3 { grid-template-columns: repeat(3, 1fr); }
+  .ch-cards.col-4 { grid-template-columns: repeat(4, 1fr); }
+  .ch-cards.col-3 .ch-card,
+  .ch-cards.col-4 .ch-card {
+    border-bottom: 1px solid var(--hair);
+    padding: 28px 28px 36px 0;
+  }
+  .ch-cards.col-3 .ch-card + .ch-card,
+  .ch-cards.col-4 .ch-card + .ch-card {
+    padding-left: 28px;
+    border-left: 1px solid var(--hair);
+  }
+  .ch-card-num {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--cobalt);
+    margin: 0 0 24px;
+  }
+  .ch-card h4 {
+    margin: 0 0 12px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.15;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+  }
+  .ch-card p {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--mute);
+    max-width: 280px;
+  }
+
+  /* Pillar deep-dive sub-rows — example messaging for advisors */
+  .ch-pillar-intro {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--mute);
+  }
+  .ch-pillar-rows {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .ch-pillar-row {
+    padding: 44px 32px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+  }
+  .ch-pillar-row.people    { background: var(--berry); color: var(--white); }
+  .ch-pillar-row.funded    { background: var(--navy);  color: var(--white); }
+  .ch-pillar-row.connected { background: var(--pool);  color: var(--navy); }
+  .ch-pillar-row-head {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0 0 24px;
+  }
+  .ch-pillar-mark {
+    order: -1;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+  .ch-pillar-name {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(32px, 3.4vw, 44px);
+    line-height: 1;
+    letter-spacing: -0.022em;
+    color: currentColor;
+  }
+  .ch-pillar-row p {
+    margin: 18px 0 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.5;
+    letter-spacing: -0.003em;
+    color: currentColor;
+    opacity: 0.88;
+    max-width: 320px;
+  }
+  .ch-pillar-row p:last-child { margin-bottom: 0; }
+  .ch-pillar-row p em {
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 700;
+    color: var(--berry);
+  }
+  .ch-pillar-row p strong {
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .ch-pillar-stat {
+    margin: auto 0 0;
+    padding-top: 24px;
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--cobalt);
+  }
+
+  /* ============================================================
+     FRAMEWORK PANELS — 4-up color grid
+     Cream + Navy + Fog + Berry. Each panel uses brand color as
+     full surface; type adapts to surface contrast.
+     ============================================================ */
+  .fw-section {
+    padding: 96px 0;
+    position: relative;
+  }
+  .fw-section::before,
+  .fw-section::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(min(100%, var(--col)) - 112px);
+    height: 4px;
+    background: var(--berry);
+  }
+  .fw-section::before { top: 0; }
+  .fw-section::after  { bottom: 0; }
+  .fw-grid {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 80px;
+    max-width: var(--col);
+    margin: 0 auto;
+    padding: 0 56px;
+    align-items: start;
+  }
+  .fw-mark {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+  }
+  .fw-mark::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--berry);
+    margin-bottom: 22px;
+  }
+  .fw-headline {
+    margin: 0 0 36px;
+    line-height: 0.94;
+    letter-spacing: -0.025em;
+  }
+  .fw-headline .line1 {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(48px, 5.4vw, 80px);
+    color: var(--ink);
+  }
+  .fw-headline .line2 {
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(48px, 5.4vw, 80px);
+    color: var(--berry);
+  }
+  .fw-body { padding-top: 0; }
+  .fw-card {
+    background: var(--navy);
+    color: var(--white);
+    padding: 64px 56px 72px;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  .fw-card-mark {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: currentColor;
+    opacity: 0.55;
+    margin: 0 0 36px;
+  }
+  .fw-intro-lead {
+    margin: 28px 0 22px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    max-width: 640px;
+  }
+  .fw-body p {
+    margin: 0 0 22px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    max-width: 640px;
+  }
+  .fw-body p:last-child { margin-bottom: 0; }
+  .fw-body em {
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 700;
+    color: var(--berry);
+  }
+  .fw-panels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    max-width: var(--col);
+    margin: 0 auto;
+    padding: 0 56px;
+  }
+  .fw-panel {
+    padding: 96px 32px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 480px;
+    position: relative;
+  }
+  .fw-panel.cream { background: #E6E3DA; color: var(--ink); }
+  .fw-panel.navy { background: var(--navy); color: var(--white); }
+  .fw-panel.fog { background: var(--fog); color: var(--navy); }
+  .fw-panel.berry { background: var(--berry); color: var(--white); }
+  .fw-panel-title {
+    margin: 0 0 18px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 1;
+    letter-spacing: -0.026em;
+    color: currentColor;
+  }
+  .fw-panel-sub {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: currentColor;
+    opacity: 0.7;
+    margin: 0 0 28px;
+  }
+  .fw-panel-body {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.6;
+    color: currentColor;
+    opacity: 0.92;
+    max-width: 240px;
+  }
+  /* Summary (berry) panel */
+  .fw-summary-text {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.04;
+    letter-spacing: -0.022em;
+    color: currentColor;
+  }
+
+  /* ============================================================
+     STRATEGIC ADVANTAGE — full-bleed navy dramatic moment.
+     Gallery spans full width of the stage. Headline is absolutely
+     positioned on top-left of the gallery, with a navy fade to
+     keep text legible without obscuring tiles.
+     ============================================================ */
+  .strat-section {
+    background: var(--navy);
+    color: #FDFDFD;
+    padding: 24px 0 0;
+    overflow: hidden;
+  }
+  /* Stage spans full viewport — gallery bleeds to browser edges */
+  .strat-stage {
+    position: relative;
+    width: 100%;
+  }
+  /* Strong left fade — sits ABOVE the gallery (z-1), BELOW the text (z-10).
+     Solid navy across the leftmost ~28% then fades to transparent. */
+  .strat-stage::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+      var(--navy) 0%,
+      var(--navy) 26%,
+      rgba(15, 28, 45, 0.92) 42%,
+      rgba(15, 28, 45, 0.55) 62%,
+      rgba(15, 28, 45, 0.18) 80%,
+      transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .strat-gallery {
+    display: block;
+    height: clamp(460px, 50vw, 700px);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .strat-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transform: translateY(40px) scale(1.15);
+    transform-origin: center;
+  }
+  .strat-row {
+    display: grid;
+    gap: 12px;
+  }
+  /* Varied per-row column widths — magazine wall, not uniform grid */
+  .strat-row.r1 { grid-template-columns: 1fr 0.95fr 1.2fr; }
+  .strat-row.r2 { grid-template-columns: 0.75fr 1.6fr 0.85fr; }
+  .strat-row.r3 { grid-template-columns: 0.9fr 1fr 1.1fr; }
+  .strat-tile {
+    background: linear-gradient(135deg, #1c2535, #0c121d);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+  }
+  /* Photography placeholder — labels brief the photo team. Replace with <img> on asset delivery. */
+  .strat-tile-label {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 18px;
+    font-family: var(--mono);
+    font-weight: 500;
+    color: rgba(255,255,255,0.38);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+  .strat-tile-label .moment {
+    display: block;
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 6px;
+  }
+  .strat-tile-label .meta {
+    display: block;
+    font-size: 9px;
+    color: rgba(255,255,255,0.32);
+    letter-spacing: 0.28em;
+  }
+  /* Subtle diagonal sheen — barely there, photo-like depth */
+  .strat-tile::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .strat-tile.t1 { background: linear-gradient(135deg, #283447 0%, #0e1521 100%); }
+  .strat-tile.t2 { background: linear-gradient(180deg, #2a3548 0%, #131b2a 100%); }
+  .strat-tile.t3 { background: linear-gradient(225deg, #3a4a6b -10%, #141d2c 70%); }
+  .strat-tile.t4 { background: radial-gradient(circle at 35% 65%, #2f3b51 0%, #0c121d 75%); }
+  .strat-tile.t5 { background: linear-gradient(135deg, #2c3a52 0%, #161e2d 100%); }
+  .strat-tile.t6 { background: linear-gradient(45deg, #1a2436 0%, #3d4d6a 220%); }
+  .strat-tile.t7 { background: radial-gradient(circle at 60% 35%, #344256 0%, #080d16 70%); }
+  .strat-tile.t8 { background: linear-gradient(180deg, #1f2b3e 0%, #34425c 100%); }
+  .strat-tile.t9 { background: linear-gradient(225deg, #364561 0%, #11192a 100%); }
+
+  /* Headline overlay — sits on top of the gallery, aligned to wrap-inner-left */
+  .strat-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: max(56px, calc((100vw - 1320px) / 2 + 56px));
+    width: clamp(500px, 50vw, 760px);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 36px 0 36px 0;
+    pointer-events: none;
+  }
+  /* Overlay handles legibility; subtle text-shadow as a safety halo */
+  .strat-headline,
+  .strat-mark,
+  .strat-body {
+    text-shadow: 0 2px 24px rgba(0,0,0,0.4);
+  }
+  .strat-mark {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1;
+    letter-spacing: -0.005em;
+    color: #FDFDFD;
+    margin: 0 0 40px;
+  }
+  .strat-headline {
+    margin: 0 0 40px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(56px, 6.4vw, 92px);
+    line-height: 0.96;
+    letter-spacing: -0.022em;
+    color: #FDFDFD;
+  }
+  .strat-headline span { display: block; }
+  .strat-headline em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--berry);
+  }
+  .strat-body {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: #FDFDFD;
+    max-width: 380px;
+  }
+  .strat-arrow {
+    margin-top: auto;
+    padding-top: 56px;
+    font-size: 28px;
+    color: rgba(253,253,253,0.7);
+    line-height: 1;
+  }
+
+  /* Film-strip detail — theme labels tight to the lower gallery edge */
+  .strat-rule {
+    width: 100%;
+    margin: 14px 0 0;
+    padding: 0 56px 32px;
+  }
+  .strat-themes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    font-family: var(--sans);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(253,253,253,0.8);
+  }
+  .strat-themes span:nth-child(1) { text-align: left; }
+  .strat-themes span:nth-child(2),
+  .strat-themes span:nth-child(3) { text-align: center; }
+  .strat-themes span:nth-child(4) { text-align: right; }
+
+  /* ============================================================
+     THE PROMISE — closing bookend on navy. All mono, all fog.
+     Stripped to a stamp: label, headline, stat. No body copy.
+     ============================================================ */
+  .promise-section {
+    background: var(--navy);
+    color: var(--fog);
+    padding: 96px 0;
+  }
+  .promise-inner {
+    max-width: var(--col);
+    margin: 0 auto;
+    padding: 0 56px;
+    text-align: center;
+  }
+  .promise-mark {
+    margin: 0 0 56px;
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--fog);
+  }
+  .promise-headline {
+    margin: 0 0 64px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(56px, 6.4vw, 96px);
+    line-height: 0.96;
+    letter-spacing: -0.025em;
+    color: var(--white);
+  }
+  .promise-stat {
+    display: inline-block;
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--fog);
+  }
+  .promise-stat .sep {
+    margin: 0 14px;
+    color: rgba(132,162,198,0.45);
+  }
+
+  /* ============================================================
+     HERO — canonical pattern (hero-mark + accent-bar)
+     Match: sbdc-logos.html. .hero-mark is a DIV inside a .wrap
+     (NOT a section.wrap — that zeros the wrap horizontal padding).
+     ============================================================ */
+  .hero-mark {
+    padding: 84px 0 64px;
+    display: grid;
+    grid-template-columns: 1fr 460px;
+    gap: 80px;
+    align-items: end;
+  }
+  .hero-mark .eyebrow {
+    display: block;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--cobalt);
+    margin-bottom: 22px;
+  }
+  .hero-mark h1 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(120px, 14vw, 200px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+  .hero-mark .subtitle { display: block; }
+  .hero-mark .accent-bar {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: var(--navy);
+    margin: 0 0 22px;
+  }
+  .hero-mark p {
+    margin: 0 0 14px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    max-width: 520px;
+  }
+
+  /* SHARED — section header pattern */
+  .sec-mark {
+    padding: 18px 0 56px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute);
+  }
+  .sec-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1fr;
+    gap: 80px;
+    padding-bottom: 56px;
+    align-items: end;
+  }
+  .sec-head h2 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(40px, 4vw, 60px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+  }
+  .sec-head h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--berry);
+  }
+  .sec-head .deck {
+    margin: 0;
+    padding-bottom: 8px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px; line-height: 1.55;
+    color: var(--mute);
+    max-width: 420px;
+  }
+
+  /* ============================================================
+     FOUR PERSONALITY TILES
+     ============================================================ */
+  .pers-section {
+    padding: 0 0 160px;
+  }
+  .pers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0;
+  }
+  .pers-tile {
+    padding: 36px 32px 40px;
+    min-height: 320px;
+    display: flex; flex-direction: column;
+    color: var(--white);
+    position: relative;
+  }
+  .pers-tile.navy { background: var(--navy); }
+  .pers-tile.cobalt { background: var(--cobalt); }
+  .pers-tile.berry { background: var(--berry); }
+  .pers-tile.evergreen { background: var(--evergreen); }
+  .pers-tile .num {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: auto;
+  }
+  .pers-tile h3 {
+    margin: 0 0 16px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 0.98;
+    letter-spacing: -0.022em;
+    color: var(--white);
+  }
+  .pers-tile p {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px; line-height: 1.5;
+    color: rgba(255,255,255,0.92);
+    max-width: 260px;
+  }
+
+  /* ============================================================
+     PRIMARY TAGLINE — four-panel color block
+     ============================================================ */
+  .tagline-section {
+    padding: 0 0 200px;
+    border-top: 1px solid var(--ink);
+  }
+  .tag-panels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    max-width: 1320px;
+    padding: 0 56px;
+    min-height: 520px;
+  }
+  .tag-panel {
+    padding: 56px 36px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 520px;
+  }
+  .tag-panel.cream    { background: #E6E3DA; color: var(--ink); }
+  .tag-panel.navy     { background: var(--navy); color: var(--white); }
+  .tag-panel.fog      { background: var(--fog); color: var(--navy); }
+  .tag-panel .eyebrow {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: currentColor;
+    opacity: 0.7;
+    margin: 0 0 6px;
+  }
+  .tag-panel.navy .eyebrow,
+  .tag-panel.berry .eyebrow { opacity: 0.65; }
+  .tag-panel .meta {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    line-height: 1.6;
+    color: currentColor;
+    opacity: 0.85;
+  }
+  .tag-panel .display {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.05;
+    letter-spacing: -0.024em;
+    margin: 24px 0 28px;
+  }
+  .tag-panel .sublabel {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 18px;
+  }
+  .tag-panel .kicker {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px; line-height: 1.55;
+    color: currentColor;
+    opacity: 0.9;
+    margin: 0;
+  }
+  .tag-panel .footer-line {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    opacity: 0.75;
+  }
+
+
+  /* ============================================================
+     HEADLINE PATTERNS — four-row editorial grid
+     ============================================================ */
+  .hp-section {
+    padding: 0 0 200px;
+    border-top: 1px solid var(--ink);
+  }
+  .hp-mark {
+    padding: 18px 0 80px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute);
+  }
+  .hp-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1fr;
+    gap: 80px;
+    padding-bottom: 80px;
+    align-items: end;
+  }
+  .hp-head h2 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(48px, 5.4vw, 84px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .hp-head .deck {
+    margin: 0;
+    padding-bottom: 10px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px; line-height: 1.55;
+    color: var(--mute);
+    max-width: 420px;
+  }
+  .hp-row {
+    display: grid;
+    grid-template-columns: 200px 80px minmax(0, 1fr);
+    gap: 32px;
+    align-items: baseline;
+    padding: 56px 0;
+    border-top: 1px solid var(--hair);
+  }
+  .hp-row:last-of-type { border-bottom: 1px solid var(--hair); }
+  .hp-row .num {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--cobalt);
+  }
+  .hp-row .tag {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+  }
+  .hp-row .line {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(36px, 4.4vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+  }
+  .hp-row .line em {
+    color: var(--berry);
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  /* ============================================================
+     MANIFESTO — COBALT full-bleed, pure white, scroll-reveal
+     ============================================================ */
+  .manifesto-section {
+    background: var(--cobalt);
+    color: var(--white);
+    padding: 112px 0 128px;
+  }
+  .manifesto-section .wrap-inner {
+    max-width: var(--col);
+    margin: 0 auto;
+    padding: 0 56px;
+  }
+  .manifesto-mark {
+    padding: 0 0 200px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+  .manifesto-eyebrow {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 64px;
+    text-align: left;
+  }
+  .manifesto {
+    max-width: 600px;
+    margin: 0;
+    text-align: left;
+  }
+  .manifesto .beat {
+    margin: 0 0 56px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    letter-spacing: -0.006em;
+    color: var(--white);
+  }
+  .manifesto .beat:last-of-type { margin-bottom: 0; }
+  .manifesto .beat em,
+  .manifesto .beat strong {
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .manifesto .closer {
+    display: block;
+    margin-top: 56px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    letter-spacing: -0.006em;
+    color: var(--white);
+  }
+
+  /* Scroll-reveal mechanics */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+                transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal.d1 { transition-delay: 80ms; }
+  .reveal.d2 { transition-delay: 220ms; }
+  .reveal.d3 { transition-delay: 360ms; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ============================================================
+     TONE BY CONTEXT — six surfaces, channel-style rows w/ icons
+     ============================================================ */
+  .tone-section {
+    padding: 0 0 200px;
+    border-top: 1px solid var(--ink);
+  }
+  .tone-mark {
+    padding: 18px 0 80px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute);
+  }
+  .tone-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1fr;
+    gap: 80px;
+    padding-bottom: 80px;
+    align-items: end;
+  }
+  .tone-head h2 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(48px, 5.4vw, 84px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .tone-head .deck {
+    margin: 0;
+    padding-bottom: 10px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px; line-height: 1.55;
+    color: var(--mute);
+    max-width: 420px;
+  }
+  .tone-row {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1.4fr) 200px;
+    gap: 56px;
+    align-items: baseline;
+    padding: 36px 0;
+    border-top: 1px solid var(--hair);
+  }
+  .tone-row:last-of-type { border-bottom: 1px solid var(--hair); }
+  .tone-row .surface {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.05;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+  }
+  .tone-row .quote {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 21px; line-height: 1.4;
+    letter-spacing: -0.008em;
+    color: var(--ink);
+    max-width: 600px;
+  }
+  .tone-row .quote em {
+    color: var(--berry);
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+  }
+  .tone-row .meta {
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--mute);
+    line-height: 1.6;
+  }
+
+  /* ============================================================
+     WORDS — lexicon (tight color-grid feel)
+     ============================================================ */
+  .words-section {
+    padding: 0 0 160px;
+  }
+  .words-section .sec-head h2 em {
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 700;
+    color: var(--berry);
+  }
+  /* Words layout — 1/4 head, 3/4 table */
+  .words-layout {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .words-layout .vocab-head h2 {
+    margin: 0 0 18px;
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 700;
+    font-size: clamp(40px, 4vw, 60px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    text-transform: none;
+    color: var(--ink);
+  }
+  .words-layout .vocab-head .deck {
+    margin: 0;
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px; line-height: 1.55;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--ink);
+    max-width: 280px;
+  }
+  .words-table {
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .words-cap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 12px 0 14px;
+    border-bottom: 1px solid var(--hair);
+  }
+  .words-cap .a, .words-cap .b {
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+  }
+  .words-cap .a { color: var(--evergreen); }
+  .words-cap .b { color: var(--berry); padding-left: 24px; border-left: 1px solid var(--hair); }
+  .words-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+    border-bottom: 1px solid var(--hair);
+  }
+  .words-row:last-child { border-bottom: none; }
+  .words-row .yes,
+  .words-row .no {
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr);
+    column-gap: 14px;
+    align-items: baseline;
+    padding: 18px 0;
+  }
+  .words-row .no { padding-left: 24px; border-left: 1px solid var(--hair); }
+  .words-row .glyph {
+    font-family: var(--mono);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1;
+    transform: translateY(2px);
+  }
+  .words-row .yes .glyph { color: var(--evergreen); }
+  .words-row .no .glyph { color: var(--berry); }
+  .words-row .word {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .words-row .no .word { color: var(--mute); text-decoration: line-through; text-decoration-thickness: 1.5px; text-decoration-color: var(--berry); }
+  .words-row .why {
+    margin: 4px 0 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 12px; line-height: 1.45;
+    color: var(--mute);
+    max-width: 320px;
+  }
+
+  /* ============================================================
+     CAMPAIGN STRATEGY — three strategy tiles like Three Principles
+     ============================================================ */
+  .camp-section {
+    padding: 0 0 200px;
+    border-top: 1px solid var(--ink);
+  }
+  .camp-mark {
+    padding: 18px 0 80px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute);
+  }
+  .camp-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1fr;
+    gap: 80px;
+    padding-bottom: 80px;
+    align-items: end;
+  }
+  .camp-head h2 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(48px, 5.4vw, 84px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .camp-head h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--berry);
+  }
+  .camp-head .deck {
+    margin: 0;
+    padding-bottom: 10px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px; line-height: 1.55;
+    color: var(--mute);
+    max-width: 420px;
+  }
+  .camp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+  }
+  .camp-tile {
+    padding: 48px 40px 56px;
+    min-height: 380px;
+    color: var(--white);
+    display: flex; flex-direction: column;
+  }
+  .camp-tile.navy { background: var(--navy); }
+  .camp-tile.cobalt { background: var(--cobalt); }
+  .camp-tile.evergreen { background: var(--evergreen); }
+  .camp-tile .num {
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: auto;
+  }
+  .camp-tile h3 {
+    margin: 0 0 22px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 0.96;
+    letter-spacing: -0.025em;
+    color: var(--white);
+  }
+  .camp-tile p {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 17px; line-height: 1.5;
+    color: rgba(255,255,255,0.92);
+    max-width: 320px;
+  }
+  .camp-tile p em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  /* ============================================================
+     THE PROOF — Pentagram-style typographic display
+     no color bg, giant numbers, editorial hairlines
+     ============================================================ */
+  .proof-section {
+    padding: 24px 0 200px;
+    border-top: 1px solid var(--ink);
+  }
+  .proof-mark {
+    padding: 18px 0 96px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute);
+  }
+  .proof-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1fr;
+    gap: 80px;
+    padding-bottom: 96px;
+    align-items: end;
+  }
+  .proof-head h2 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(72px, 9vw, 132px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+  .proof-head h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--berry);
+  }
+  .proof-head .deck {
+    margin: 0;
+    padding-bottom: 22px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 17px; line-height: 1.55;
+    color: var(--ink);
+    max-width: 460px;
+  }
+
+  .proof-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .proof-cell {
+    padding: 56px 40px 56px 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
+    position: relative;
+  }
+  .proof-cell + .proof-cell {
+    padding-left: 40px;
+    border-left: 1px solid var(--hair);
+  }
+  .proof-cell .meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+    margin: 0 0 64px;
+  }
+  .proof-cell .meta .pillar { color: var(--cobalt); }
+  .proof-cell .stat {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(72px, 7.6vw, 116px);
+    line-height: 0.88;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+    margin: 0 0 12px;
+    white-space: nowrap;
+  }
+  .proof-cell .stat em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    color: var(--berry);
+  }
+  .proof-cell .stat-label {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+    margin: 0 0 auto;
+    padding-bottom: 48px;
+  }
+  .proof-cell .pillar-name {
+    margin: 0 0 10px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.1;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+  }
+  .proof-cell .pillar-line {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--mute);
+    max-width: 280px;
+  }
+
+  /* ============================================================
+     HASHTAGS — quiet utility
+     ============================================================ */
+  .tags-section {
+    padding: 0 0 200px;
+    border-top: 1px solid var(--ink);
+  }
+  .tags-mark {
+    padding: 18px 0 80px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute);
+  }
+  .tags-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1fr;
+    gap: 80px;
+    padding-bottom: 80px;
+    align-items: end;
+  }
+  .tags-head h2 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(48px, 5.4vw, 84px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .tags-head .deck {
+    margin: 0;
+    padding-bottom: 10px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px; line-height: 1.55;
+    color: var(--mute);
+    max-width: 420px;
+  }
+  .tags-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--hair);
+  }
+  .tag-row {
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr) 180px;
+    gap: 24px;
+    align-items: baseline;
+    padding: 32px 40px 32px 0;
+    border-bottom: 1px solid var(--hair);
+  }
+  .tag-row:nth-child(odd) {
+    border-right: 1px solid var(--hair);
+    padding-right: 56px;
+  }
+  .tag-row:nth-child(even) { padding-left: 56px; }
+  .tag-row .hash {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 36px;
+    color: var(--berry);
+    line-height: 1;
+  }
+  .tag-row .name {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .tag-row .use {
+    text-align: right;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--mute);
+  }
+
+  /* ============================================================
+     BRAND FILM
+     ============================================================ */
+  .film-section { padding: 0 0 160px; border-top: 1px solid var(--ink); }
+  .film-mark {
+    padding: 18px 0 80px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute);
+  }
+  .film-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1fr;
+    gap: 80px;
+    padding-bottom: 56px;
+    align-items: end;
+  }
+  .film-head h2 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(48px, 5.4vw, 84px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .film-head .deck {
+    margin: 0;
+    padding-bottom: 10px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px; line-height: 1.55;
+    color: var(--mute);
+    max-width: 420px;
+  }
+  .film-stage {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, #1a2536 0%, #0F1C2D 60%, #2C3240 100%);
+    overflow: hidden;
+  }
+  .film-stage::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 35% 60%, rgba(165,60,67,0.18) 0%, transparent 50%),
+      radial-gradient(circle at 70% 40%, rgba(85,130,185,0.12) 0%, transparent 55%);
+  }
+  .film-play {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex; align-items: center; gap: 18px;
+    color: var(--white);
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+  }
+  .film-play .ring {
+    width: 92px; height: 92px;
+    border: 1.5px solid rgba(255,255,255,0.85);
+    border-radius: 50%;
+    display: grid; place-items: center;
+  }
+  .film-play .tri {
+    width: 0; height: 0;
+    border-left: 18px solid var(--white);
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    margin-left: 6px;
+  }
+  .film-meta {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 24px 0 0;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute);
+  }
+  .film-meta .ttl {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 15px; letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+  }
+
+  /* ============================================================
+     ACCORDION — [+] WHY · VOICE RULES (evergreen, system match)
+     ============================================================ */
+  .disc {
+    /* no surrounding borders — accordion separates itself */
+  }
+  .disc details.disclose + details.disclose {
+    border-top: 1px solid var(--hair);
+  }
+  details.disclose {
+    border: none;
+  }
+  details.disclose > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 28px 0;
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr);
+    gap: 32px;
+    align-items: baseline;
+    font-family: var(--mono);
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--evergreen);
+  }
+  details.disclose > summary::-webkit-details-marker { display: none; }
+  details.disclose .pm {
+    font-family: var(--mono);
+    font-size: 14px; font-weight: 500;
+    letter-spacing: 0;
+    color: var(--evergreen);
+  }
+  details.disclose[open] .pm::before { content: "[ – ]"; }
+  details.disclose:not([open]) .pm::before { content: "[ + ]"; }
+  details.disclose .disclose-body {
+    padding: 0 0 36px 92px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 17px; line-height: 1.55;
+    color: var(--ink);
+    max-width: 1080px;
+  }
+  details.disclose .disclose-body p {
+    margin: 0 0 18px;
+  }
+  details.disclose .disclose-body p:last-child { margin-bottom: 0; }
+  details.disclose .disclose-body strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  details.disclose .disclose-body em {
+    color: var(--berry);
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  /* ============================================================
+     DISCOVERY — equidistant 4-up theme rule on navy
+     ============================================================ */
+  .disc-section {
+    background: var(--navy);
+    color: #FDFDFD;
+    margin: 0;
+    padding: 56px 0 72px;
+    border-top: 1px solid rgba(253,253,253,0.18);
+  }
+  .disc-themes-words {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: baseline;
+    font-family: var(--mono);
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: #FDFDFD;
+    text-align: center;
+  }
+
+  /* ============================================================
+     VOICE TRAITS — paired causality grid
+     What we sound like (top) → what clients feel (bottom).
+     Maps directly to Strategic Advantage's 4 discovery themes.
+     ============================================================ */
+  .vt-section {
+    padding: 96px 0;
+    border-top: 1px solid var(--hair);
+    border-bottom: 1px solid var(--hair);
+  }
+  .vt-head {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 80px;
+    max-width: var(--col);
+    margin: 0 auto 0;
+    padding: 0 56px;
+    align-items: start;
+  }
+  .vt-head-right { padding-top: 0; }
+  .vt-label {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+  }
+  .vt-label::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--berry);
+    margin-bottom: 22px;
+  }
+  .vt-h2 {
+    margin: 0 0 22px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(48px, 5.4vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.028em;
+    color: var(--ink);
+  }
+  .vt-h2 em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--berry);
+  }
+  .vt-lead {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    max-width: 720px;
+  }
+  .vt-cards {
+    margin: 56px 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 36px;
+  }
+  .vt-card {
+    border-top: 4px solid var(--berry);
+    padding: 24px 0 0;
+  }
+  .vt-card-text {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.5;
+    letter-spacing: -0.003em;
+    color: var(--ink);
+    max-width: 720px;
+  }
+  .vt-card-text strong {
+    font-weight: 600;
+  }
+
+  /* ============================================================
+     VOCABULARY v2 — What we say / what we don't.
+     Photo-page do's-and-don'ts pattern: flowing prose with
+     evergreen separator dots; don't-row gets berry strikethrough.
+     ============================================================ */
+  .words-v2-section {
+    padding: 96px 0;
+    background: var(--white);
+    color: var(--ink);
+  }
+  .words-v2-grid {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 80px;
+    align-items: start;
+    max-width: var(--col);
+    margin: 0 auto;
+    padding: 0 56px;
+  }
+  .words-v2-list { padding-top: 28px; }
+  .words-v2-label {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+    margin: 0 0 22px;
+  }
+  .words-v2-label::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--berry);
+    margin-bottom: 22px;
+  }
+  .words-v2-h2 {
+    margin: 0 0 24px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(48px, 5.4vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.028em;
+    color: var(--ink);
+  }
+  .words-v2-deck {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    max-width: 360px;
+  }
+  .words-v2-list {
+    /* lives in the 2/3 column */
+  }
+  .words-v2-row {
+    margin: 0 0 36px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(28px, 2.8vw, 40px);
+    line-height: 1.4;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+  }
+  .words-v2-row:last-child { margin-bottom: 0; }
+  .words-v2-row.dont {
+    color: var(--mute);
+  }
+  /* Strikethrough lives on .item only — siblings like .sep stay clean */
+  .words-v2-row.dont .item {
+    text-decoration: line-through;
+    text-decoration-color: var(--berry);
+    text-decoration-thickness: 5px;
+  }
+  .words-v2-row .sep {
+    display: inline-block;
+    margin: 0 18px;
+    color: var(--evergreen);
+    font-weight: 400;
+  }
+  .words-v2-row.dont .sep {
+    color: var(--berry);
+  }
+
+  /* ============================================================
+     TRAITS — typographic four-row editorial display (LEGACY)
+     ============================================================ */
+  .traits-section { padding: 0 0 200px; border-top: 1px solid var(--ink); }
+  .traits-mark {
+    padding: 18px 0 80px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute);
+  }
+  .traits-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1fr;
+    gap: 80px;
+    padding-bottom: 80px;
+    align-items: end;
+  }
+  .traits-head h2 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(48px, 5.4vw, 84px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .traits-head .deck {
+    margin: 0;
+    padding-bottom: 10px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px; line-height: 1.55;
+    color: var(--mute);
+    max-width: 420px;
+  }
+  .traits-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.8fr) minmax(0, 1.15fr);
+    gap: 56px;
+    align-items: baseline;
+    padding: 56px 0;
+    border-top: 1px solid var(--hair);
+  }
+  .traits-row:last-of-type { border-bottom: 1px solid var(--hair); }
+  .traits-num-word {
+    display: flex; align-items: baseline; gap: 24px;
+  }
+  .traits-num {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--cobalt);
+    transform: translateY(-6px);
+  }
+  .traits-word {
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(56px, 6vw, 88px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+  }
+  .traits-meaning {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 17px; line-height: 1.5;
+    color: var(--ink);
+    max-width: 280px;
+  }
+  .traits-example {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 18px; line-height: 1.45;
+    color: var(--ink);
+    max-width: 360px;
+    letter-spacing: -0.005em;
+  }
+  .traits-example-label {
+    display: block;
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--evergreen);
+    margin-bottom: 10px;
+  }
+  .traits-example em {
+    font-family: var(--serif); font-style: italic; font-weight: 600;
+    color: var(--berry);
+  }
+
+  /* ============================================================
+     THE LINE — typographic tagline architecture (Master + 3 pillars)
+     ============================================================ */
+  .line-section { padding: 0 0 200px; border-top: 1px solid var(--ink); }
+  .line-mark {
+    padding: 18px 0 80px;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute);
+  }
+  .line-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) 1fr;
+    gap: 80px;
+    padding-bottom: 80px;
+    align-items: end;
+  }
+  .line-head h2 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(72px, 9vw, 132px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+  .line-head h2 em {
+    font-family: var(--serif); font-style: italic; font-weight: 600;
+    color: var(--berry);
+  }
+  .line-head .deck {
+    margin: 0;
+    padding-bottom: 22px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 17px; line-height: 1.55;
+    color: var(--ink);
+    max-width: 380px;
+  }
+  .line-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .line-cell {
+    padding: 40px 28px 32px 0;
+    display: flex; flex-direction: column;
+    min-height: 320px;
+  }
+  .line-cell + .line-cell {
+    padding-left: 28px;
+    border-left: 1px solid var(--hair);
+  }
+  .line-cell .line-eyebrow {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 56px;
+    display: flex; justify-content: space-between;
+  }
+  .line-cell.master .line-eyebrow .role { color: var(--berry); }
+  .line-cell .line-text {
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(36px, 4vw, 60px);
+    line-height: 0.96;
+    letter-spacing: -0.028em;
+    color: var(--ink);
+    margin: 0 0 auto;
+  }
+  .line-cell.master .line-text {
+    font-size: clamp(48px, 5.6vw, 84px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+  .line-cell .line-text em {
+    font-family: var(--serif); font-style: italic; font-weight: 600;
+    color: var(--berry);
+  }
+  .line-cell .line-use {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 13px; line-height: 1.5;
+    color: var(--mute);
+    padding-top: 24px;
+    max-width: 240px;
+  }
+
+  /* ============================================================
+     SIGNATURES — repeatable phrase panel inside Vocabulary
+     ============================================================ */
+  .signatures { padding: 96px 0 0; }
+  .signatures-head {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 56px;
+    padding-bottom: 32px;
+    align-items: end;
+  }
+  .signatures-head h3 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(36px, 3.4vw, 52px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+  }
+  .signatures-head h3 em {
+    font-family: var(--serif); font-style: italic; font-weight: 600;
+    color: var(--berry);
+  }
+  .signatures-head .deck {
+    margin: 0;
+    padding-bottom: 6px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 14px; line-height: 1.55;
+    color: var(--mute);
+    max-width: 480px;
+  }
+  .signatures-grid {
+    list-style: none;
+    padding: 0; margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .signatures-grid li {
+    padding: 32px 24px 36px 0;
+    border-bottom: 1px solid var(--hair);
+    display: flex; flex-direction: column;
+    min-height: 180px;
+  }
+  .signatures-grid li:nth-child(3n+2),
+  .signatures-grid li:nth-child(3n) {
+    padding-left: 24px;
+    border-left: 1px solid var(--hair);
+  }
+  .signatures-grid li:nth-last-child(-n+3) { border-bottom: none; }
+  .signatures-grid .sig-num {
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--cobalt);
+    margin-bottom: 32px;
+  }
+  .signatures-grid .phrase {
+    font-family: var(--sans); font-weight: 700;
+    font-size: 22px; line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin: 0 0 auto;
+    max-width: 280px;
+  }
+  .signatures-grid .phrase em {
+    font-family: var(--serif); font-style: italic; font-weight: 600;
+    color: var(--berry);
+  }
+  .signatures-grid .use {
+    margin-top: 18px;
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+    line-height: 1.6;
+  }
+
+  /* ============================================================
+     POSITION — Phrasing-style: full-span white bg, 4/8 grid
+     with label + 3-word title + short blurb left,
+     large positioning statement right.
+     ============================================================ */
+  .pos-section {
+    padding: 96px 0;
+  }
+  .pos-grid {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 80px;
+    max-width: var(--col);
+    margin: 0 auto;
+    padding: 0 56px;
+    align-items: start;
+  }
+  .pos-mark {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+  }
+  .pos-mark::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--berry);
+    margin-bottom: 22px;
+  }
+  .pos-h2 {
+    margin: 24px 0 24px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(48px, 5.4vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.028em;
+    color: var(--ink);
+  }
+  .pos-supporting {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    max-width: 360px;
+  }
+  .pos-body { padding-top: 28px; }
+  .pos-statement {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: clamp(32px, 3.4vw, 48px);
+    line-height: 1.2;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+  }
+  .pos-statement em {
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 700;
+    color: var(--berry);
+  }
+  .pos-statement strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .pos-meta {
+    margin: 0;
+    padding-top: 18px;
+    border-top: 1px solid var(--hair);
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+    max-width: 480px;
+  }
+
+  /* ============================================================
+     KEY MESSAGES — three editorial rows, italic-Sera roman numerals
+     ============================================================ */
+  .km-section {
+    padding: 96px 0;
+  }
+  .km-head {
+    max-width: var(--col);
+    margin: 0 auto 0;
+    padding: 0 56px;
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .km-head-right { padding-top: 0; }
+  .km-mark {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+  }
+  .km-mark::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--berry);
+    margin-bottom: 22px;
+  }
+  .km-h2 {
+    margin: 0 0 22px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(48px, 5.4vw, 80px);
+    line-height: 0.98;
+    letter-spacing: -0.028em;
+    color: var(--ink);
+  }
+  .km-h2 em {
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 700;
+    color: var(--berry);
+  }
+  .km-deck {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    max-width: 600px;
+  }
+  .km-rows {
+    max-width: var(--col);
+    margin: 56px auto 0;
+    padding: 0 96px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+  }
+  .km-row {
+    border-top: 4px solid var(--berry);
+    padding: 24px 0 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .km-body {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.5;
+    letter-spacing: -0.003em;
+    color: var(--ink);
+  }
+  .km-body em {
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 700;
+    color: var(--berry);
+  }
+  .km-body strong {
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  /* ============================================================
+     SAMPLES — 2-col color block. Left: white/navy (social post).
+     Right: navy/fog (anthem). Color moment to break the page's
+     text-heavy run between Vocabulary and the Promise.
+     ============================================================ */
+  .samples-section {
+    padding: 96px 0;
+  }
+  .samples-mark {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+    max-width: var(--col);
+    margin: 0 auto 56px;
+    padding: 0 56px;
+  }
+  .samples-mark::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--berry);
+    margin-bottom: 22px;
+  }
+  .samples-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: var(--col);
+    margin: 0 auto;
+    padding: 0 56px;
+  }
+  .sample-panel {
+    padding: 56px 48px 48px;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+  }
+  .sample-panel.cream { background: #E6E3DA; color: var(--ink); }
+  .sample-panel.navy  { background: var(--navy); color: var(--white); }
+  .sample-panel.fog   { background: var(--fog);  color: var(--navy); }
+  .sample-panel.pool  { background: var(--pool); color: var(--navy); }
+  .sample-panel.berry { background: var(--berry); color: var(--white); }
+  .sample-panel.white { background: var(--white); color: var(--ink); }
+  .sample-panel .sample-tag {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: currentColor;
+    opacity: 0.55;
+    margin: 0 0 auto;
+  }
+  .sample-panel .sample-headline {
+    margin: 36px 0 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(32px, 3.6vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.022em;
+    color: currentColor;
+  }
+  .sample-panel .sample-headline em {
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 700;
+    color: var(--berry);
+  }
+  .sample-panel.navy .sample-headline em { color: var(--berry); }
+  .sample-panel .sample-body {
+    margin: 18px 0 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: currentColor;
+  }
+  .sample-panel .sample-body strong {
+    font-weight: 600;
+  }
+  .samples-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: var(--col);
+    margin: 12px auto 0;
+    padding: 0 56px;
+  }
+  @media (max-width: 900px) {
+    .samples-grid { grid-template-columns: 1fr; }
+    .sample-panel { min-height: 0; }
+  }
+
+  /* ============================================================
+     AUDIENCES — 5/7 head + accordion list of 6 reader profiles.
+     Reuses .disc / .disclose styling for the expanding rows.
+     ============================================================ */
+  .aud-section {
+    padding: 96px 0;
+  }
+  .aud-grid {
+    max-width: var(--col);
+    padding: 0 56px;
+    margin: 0 auto;
+  }
+  .aud-head {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 80px;
+    align-items: start;
+    margin-bottom: 0;
+  }
+  .aud-head-right { padding-top: 0; }
+  .aud-mark {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+  }
+  .aud-mark::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--berry);
+    margin-bottom: 22px;
+  }
+  .aud-h2 {
+    margin: 0 0 22px;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(48px, 5.4vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.028em;
+    color: var(--ink);
+  }
+  .aud-lead {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+  }
+  /* Editorial accordion overrides for the audiences list */
+  .aud-section .disc {
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .aud-section details.disclose + details.disclose {
+    border-top: 1px solid var(--hair);
+  }
+  .aud-section details.disclose > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 36px 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 60px;
+    gap: 32px;
+    align-items: baseline;
+  }
+  .aud-section details.disclose > summary::-webkit-details-marker { display: none; }
+  .aud-section details.disclose summary .name {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(28px, 3vw, 44px);
+    line-height: 1;
+    letter-spacing: -0.024em;
+    color: var(--ink);
+    text-transform: none;
+  }
+  .aud-section details.disclose .pm {
+    text-align: right;
+    font-family: var(--mono);
+    font-size: 14px; font-weight: 500;
+    color: var(--mute);
+    align-self: center;
+  }
+  .aud-section details.disclose[open] .pm::before { content: "[ – ]"; }
+  .aud-section details.disclose:not([open]) .pm::before { content: "[ + ]"; }
+  .aud-section details.disclose .disclose-body {
+    padding: 0 0 40px 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 720px;
+  }
+  .aud-section details.disclose .disclose-body p {
+    margin: 0 0 14px;
+  }
+  .aud-section details.disclose .disclose-body p:last-child { margin-bottom: 0; }
+  .aud-section details.disclose .disclose-body strong {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .aud-section details.disclose .disclose-body em {
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 700;
+    color: var(--berry);
+  }
+
+  /* ============================================================
+     UNIFIED SECTION LABEL TREATMENT
+     Bigger, bolder berry accent bar + Nova 600 berry label text
+     in place of the smaller mono-mute treatment. Applied once
+     here so every section label updates together.
+     ============================================================ */
+  .fw-mark,
+  .pos-mark,
+  .ch-label,
+  .km-mark,
+  .vt-label,
+  .aud-mark,
+  .words-v2-label,
+  .samples-mark {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--berry);
+  }
+  .fw-mark::before,
+  .pos-mark::before,
+  .ch-label::before,
+  .km-mark::before,
+  .vt-label::before,
+  .aud-mark::before,
+  .words-v2-label::before,
+  .samples-mark::before {
+    width: 72px;
+    height: 4px;
+    margin-bottom: 18px;
+  }
+  /* Tagline + Position have full-width berry borders on the section,
+     so their label-level accent strokes are redundant. */
+  .fw-mark::before,
+  .pos-mark::before {
+    display: none;
+  }
+  .fw-body,
+  .pos-body {
+    padding-top: 18px;
+  }
+
+  /* FOOTER NAV */
+  .next {
+    padding: 64px 0 80px;
+    border-top: 1px solid var(--ink);
+  }
+  .next .row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--mute);
+  }
+  .next h2 {
+    margin: 18px 0 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(80px, 11vw, 168px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+    <!-- HEADER TAB -->
+    <div class="head">
+      <div><span class="brand">NorCal SBDC</span> &middot; Brand House</div>
+      <div>Voice &middot; How we sound</div>
+      <div>04 / 13</div>
+    </div>
+
+    <!-- HERO — canonical pattern, inverted onto black for this chapter -->
+    <div class="hero-mark">
+      <div>
+        <span class="eyebrow">04 &middot; Voice</span>
+        <h1>Voice.</h1>
+      </div>
+      <div class="subtitle">
+        <span class="accent-bar"></span>
+        <p>How we sound when we write. And how we don&rsquo;t. A person on the page, not a program.</p>
+      </div>
+    </div>
+
+  </div>
+
+
+<!-- 01 · TAGLINE — master "Your Business, Better." in 5/7 split -->
+<section class="fw-section">
+  <div class="fw-grid">
+    <div class="fw-head-left">
+      <div class="fw-mark">Tagline</div>
+    </div>
+    <div class="fw-body">
+      <h2 class="fw-headline">
+        <span class="line1">Your Business,</span> <span class="line2">Better.</span>
+      </h2>
+      <p class="fw-intro-lead">Better isn&rsquo;t just a promise &mdash; it&rsquo;s a <em>measurable outcome.</em></p>
+      <p>Our network of expert advisors delivers the right guidance at the right time. We connect you to the people and resources that build momentum.</p>
+    </div>
+  </div>
+</section>
+
+<!-- POSITION — Phrasing-style: white bg, 4/8 grid, label + 3-word title + blurb left, statement right -->
+<section class="pos-section">
+  <div class="pos-grid">
+    <div class="pos-head-left">
+      <div class="pos-mark">Position</div>
+      <h2 class="pos-h2">The one sentence.</h2>
+      <p class="pos-supporting">The line every advisor knows by heart. What we lead with. What we leave out.</p>
+    </div>
+    <div class="pos-body">
+      <p class="pos-statement">For Northern California&rsquo;s small business owners, NorCal SBDC is the regional network of expert advisors that delivers the <strong>people</strong>, the <strong>capital</strong>, and the <strong>connections</strong> every business needs to grow &mdash; <em>at no fee, ever.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 · THE PILLARS — gating rule + per-pillar example messaging for advisors -->
+<section class="ch-section">
+  <div class="ch-grid">
+    <div class="ch-head">
+      <div class="ch-head-left">
+        <div class="ch-label">The Pillars</div>
+      </div>
+      <div class="ch-head-right">
+        <p class="ch-lead">Three words guide every workshop invite, every social post, every success story, every funding announcement.</p>
+      </div>
+    </div>
+
+    <div class="ch-pillar-rows">
+      <div class="ch-pillar-row people">
+        <h3 class="ch-pillar-name">People.</h3>
+        <p>Advisors who&rsquo;ve sat where you sit. Real experience, not playbooks.</p>
+      </div>
+
+      <div class="ch-pillar-row funded">
+        <h3 class="ch-pillar-name">Funded.</h3>
+        <p>Strategic guidance and lender relationships. From searching for capital to closing the deal.</p>
+      </div>
+
+      <div class="ch-pillar-row connected">
+        <h3 class="ch-pillar-name">Connected.</h3>
+        <p>The right banker, the right partner, the right buyer for what you sell.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY MESSAGES -->
+<section class="km-section">
+  <div class="km-head">
+    <div class="km-head-left">
+      <div class="km-mark">Key Messages</div>
+    </div>
+    <div class="km-head-right"></div>
+  </div>
+
+  <div class="km-rows">
+    <div class="km-row">
+      <p class="km-body">Behind every thriving small business is the right people, the right capital, and the right connections. NorCal SBDC delivers all three. <em>At no fee.</em></p>
+    </div>
+    <div class="km-row">
+      <p class="km-body">We don&rsquo;t just advise. We sit down with you, roll up our sleeves, and help you <em>build momentum</em> in your business.</p>
+    </div>
+    <div class="km-row">
+      <p class="km-body">8,500 businesses. $547M in capital. 3,723 jobs. <em>Last year alone.</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGIC ADVANTAGE — full-bleed navy. Gallery spans the stage; headline overlays on top-left. -->
+<section class="strat-section">
+  <div class="strat-stage">
+    <div class="strat-gallery" aria-hidden="true">
+      <img src="voice-section-photos/voices-bg.jpeg" alt="" />
+    </div>
+
+    <div class="strat-content">
+      <div class="strat-mark">Strategic Advantage</div>
+      <h2 class="strat-headline">
+        <span>The team</span>
+        <span>behind</span>
+        <span><em>your team.</em></span>
+      </h2>
+      <p class="strat-body">Local advisors. Real expertise. Trusted relationships.</p>
+      <div class="strat-arrow" aria-hidden="true">&darr;</div>
+    </div>
+  </div>
+
+  <div class="strat-rule">
+    <div class="strat-themes">
+      <span>Relationships</span>
+      <span>Connection</span>
+      <span>Trust</span>
+      <span>Confidence</span>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE TRAITS — paired causality grid (what we sound like → what they feel) -->
+<section class="vt-section">
+  <div class="vt-head">
+    <div class="vt-head-left">
+      <div class="vt-label">Voice Traits</div>
+    </div>
+    <div class="vt-head-right">
+      <h2 class="vt-h2">How we sound.</h2>
+      <div class="vt-cards">
+    <div class="vt-card">
+      <p class="vt-card-text"><strong>Direct.</strong> Lead with the point. Skip the acronym. Cut corporate filler. Say what you mean.</p>
+    </div>
+
+    <div class="vt-card">
+      <p class="vt-card-text"><strong>Human.</strong> Write like a person, not an institution. Plain language. Real voice. No jargon.</p>
+    </div>
+
+    <div class="vt-card">
+      <p class="vt-card-text"><strong>Knowing.</strong> Show the work. Don&rsquo;t show off. Use numbers. Skip the maybes. Be specific.</p>
+    </div>
+
+    <div class="vt-card">
+      <p class="vt-card-text"><strong>Optimistic.</strong> Be real about the work. Unreasonable about what&rsquo;s possible. Name the hard part.</p>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCES — single short paragraph. Mostly we write to one reader. -->
+<section class="aud-section">
+  <div class="aud-grid">
+    <div class="aud-head">
+      <div class="aud-head-left">
+        <div class="aud-mark">Audience</div>
+      </div>
+      <div class="aud-head-right">
+        <h2 class="aud-h2">Write to one reader.</h2>
+        <p class="aud-lead">Most of the time, that reader is a small business owner &mdash; stretched thin, skeptical of jargon, looking for the next move. Sound like a neighbor, not an institution. Lead with what they get, not what we offer. Answer &ldquo;what&rsquo;s in it for me?&rdquo; before they have to ask.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOCABULARY v2 — 1/3 head + 2/3 word lists -->
+<section class="words-v2-section">
+  <div class="words-v2-grid">
+    <div class="words-v2-head">
+      <div class="words-v2-label">Phrasing</div>
+      <h2 class="words-v2-h2">Phrase by phrase.</h2>
+      <p class="words-v2-deck">Specific word choices carry the brand. The first set names a relationship. The second set reads as someone else&rsquo;s voice.</p>
+    </div>
+
+    <div class="words-v2-list">
+      <p class="words-v2-row">
+        <span class="item">advisor</span><span class="sep">&middot;</span><span class="item">funded</span><span class="sep">&middot;</span><span class="item">we sit with you</span><span class="sep">&middot;</span><span class="item">the team behind your team</span><span class="sep">&middot;</span><span class="item">no fee &mdash; ever</span>
+      </p>
+      <p class="words-v2-row dont">
+        <span class="item">consultant</span><span class="sep">&middot;</span><span class="item">capitalized</span><span class="sep">&middot;</span><span class="item">we provide services</span><span class="sep">&middot;</span><span class="item">stakeholder engagement</span><span class="sep">&middot;</span><span class="item">free of charge</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLES — 2-col color block: white/navy (social) + navy/fog (anthem) -->
+<section class="samples-section">
+  <div class="samples-mark">Samples</div>
+  <div class="samples-grid">
+    <div class="sample-panel cream">
+      <div class="sample-tag">Small Business Week</div>
+      <h2 class="sample-headline">Every week is <em>small business week</em> here.</h2>
+      <p class="sample-body">Support for entrepreneurs, every day of the year.</p>
+    </div>
+    <div class="sample-panel navy">
+      <div class="sample-tag">Brand anthem</div>
+      <h2 class="sample-headline">It starts with <em>people who know the way.</em></h2>
+      <p class="sample-body">It grows through funded opportunities. It thrives in connected communities.</p>
+    </div>
+    <div class="sample-panel navy">
+      <div class="sample-tag">Year in review</div>
+      <h2 class="sample-headline"><em>8,500 businesses</em> moved forward last year.</h2>
+      <p class="sample-body">$547M in capital. 3,723 jobs. Across Northern California.</p>
+    </div>
+    <div class="sample-panel pool">
+      <div class="sample-tag">Social post</div>
+      <h2 class="sample-headline">Some questions don&rsquo;t have <em>Google answers.</em></h2>
+      <p class="sample-body">They have a person on the other end of the line.</p>
+    </div>
+  </div>
+
+  <div class="samples-row">
+    <div class="sample-panel pool">
+      <div class="sample-tag">Advising</div>
+      <p class="sample-body">No-fee. Confidential. One-on-one. The <strong>right advisor</strong> for your stage and industry.</p>
+    </div>
+    <div class="sample-panel berry">
+      <div class="sample-tag">Workshops</div>
+      <p class="sample-body">90 minutes. Ask questions, get answers. Leave with a <strong>running start</strong> on your next move.</p>
+    </div>
+    <div class="sample-panel navy">
+      <div class="sample-tag">Networking</div>
+      <p class="sample-body">Lender intros, peer connections, and <strong>the right support</strong> for what you&rsquo;re building.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- DISCLOSURE — system accordion -->
+<section class="wrap">
+  <div class="disc">
+    <details class="disclose">
+      <summary>
+        <span class="pm"></span>
+        <span>Why &middot; voice rules</span>
+      </summary>
+      <div class="disclose-body">
+        <p><strong>Voice has three jobs.</strong> Reposition, unify, convert. Shift perception from government program to trusted business growth partner. Give all 16 centers a shared vocabulary. Turn brand awareness into consultation bookings. Every word should advance one of the three.</p>
+        <p>Lead with the point. Never the acronym. The first sentence does the work &mdash; if it needs &ldquo;Small Business Development Center&rdquo; to land, the sentence is wrong.</p>
+        <p>Use Sera italic only for client story headlines and pull quotes. Every other headline is Nova 700. Numbers are always set in Nova at display weight &mdash; never in Sera.</p>
+        <p>Write to one reader. A founder needs different content than a city councilmember. Pick the person on the other side of the screen and stay with them for the whole sentence.</p>
+        <p>Never publish a generator output without a human pass. Voice, facts, names, and links must be checked. The generator drafts &mdash; <em>the editor approves.</em></p>
+        <p>Every piece of content ladders to one CTA: <em>talk to an advisor.</em> If the post can&rsquo;t answer &ldquo;why book a consultation,&rdquo; it isn&rsquo;t finished.</p>
+      </div>
+    </details>
+
+    <details class="disclose">
+      <summary>
+        <span class="pm"></span>
+        <span>Why &middot; the evidence</span>
+      </summary>
+      <div class="disclose-body">
+        <p>The voice on this page isn&rsquo;t a hunch. It&rsquo;s the conclusion. <em>Simple, outcome-focused promises outperform clever ones</em> &mdash; HBR and McKinsey both. Top-40 brands with consistent messaging deliver almost 2&times; shareholder return over 20 years.</p>
+        <p>People is the differentiator. <strong>84%</strong> of Americans prefer human advisors over robo-advisors (NerdWallet, 2023). Mentored businesses post a <strong>70%</strong> 5-year survival rate vs. <strong>35%</strong> without (SCORE, 2022).</p>
+        <p>Funded is the proof. America&rsquo;s SBDC clients accessed <strong>$7.7B</strong> in capital last year. Capitalized firms have <strong>50%</strong> higher survival and are <strong>3&times;</strong> more likely to expand.</p>
+        <p>Connected is the experience. Founders with strong networks grow <strong>3.5&times;</strong> faster (MIT). 46% of entrepreneurs report isolation; community participation lifts mental-health outcomes by 40% (KPMG, 2022).</p>
+        <p>Consistency is the multiplier. Brands with a unified voice see up to <strong>23%</strong> revenue growth (Lucidpress, 2021). <em>The framework is the conclusion, not the assumption.</em></p>
+      </div>
+    </details>
+  </div>
+</section>
+
+
+
+<script>
+  // Scroll-reveal: add .in to .reveal when intersecting
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function(e){ e.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function(e){ io.observe(e); });
+  })();
+</script>
+</body>
+</html>

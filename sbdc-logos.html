@@ -1,0 +1,1581 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NorCal SBDC · Brand House · Logos</title>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin />
+<link rel="stylesheet" href="https://use.typekit.net/pkl5rjs.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0F1C2D;
+    --slate: #2C3240;
+    --cobalt: #1B5FAF;
+    --pool: #8FC5D9;
+    --berry: #C23C3C;
+    --evergreen: #00675C;
+    --silver: #D8D8D8;
+    --white: #FDFDFD;
+    --page: #F2F1ED;
+    --paper: #FAF8F2;
+    --ink: #0F1C2D;
+    --mute: #4A5260;
+    --hair: #D4D2CC;
+
+    --sans:  "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+    --serif: "proxima-sera", "Iowan Old Style", Georgia, serif;
+    --mono:  "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    --col: 1320px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap { max-width: var(--col); margin: 0 auto; padding: 0 56px; }
+
+  /* HEADER */
+  .head {
+    padding: 28px 0 0;
+    display: flex; align-items: baseline; justify-content: space-between;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .head .brand { color: var(--ink); font-weight: 500; }
+
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--cobalt);
+  }
+
+  /* HERO */
+  .hero-mark {
+    padding: 84px 0 36px;
+    display: grid;
+    grid-template-columns: 1fr 460px;
+    gap: 80px;
+    align-items: end;
+  }
+  .hero-mark .eyebrow { display: block; margin-bottom: 22px; }
+  .hero-mark h1 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(120px, 14vw, 200px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+  .hero-mark .subtitle { display: block; }
+  .hero-mark .accent-bar {
+    display: block; width: 100%; height: 4px;
+    background: var(--navy); margin: 0 0 22px;
+  }
+  .hero-mark p {
+    margin: 0 0 14px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 22px; line-height: 1.45; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 520px;
+  }
+  .hero-mark p strong { color: var(--berry); font-weight: 600; }
+
+  /* SECTIONS */
+  .section { padding: 100px 0 0; }
+  .section-head {
+    display: grid; grid-template-columns: 360px 1fr; gap: 48px;
+    align-items: end; margin-bottom: 32px;
+  }
+  .section-head h2 {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(40px, 4.4vw, 56px); line-height: 1.0;
+    letter-spacing: -0.02em; color: var(--ink);
+  }
+  .section-head .lede {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 19px; line-height: 1.5; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 640px;
+  }
+
+  /* Split section — heading + lede on the LEFT (1/4), content on the RIGHT (3/4), same row */
+  .section-split {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .section-split > .split-head { display: flex; flex-direction: column; gap: 18px; }
+  .section-split > .split-head h2 {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(36px, 3.4vw, 44px); line-height: 1.0;
+    letter-spacing: -0.02em; color: var(--ink);
+    text-transform: none;
+  }
+  .section-split > .split-head .lede {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 17px; line-height: 1.5; color: var(--ink);
+    letter-spacing: -0.005em;
+    text-transform: none;
+    max-width: 38ch;
+  }
+  .section-split > .split-body { min-width: 0; }
+
+  /* §01 NETWORK LOGO BOARD — two big cards, color + reverse */
+  .logo-board {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .logo-card {
+    position: relative;
+    min-height: 440px;
+    padding: 36px 40px;
+    background: var(--white);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .logo-card.dark {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .logo-card .lbl {
+    position: absolute;
+    top: 24px; left: 28px;
+    margin: 0;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .logo-card.dark .lbl { color: rgba(253,253,253,0.62); }
+  .logo-card .stage {
+    display: grid; place-items: center;
+    width: 100%;
+    transition: transform 220ms cubic-bezier(0.2,0.8,0.2,1), opacity 220ms ease;
+  }
+  .logo-card .stage img {
+    width: min(70%, 420px);
+    height: auto;
+    display: block;
+  }
+  .logo-card .info {
+    position: absolute;
+    left: 36px; right: 36px; bottom: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--hair);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 200ms ease, transform 200ms ease;
+    z-index: 2;
+  }
+  .logo-card.dark .info { border-top-color: rgba(253,253,253,0.20); }
+  .logo-card .info h3 {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 22px; line-height: 1.1;
+    letter-spacing: -0.005em;
+  }
+  .logo-card .info p {
+    margin: 8px 0 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 16px; line-height: 1.45;
+    color: var(--mute);
+    max-width: 36ch;
+  }
+  .logo-card.dark .info p { color: rgba(253,253,253,0.78); }
+  .logo-card .info .file {
+    display: inline-block; margin-top: 10px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em;
+    color: var(--mute);
+    word-break: break-all;
+  }
+  .logo-card.dark .info .file { color: rgba(253,253,253,0.62); }
+  .logo-card:hover .info,
+  .logo-card:focus-within .info {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .logo-card:hover .stage,
+  .logo-card:focus-within .stage {
+    transform: translateY(-50px) scale(0.84);
+    opacity: 0.45;
+  }
+
+  /* §02 CHOICE LIST — Match the mark */
+  .choice-list {
+    border-top: 1px solid var(--ink);
+  }
+  .choice-row {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr) 280px;
+    gap: 32px;
+    align-items: baseline;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--hair);
+  }
+  .choice-row h3 {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 32px; line-height: 1.0;
+    letter-spacing: -0.02em;
+  }
+  .choice-row .body {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 18px; line-height: 1.4; color: var(--ink);
+    max-width: 56ch;
+  }
+  .choice-row .note {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 15px; line-height: 1.4; color: var(--mute);
+  }
+
+  /* §03 PARTNER GRID */
+  .partner-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    background: var(--paper);
+    border-top: 1px solid var(--ink);
+  }
+  .partner-card {
+    background: var(--white);
+    padding: 28px 28px 28px;
+    border-right: 1px solid var(--hair);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: 280px;
+  }
+  .partner-card:last-child { border-right: none; }
+
+  /* §04 PROGRAM ROWS — one row per program, meta + paired light/dark tiles */
+  .program-rows {
+    border-top: 1px solid var(--ink);
+  }
+  .program-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr);
+    gap: 32px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--hair);
+    align-items: stretch;
+  }
+  .program-row:last-child { border-bottom: 1px solid var(--ink); }
+  .program-row .program-meta {
+    display: flex; flex-direction: column;
+    padding-right: 24px;
+  }
+  .program-row .program-meta h3 {
+    margin: 0 0 8px;
+    font-family: var(--sans); font-weight: 700;
+    font-size: 22px; line-height: 1.2; letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .program-row .program-meta p {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 14px; line-height: 1.5;
+    color: var(--mute);
+    max-width: 360px;
+  }
+  .program-tile-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .program-tile {
+    display: flex; flex-direction: column; gap: 14px;
+    padding: 22px 24px;
+    min-height: 180px;
+  }
+  .program-tile.light {
+    background: var(--white);
+  }
+  .program-tile.dark {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .program-tile .lbl {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .program-tile.dark .lbl { color: rgba(253, 253, 253, 0.65); }
+  .program-tile .program-placeholder {
+    flex: 1;
+    width: 100%;
+    min-height: 100px;
+    display: grid; place-items: center;
+    background: transparent;
+    border: 1px dashed var(--silver);
+    border-radius: 2px;
+    position: relative;
+  }
+  .program-tile.dark .program-placeholder {
+    border-color: rgba(253, 253, 253, 0.3);
+  }
+  .program-placeholder .mono-mark {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 28px; letter-spacing: -0.02em;
+    color: var(--cobalt);
+  }
+  .program-tile.dark .program-placeholder .mono-mark { color: var(--white); }
+  .program-placeholder .ph-tag {
+    position: absolute; top: 8px; left: 10px;
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .program-tile.dark .program-placeholder .ph-tag { color: rgba(253, 253, 253, 0.6); }
+
+  /* Download logos link — sized to content */
+  .download-link {
+    display: inline-flex;
+    width: max-content;
+    align-self: flex-start;
+    justify-self: start;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    text-decoration: underline;
+    text-decoration-color: rgba(2, 65, 144, 0.4);
+    text-underline-offset: 6px;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 180ms ease;
+  }
+  .download-link:hover { text-decoration-color: var(--cobalt); }
+  .download-link .dl-arrow {
+    font-family: var(--sans); font-weight: 700; font-size: 14px;
+    line-height: 1;
+    text-decoration: none;
+    transition: transform 180ms ease;
+    display: inline-block;
+  }
+  .download-link:hover .dl-arrow { transform: translateY(2px); }
+  .partner-card .lbl {
+    margin: 0;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .partner-card .partner-logo {
+    flex: 1;
+    display: grid; place-items: center;
+    min-height: 110px;
+  }
+  .partner-card .partner-logo img {
+    max-width: 78%;
+    max-height: 90px;
+    object-fit: contain;
+    display: block;
+  }
+  .partner-card h3 {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 20px; line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .partner-card p {
+    margin: 8px 0 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 14px; line-height: 1.45;
+    color: var(--mute);
+  }
+
+  /* §04 URL INDEX */
+  .url-index {
+    border-top: 1px solid var(--ink);
+  }
+  .url-index-row {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: 32px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--hair);
+    align-items: start;
+  }
+  .url-index-row h3 {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 22px; line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  .url-index-row ul {
+    margin: 0; padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+  .url-index-row li {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 18px;
+    align-items: baseline;
+    position: relative;
+  }
+  .url-index-row .k {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 14px; line-height: 1.3;
+    color: var(--ink);
+  }
+  .url-index-row code {
+    font-family: var(--mono); font-size: 12px; line-height: 1.4;
+    color: var(--mute);
+    overflow-wrap: anywhere;
+  }
+  .preview-link { position: relative; }
+  .hover-preview {
+    position: absolute;
+    right: 0; top: 50%;
+    width: 220px; min-height: 120px;
+    transform: translate(12px, -50%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 5;
+    display: grid; place-items: center;
+    padding: 18px;
+    background: var(--white);
+    box-shadow: 0 12px 28px rgba(15, 28, 45, 0.16);
+    transition: opacity 180ms ease, transform 180ms ease;
+  }
+  .hover-preview.dark { background: var(--navy); }
+  .hover-preview img {
+    max-width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+    display: block;
+  }
+  .preview-link:hover .hover-preview,
+  .preview-link:focus-within .hover-preview {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+
+  /* §05 CENTERS — two-zone color split: navy (message) + cobalt (action) */
+  .centers-cta {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    align-items: stretch;
+    min-height: 240px;
+  }
+  .centers-content {
+    background: var(--navy);
+    color: var(--white);
+    padding: 48px 56px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .centers-eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: rgba(253, 253, 253, 0.65);
+    margin-bottom: 18px;
+  }
+  .centers-content h2 {
+    margin: 0 0 12px;
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(34px, 3.6vw, 48px); line-height: 1.0;
+    letter-spacing: -0.025em;
+    color: var(--white);
+  }
+  .centers-content p {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 17px; line-height: 1.5;
+    color: rgba(253, 253, 253, 0.78);
+    letter-spacing: -0.005em;
+    max-width: 480px;
+  }
+  .centers-cta-zone {
+    background: var(--cobalt);
+    color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    padding: 32px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: background 200ms ease;
+  }
+  .centers-cta-zone::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0;
+    width: 6px;
+    background: var(--evergreen);
+  }
+  .centers-cta-zone:hover { background: #032f68; }
+  .centers-cta-zone .cta-label {
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(24px, 2.4vw, 32px); line-height: 1.0;
+    letter-spacing: -0.022em;
+    color: var(--white);
+  }
+  .centers-cta-zone .cta-arrow {
+    margin-left: 16px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(24px, 2.4vw, 32px); line-height: 1.0;
+    transition: transform 180ms ease;
+    display: inline-block;
+  }
+  .centers-cta-zone:hover .cta-arrow { transform: translateX(6px); }
+
+  /* §01b USAGE RULES — clear space + placement diagrams */
+  .usage-rules {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .rule-cell {
+    background: var(--white);
+    padding: 28px 32px 32px;
+    display: flex; flex-direction: column; gap: 22px;
+  }
+  .rule-cell .lbl {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--cobalt);
+  }
+  .rule-cell .rule-body {
+    font-family: var(--sans); font-weight: 500;
+    font-size: 14px; line-height: 1.55;
+    color: var(--mute);
+    margin: 0;
+    max-width: 360px;
+  }
+  .rule-cell .rule-body strong { color: var(--ink); font-weight: 600; }
+
+  /* Clear-space diagram: logo with dashed margin-box at offset = "A" height */
+  .clearspace-demo {
+    flex: 1;
+    display: grid; place-items: center;
+    background: var(--page);
+    padding: 20px;
+    min-height: 220px;
+  }
+  .clearspace-frame {
+    border: 1px dashed var(--cobalt);
+    padding: 28px;
+    position: relative;
+  }
+  .clearspace-frame img {
+    display: block;
+    max-width: 220px; height: auto;
+  }
+  .clearspace-frame::before,
+  .clearspace-frame::after {
+    content: "x";
+    position: absolute;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    color: var(--cobalt);
+    text-transform: uppercase;
+  }
+  .clearspace-frame::before { top: -16px; left: 50%; transform: translateX(-50%); }
+  .clearspace-frame::after { bottom: -16px; left: 50%; transform: translateX(-50%); }
+
+  /* Placement diagram: single page-frame, logo toggles between upper / bottom */
+  .placement-demo {
+    flex: 1;
+    display: grid; place-items: stretch;
+    background: var(--page);
+    padding: 16px;
+    min-height: 220px;
+  }
+  .page-frame {
+    position: relative;
+    aspect-ratio: 1.4 / 1;
+    background: var(--white);
+    box-shadow: inset 0 0 0 1px var(--hair);
+  }
+  .logo-mark {
+    position: absolute;
+    left: 18px;
+    width: 44px; height: 14px;
+    background: var(--cobalt);
+    animation: placement-toggle 3.2s steps(1, end) infinite;
+  }
+  @keyframes placement-toggle {
+    0%   { top: 18px; }
+    50%  { top: calc(100% - 32px); }
+  }
+  .page-frame .frame-label {
+    position: absolute;
+    bottom: 10px; right: 14px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .page-frame .frame-label::after {
+    content: "Upper-left";
+    animation: placement-label 3.2s steps(1, end) infinite;
+  }
+  @keyframes placement-label {
+    0%   { content: "Upper-left"; }
+    50%  { content: "Bottom-left"; }
+  }
+
+  /* Co-branding callout in §04 */
+  .co-brand-note {
+    margin: 0 0 32px;
+    padding: 18px 22px;
+    border-left: 3px solid var(--cobalt);
+    background: rgba(2, 65, 144, 0.06);
+    font-family: var(--sans); font-weight: 500;
+    font-size: 15px; line-height: 1.55;
+    color: var(--ink);
+    max-width: 760px;
+  }
+  .co-brand-note strong { font-weight: 700; }
+
+  /* §05 CENTERS — sample lockups (horizontal + stacked) */
+  .lockup-rows {
+    border-top: 1px solid var(--ink);
+    margin-bottom: 40px;
+  }
+  .lockup-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 2fr);
+    gap: 32px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--hair);
+    align-items: stretch;
+  }
+  .lockup-row:last-child { border-bottom: 1px solid var(--ink); }
+  .lockup-row .lockup-meta {
+    display: flex; flex-direction: column;
+    padding-right: 24px;
+  }
+  .lockup-row .lockup-meta h3 {
+    margin: 0 0 8px;
+    font-family: var(--sans); font-weight: 700;
+    font-size: 22px; line-height: 1.2; letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .lockup-row .lockup-meta p {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 14px; line-height: 1.5;
+    color: var(--mute);
+    max-width: 360px;
+  }
+  .lockup-pair {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  }
+  .lockup-tile {
+    display: flex; flex-direction: column; gap: 14px;
+    padding: 24px 28px;
+    min-height: 200px;
+  }
+  .lockup-tile.light {
+    background: var(--white);
+  }
+  .lockup-tile.dark {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .lockup-tile .lbl {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .lockup-tile.dark .lbl { color: rgba(253, 253, 253, 0.65); }
+  .lockup-stage {
+    flex: 1;
+    display: flex; align-items: center; justify-content: center;
+    padding: 8px 0;
+  }
+  .lockup-stage img {
+    max-width: 100%;
+    max-height: 130px;
+    object-fit: contain;
+    display: block;
+  }
+  .lockup-stage.stacked img { max-height: 170px; }
+  .lockup-text {
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .lockup-prefix {
+    font-family: var(--sans); font-weight: 700;
+    font-size: 11px; letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    line-height: 1.2;
+  }
+  .lockup-tile.dark .lockup-prefix { color: var(--pool); }
+  .lockup-name {
+    font-family: var(--sans); font-weight: 400;
+    font-size: 16px; line-height: 1.2;
+    letter-spacing: -0.005em;
+    color: var(--berry);
+  }
+  .lockup-tile.dark .lockup-name { color: var(--white); }
+
+  /* §06 COMPLIANCE — Navy bleed */
+  .compliance {
+    margin-top: 100px;
+    background: var(--navy);
+    color: var(--white);
+  }
+  .compliance-inner {
+    max-width: var(--col); margin: 0 auto; padding: 80px 56px;
+  }
+  .compliance .eyebrow { color: var(--pool); display: block; margin-bottom: 22px; }
+  .compliance h2 {
+    margin: 0 0 24px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(48px, 5vw, 72px); line-height: 0.96;
+    letter-spacing: -0.025em;
+    color: var(--white);
+  }
+  .compliance .lede {
+    margin: 0 0 56px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 20px; line-height: 1.45;
+    color: rgba(253,253,253,0.85);
+    max-width: 64ch;
+  }
+
+  /* Compliance table */
+  .compliance-table-wrap {
+    margin-top: 24px;
+    border-top: 4px solid rgba(253,253,253,0.72);
+  }
+  .compliance-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--white);
+  }
+  .compliance-table thead th {
+    padding: 18px 18px;
+    text-align: left;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--pool);
+    font-weight: 500;
+    border-bottom: 1px solid rgba(253,253,253,0.20);
+    background: transparent;
+  }
+  .compliance-table tbody td {
+    padding: 18px 18px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 15px; line-height: 1.35;
+    border-bottom: 1px solid rgba(253,253,253,0.12);
+  }
+  .compliance-table tbody td:first-child {
+    color: var(--white);
+    font-size: 16px;
+  }
+  .compliance-table tbody td:not(:first-child) {
+    color: rgba(253,253,253,0.85);
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .compliance-table .yes { color: var(--white); }
+  .compliance-table .no  { color: rgba(253,253,253,0.42); }
+  .compliance-table .always {
+    color: var(--white);
+    background: var(--berry);
+    padding: 4px 10px;
+    display: inline-block;
+    border-radius: 2px;
+  }
+
+  /* Preview cards inside compliance */
+  .preview-card {
+    margin-top: 32px;
+    background: var(--white);
+    color: var(--ink);
+    padding: 36px 40px;
+    display: grid;
+    grid-template-columns: 1fr 110px;
+    gap: 40px;
+    align-items: start;
+  }
+  .preview-card .rail {
+    grid-row: 1 / span 2;
+    grid-column: 2;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    align-self: stretch;
+    padding-right: 14px;
+    border-right: 1px solid var(--hair);
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .preview-card .copy-mark {
+    grid-column: 2;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+    text-align: right;
+  }
+  .preview-card .body { grid-column: 1; }
+  .preview-card .funding-logos {
+    display: flex; gap: 18px; align-items: center;
+    margin-bottom: 24px;
+  }
+  .preview-card .funding-logos .logo-tile {
+    display: grid; place-items: center;
+    height: 80px;
+    padding: 12px 18px;
+    background: var(--page);
+  }
+  .preview-card .funding-logos img {
+    max-height: 60px; max-width: 160px;
+    object-fit: contain;
+    display: block;
+  }
+  .preview-card p {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 17px; line-height: 1.55;
+    color: var(--ink);
+    max-width: 78ch;
+  }
+  .preview-card p + p { margin-top: 14px; }
+  .preview-card .with-icon {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  .preview-card .ada-icon {
+    width: 96px; height: 96px;
+    display: grid; place-items: center;
+    border: 2px solid var(--cobalt);
+    border-radius: 12px;
+  }
+  .preview-card .ada-icon svg { width: 56px; height: 56px; color: var(--cobalt); }
+
+  .preview-intro {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 17px; line-height: 1.55;
+    color: rgba(253,253,253,0.78);
+    max-width: 64ch;
+    margin-top: 40px;
+  }
+
+  /* §07 MISUSE */
+  .never-do {
+    color: var(--berry);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+  }
+  .misuse-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .misuse {
+    aspect-ratio: 1 / 1;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+  }
+  .misuse.hot {
+    background: var(--berry);
+  }
+  .misuse img {
+    width: min(72%, 240px);
+    height: auto;
+    display: block;
+  }
+  .misuse .distort { transform: scaleX(1.9); }
+  .misuse .rotate  { transform: rotate(18deg); }
+  .misuse .dot {
+    position: absolute;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    right: 20%; top: 22%;
+    background: var(--berry);
+  }
+  .misuse-rules {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .misuse-rule {
+    padding-top: 16px;
+    border-top: 1px solid var(--hair);
+  }
+  .misuse-rule h3 {
+    margin: 0 0 10px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 19px; line-height: 1.15;
+    letter-spacing: -0.005em;
+  }
+  .misuse-rule p {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 15px; line-height: 1.45;
+    color: var(--mute);
+  }
+
+  /* §06 COMPLIANCE — rule + two requirement cards + slide-deck note */
+  .rule-statement {
+    margin: 12px 0 48px;
+    padding: 32px 0 0;
+    border-top: 1px solid rgba(253,253,253,0.28);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .rule-statement .rs-num {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(253,253,253,0.55);
+    padding-top: 8px;
+  }
+  .rule-statement .rs-text {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: clamp(26px, 2.8vw, 34px); line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    max-width: 40ch;
+  }
+  .rule-statement .rs-text .rs-key {
+    text-decoration: underline;
+    text-decoration-color: var(--cobalt);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+    color: var(--pool);
+  }
+  .rule-statement .rs-foot {
+    grid-column: 2;
+    margin: 18px 0 0;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(253,253,253,0.55);
+  }
+
+  /* Two-up requirement cards (SBA + ADA) */
+  .req-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .req-tile {
+    background: var(--white);
+    color: var(--ink);
+    padding: 32px 36px 32px;
+    display: flex; flex-direction: column;
+    gap: 22px;
+  }
+  .req-tile .rt-rail {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+  }
+  .req-tile .rt-mark {
+    display: flex; align-items: center; gap: 18px;
+    min-height: 60px;
+  }
+  .req-tile .rt-mark .rt-marks {
+    display: inline-flex; align-items: center; gap: 14px;
+  }
+  .req-tile .rt-mark img {
+    max-height: 56px; max-width: 130px;
+    object-fit: contain;
+  }
+  .req-tile .rt-mark .rt-marks img {
+    max-height: 56px; max-width: 92px;
+  }
+  .req-tile .rt-mark .ada-svg {
+    width: 52px; height: 52px;
+    color: var(--cobalt);
+  }
+  .req-tile .rt-mark .rt-label {
+    font-family: var(--sans); font-weight: 700;
+    font-size: 18px; line-height: 1.2;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+  }
+  .req-tile p {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 15px; line-height: 1.55;
+    color: var(--slate);
+  }
+
+  /* Where-to-apply [+] disclosure on the navy panel */
+  .compliance details.disclose {
+    margin: 32px 0 0;
+    max-width: none;
+    border-top: 1px solid rgba(253, 253, 253, 0.22);
+    border-bottom: 1px solid rgba(253, 253, 253, 0.22);
+    padding: 22px 0;
+  }
+  .compliance details.disclose > summary { color: var(--white); }
+  .compliance details.disclose > summary .plus {
+    border-color: var(--white);
+    color: var(--white);
+  }
+  .compliance details.disclose > .body {
+    margin-top: 22px;
+    color: rgba(253, 253, 253, 0.82);
+    max-width: 920px;
+  }
+  .compliance details.disclose > .body p { margin: 0 0 14px; }
+  .compliance details.disclose > .body p:last-child { margin-bottom: 0; }
+  .compliance details.disclose > .body strong { color: var(--white); font-weight: 700; }
+  .compliance details.disclose > .body em {
+    font-style: italic;
+    color: rgba(253, 253, 253, 0.7);
+  }
+
+  /* DISCLOSURE */
+  details.disclose {
+    margin-top: 32px;
+    border-top: 1px solid var(--hair);
+    border-bottom: 1px solid var(--hair);
+  }
+  details.disclose summary {
+    list-style: none; cursor: pointer;
+    padding: 18px 0;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--evergreen);
+    display: flex; align-items: center; gap: 12px;
+  }
+  details.disclose summary::-webkit-details-marker { display: none; }
+  details.disclose .plus::before { content: "[+]"; }
+  details[open].disclose .plus::before { content: "[–]"; }
+  details.disclose .disclose-body {
+    padding: 0 0 28px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 16px; line-height: 1.55; color: var(--ink);
+    max-width: 760px;
+  }
+  details.disclose .disclose-body p { margin: 0 0 12px; }
+
+  /* COLOPHON */
+  .colophon {
+    margin-top: 120px;
+    padding: 36px 0 56px;
+    border-top: 1px solid var(--hair);
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .colophon .center { text-align: center; }
+  .colophon .right  { text-align: right; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <div class="head">
+    <div class="brand">NorCal SBDC · Brand House</div>
+    <div>Chapter 03</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero-mark">
+    <div>
+      <span class="eyebrow">03 · Identity System</span>
+      <h1>Logos.</h1>
+    </div>
+    <div class="subtitle">
+      <span class="accent-bar"></span>
+      <p>Pick the right logo for the background. Make sure compliance is covered.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="wrap">
+
+  <!-- §01 NETWORK LOGO BOARD -->
+  <section class="section">
+    <div class="section-split">
+      <div class="split-head">
+        <h2>Our logo.</h2>
+        <p class="lede">The network logo is the primary mark. Use full color on light backgrounds and the reverse version on dark backgrounds.</p>
+        <a class="download-link" href="https://photos.app.goo.gl/vdaqbQjZB5Xm6KBD6" target="_blank" rel="noopener noreferrer"><span class="dl-arrow">↓</span> Download logos</a>
+      </div>
+      <div class="split-body">
+
+        <div class="logo-board">
+          <article class="logo-card">
+            <p class="lbl">Full color · light background</p>
+            <div class="stage">
+              <img src="https://www.norcalsbdc.org/wp-content/uploads/2024/08/NCN_ColorBand_Logo.png" alt="NorCal SBDC full color network logo">
+            </div>
+            <div class="info">
+              <h3>Full color network logo</h3>
+              <p>Use on white, cream, and other light backgrounds.</p>
+            </div>
+          </article>
+          <article class="logo-card dark">
+            <p class="lbl">Reverse · dark background</p>
+            <div class="stage">
+              <img src="https://www.norcalsbdc.org/wp-content/uploads/2021/02/SBDC-Norcal-Network-Logo-White-with-Band.png" alt="NorCal SBDC reverse network logo">
+            </div>
+            <div class="info">
+              <h3>Reverse network logo</h3>
+              <p>Use on navy, dark color fields, and photography.</p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- §01b USAGE RULES — clear space + placement -->
+  <section class="section">
+    <div class="section-split">
+      <div class="split-head">
+        <h2>Use it right.</h2>
+        <p class="lede">Two rules govern every placement: how much room to give the mark, and where to put it on the page.</p>
+      </div>
+      <div class="split-body">
+        <div class="usage-rules">
+          <article class="rule-cell">
+            <span class="lbl">Clear space</span>
+            <div class="clearspace-demo">
+              <div class="clearspace-frame">
+                <img src="https://www.norcalsbdc.org/wp-content/uploads/2024/08/NCN_ColorBand_Logo.png" alt="NorCal SBDC logo with clear-space margin">
+              </div>
+            </div>
+            <p class="rule-body">Maintain space equal to the height of the &ldquo;A&rdquo; in <strong>America&rsquo;s</strong> on all sides. The clear zone scales with the logo &mdash; bigger logo, bigger space.</p>
+          </article>
+
+          <article class="rule-cell">
+            <span class="lbl">Placement</span>
+            <div class="placement-demo">
+              <div class="page-frame">
+                <span class="logo-mark" aria-hidden="true"></span>
+                <span class="frame-label" aria-hidden="true"></span>
+              </div>
+            </div>
+            <p class="rule-body">Set the logo in the <strong>upper-left</strong> or <strong>bottom-left</strong> corner of the page, equal distance from both edges. Don&rsquo;t center it.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- §02 PARTNER GRID -->
+  <section class="section">
+    <div class="section-split">
+      <div class="split-head">
+        <h2>Required partner marks.</h2>
+        <p class="lede">Display partner logos from official source files. The required funding language names SBA, the California Office of the Small Business Advocate, and Cal Poly Humboldt sponsored programs.</p>
+        <a class="download-link" href="https://photos.app.goo.gl/Sa1scC6UYQRPF7po8" target="_blank" rel="noopener noreferrer"><span class="dl-arrow">↓</span> Download logos</a>
+      </div>
+      <div class="split-body">
+
+        <div class="partner-grid">
+          <article class="partner-card">
+            <p class="lbl">SBA</p>
+            <div class="partner-logo">
+              <img src="https://www.norcalsbdc.org/wp-content/themes/norcal-sbdc/assets/img/logos/powered-by-sba.png" alt="Powered by SBA">
+            </div>
+            <div>
+              <h3>U.S. Small Business Administration</h3>
+              <p>Official powered-by file in funding and partner contexts.</p>
+            </div>
+          </article>
+          <article class="partner-card">
+            <p class="lbl">CAOSBA</p>
+            <div class="partner-logo">
+              <img src="https://www.norcalsbdc.org/wp-content/themes/norcal-sbdc/assets/img/logos/ca-osba.png" alt="California Office of the Small Business Advocate">
+            </div>
+            <div>
+              <h3>CA Office of the Small Business Advocate</h3>
+              <p>Official CAOSBA mark in state-funded contexts.</p>
+            </div>
+          </article>
+          <article class="partner-card">
+            <p class="lbl">Cal Poly Humboldt</p>
+            <div class="partner-logo">
+              <img src="https://www.humboldt.edu/sites/default/files/brand/2025-04/logo-for-signature.png" alt="Cal Poly Humboldt">
+            </div>
+            <div>
+              <h3>Cal Poly Humboldt</h3>
+              <p>Referenced in the required disclaimer as Cal Poly Humboldt sponsored programs.</p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- §04 REGIONAL PROGRAM LOGOS -->
+  <section class="section">
+    <div class="section-split">
+      <div class="split-head">
+        <h2>Regional program logos.</h2>
+        <p class="lede">Eight programs operate under the network. Each program has its own official logo file. Use the official file in program-specific contexts only — the network mark still leads when both appear.</p>
+        <a class="download-link" href="https://photos.app.goo.gl/vdaqbQjZB5Xm6KBD6" target="_blank" rel="noopener noreferrer"><span class="dl-arrow">↓</span> Download logos</a>
+      </div>
+      <div class="split-body">
+
+        <p class="co-brand-note"><strong>Co-branding placement.</strong> When the program logo appears alongside the NorCal SBDC logo, set the program logo immediately to the right of the NorCal SBDC mark. Use the official lockup file rather than rebuilding the pair by hand.</p>
+
+        <div class="program-rows">
+          <article class="program-row">
+            <div class="program-meta">
+              <h3>Tech Futures Group</h3>
+              <p>Innovation, technology commercialization, and growth-stage advising.</p>
+            </div>
+            <div class="program-tile-pair">
+              <div class="program-tile light">
+                <span class="lbl">Full color &middot; light</span>
+                <div class="program-placeholder"><span class="ph-tag">Placeholder</span><span class="mono-mark">TF</span></div>
+              </div>
+              <div class="program-tile dark">
+                <span class="lbl">Reverse &middot; dark</span>
+                <div class="program-placeholder"><span class="ph-tag">Placeholder</span><span class="mono-mark">TF</span></div>
+              </div>
+            </div>
+          </article>
+          <article class="program-row">
+            <div class="program-meta">
+              <h3>ProBiz</h3>
+              <p>Procurement and government contracting advising.</p>
+            </div>
+            <div class="program-tile-pair">
+              <div class="program-tile light">
+                <span class="lbl">Full color &middot; light</span>
+                <div class="program-placeholder"><span class="ph-tag">Placeholder</span><span class="mono-mark">PB</span></div>
+              </div>
+              <div class="program-tile dark">
+                <span class="lbl">Reverse &middot; dark</span>
+                <div class="program-placeholder"><span class="ph-tag">Placeholder</span><span class="mono-mark">PB</span></div>
+              </div>
+            </div>
+          </article>
+          <article class="program-row">
+            <div class="program-meta">
+              <h3>SBDC EATS</h3>
+              <p>Food, beverage, and value-added agriculture clients.</p>
+            </div>
+            <div class="program-tile-pair">
+              <div class="program-tile light">
+                <span class="lbl">Full color &middot; light</span>
+                <div class="program-placeholder"><span class="ph-tag">Placeholder</span><span class="mono-mark">EA</span></div>
+              </div>
+              <div class="program-tile dark">
+                <span class="lbl">Reverse &middot; dark</span>
+                <div class="program-placeholder"><span class="ph-tag">Placeholder</span><span class="mono-mark">EA</span></div>
+              </div>
+            </div>
+          </article>
+          <article class="program-row">
+            <div class="program-meta">
+              <h3>R4I</h3>
+              <p>Rural recovery, resilience, and reinvestment initiative.</p>
+            </div>
+            <div class="program-tile-pair">
+              <div class="program-tile light">
+                <span class="lbl">Full color &middot; light</span>
+                <div class="program-placeholder"><span class="ph-tag">Placeholder</span><span class="mono-mark">R4I</span></div>
+              </div>
+              <div class="program-tile dark">
+                <span class="lbl">Reverse &middot; dark</span>
+                <div class="program-placeholder"><span class="ph-tag">Placeholder</span><span class="mono-mark">R4I</span></div>
+              </div>
+            </div>
+          </article>
+          <article class="program-row">
+            <div class="program-meta">
+              <h3>NorCal APEX Accelerator</h3>
+              <p>Federal, state, and local government contract assistance.</p>
+            </div>
+            <div class="program-tile-pair">
+              <div class="program-tile light">
+                <span class="lbl">Full color &middot; light</span>
+                <div class="program-placeholder"><span class="ph-tag">Placeholder</span><span class="mono-mark">AX</span></div>
+              </div>
+              <div class="program-tile dark">
+                <span class="lbl">Reverse &middot; dark</span>
+                <div class="program-placeholder"><span class="ph-tag">Placeholder</span><span class="mono-mark">AX</span></div>
+              </div>
+            </div>
+          </article>
+          <article class="program-row">
+            <div class="program-meta">
+              <h3>Startup Humboldt</h3>
+              <p>Founder support and entrepreneurship programming on the North Coast.</p>
+            </div>
+            <div class="program-tile-pair">
+              <div class="program-tile light">
+                <span class="lbl">Full color &middot; light</span>
+                <div class="program-placeholder"><span class="ph-tag">Placeholder</span><span class="mono-mark">SH</span></div>
+              </div>
+              <div class="program-tile dark">
+                <span class="lbl">Reverse &middot; dark</span>
+                <div class="program-placeholder"><span class="ph-tag">Placeholder</span><span class="mono-mark">SH</span></div>
+              </div>
+            </div>
+          </article>
+          <article class="program-row">
+            <div class="program-meta">
+              <h3>NorCal VBOC</h3>
+              <p>Veterans Business Outreach Center serving veteran-owned businesses.</p>
+            </div>
+            <div class="program-tile-pair">
+              <div class="program-tile light">
+                <span class="lbl">Full color &middot; light</span>
+                <div class="program-placeholder"><span class="ph-tag">Placeholder</span><span class="mono-mark">VB</span></div>
+              </div>
+              <div class="program-tile dark">
+                <span class="lbl">Reverse &middot; dark</span>
+                <div class="program-placeholder"><span class="ph-tag">Placeholder</span><span class="mono-mark">VB</span></div>
+              </div>
+            </div>
+          </article>
+          <article class="program-row">
+            <div class="program-meta">
+              <h3>To be confirmed</h3>
+              <p>Eighth program slot reserved. Replace with the official mark and program description when confirmed.</p>
+            </div>
+            <div class="program-tile-pair">
+              <div class="program-tile light">
+                <span class="lbl">Full color &middot; light</span>
+                <div class="program-placeholder"><span class="ph-tag">Placeholder</span><span class="mono-mark">&mdash;</span></div>
+              </div>
+              <div class="program-tile dark">
+                <span class="lbl">Reverse &middot; dark</span>
+                <div class="program-placeholder"><span class="ph-tag">Placeholder</span><span class="mono-mark">&mdash;</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- §05 CENTERS — sample lockups + folder CTA -->
+  <section class="section">
+    <div class="section-split">
+      <div class="split-head">
+        <h2>Sixteen centers.</h2>
+        <p class="lede">Each center has its own lockup &mdash; the NorCal mark paired with &ldquo;Small Business Development Center&rdquo; and the center name. Two orientations: horizontal and stacked. Pull the official package; don&rsquo;t rebuild the name by hand.</p>
+        <a class="download-link" href="#"><span class="dl-arrow">↓</span> Download logos</a>
+      </div>
+      <div class="split-body">
+        <div class="lockup-rows">
+
+          <article class="lockup-row">
+            <div class="lockup-meta">
+              <h3>Horizontal lockup.</h3>
+              <p>Use for headers, email signatures, letterheads &mdash; anywhere width is the constraint. East Bay shown.</p>
+            </div>
+            <div class="lockup-pair">
+              <div class="lockup-tile light">
+                <span class="lbl">Full color &middot; light</span>
+                <div class="lockup-stage">
+                  <img src="./center-logo/NCN-east-bay.png" alt="East Bay SBDC horizontal lockup">
+                </div>
+              </div>
+              <div class="lockup-tile dark">
+                <span class="lbl">Reverse &middot; dark</span>
+                <div class="lockup-stage">
+                  <img src="./center-logo/NCN-east-bay_white.png" alt="East Bay SBDC horizontal lockup, reverse">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="lockup-row">
+            <div class="lockup-meta">
+              <h3>Stacked lockup.</h3>
+              <p>Use in narrow columns, profile cards, social avatars, mobile placements. East Bay shown.</p>
+            </div>
+            <div class="lockup-pair">
+              <div class="lockup-tile light">
+                <span class="lbl">Full color &middot; light</span>
+                <div class="lockup-stage stacked">
+                  <img src="./center-logo/NCN-stacked-logo_east-bay-01.png" alt="East Bay SBDC stacked lockup">
+                </div>
+              </div>
+              <div class="lockup-tile dark">
+                <span class="lbl">Reverse &middot; dark</span>
+                <div class="lockup-stage stacked">
+                  <img src="./center-logo/NCN-stacked-logo_east-bay-white.png" alt="East Bay SBDC stacked lockup, reverse">
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="centers-cta">
+          <div class="centers-content">
+            <div class="centers-eyebrow">Center logos &middot; 16 centers</div>
+            <h2>Sixteen centers.<br>One folder.</h2>
+            <p>Each center ships horizontal and stacked lockups in light and reverse. Pull the full package &mdash; don&rsquo;t rebuild the name by hand.</p>
+          </div>
+          <a class="centers-cta-zone" href="https://photos.app.goo.gl/vFMrpCB6kuR8BgWt5" target="_blank" rel="noopener noreferrer">
+            <span class="cta-label">Open the folder</span>
+            <span class="cta-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- §06 COMPLIANCE — Navy bleed -->
+<section class="compliance">
+  <div class="compliance-inner">
+    <span class="eyebrow">Compliance</span>
+    <h2>Acknowledge the funders.</h2>
+    <p class="lede">Two requirements cover almost every piece we send out. The rule below tells you when they apply. Everything else is an edge case.</p>
+
+    <!-- The rule -->
+    <div class="rule-statement">
+      <span class="rs-num">The rule</span>
+      <p class="rs-text">If a piece goes to a client or partner, include the <span class="rs-key">funder acknowledgment</span>. If it&rsquo;s a newsletter, workshop promo, or event, add the <span class="rs-key">ADA accommodation</span>.</p>
+      <p class="rs-foot">Internal-only memos are exempt.</p>
+    </div>
+
+    <!-- The two requirements, side by side -->
+    <div class="req-pair">
+      <article class="req-tile">
+        <span class="rt-rail">Funder acknowledgment</span>
+        <div class="rt-mark">
+          <span class="rt-marks">
+            <img src="https://www.norcalsbdc.org/wp-content/themes/norcal-sbdc/assets/img/logos/powered-by-sba.png" alt="Powered by SBA">
+            <img src="https://www.norcalsbdc.org/wp-content/themes/norcal-sbdc/assets/img/logos/ca-osba.png" alt="California Office of the Small Business Advocate">
+          </span>
+          <span class="rt-label">Logos + disclaimer</span>
+        </div>
+        <p>The SBDC program focuses on advising small business clients located in the NorCal SBDC network coverage area. Funded in part through a grant with the Governor&rsquo;s Office of Business and Economic Development. Funded in part through a cooperative agreement with the U.S. Small Business Administration. All opinions, conclusions, or recommendations expressed are those of the author(s) and do not necessarily reflect the views of the SBA, CAOSBA or Cal Poly Humboldt Sponsored Programs Foundation.</p>
+      </article>
+
+      <article class="req-tile">
+        <span class="rt-rail">ADA accommodation</span>
+        <div class="rt-mark">
+          <svg class="ada-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.61-.45-.01 0-.01-.01-.02-.01H13c-.35-.2-.75-.3-1.19-.26C10.76 7.11 10 8.04 10 9.09V15c0 1.1.9 2 2 2h5v5h2v-5.5c0-1.1-.9-2-2-2h-3v-3.45c1.29 1.07 3.25 1.94 5 1.95zm-6.17 5c-.41 1.16-1.52 2-2.83 2-1.66 0-3-1.34-3-3 0-1.31.84-2.41 2-2.83V12.1c-2.28.46-4 2.48-4 4.9 0 2.76 2.24 5 5 5 2.42 0 4.44-1.72 4.9-4h-2.07z"/></svg>
+          <span class="rt-label">Icon + standard text</span>
+        </div>
+        <p>Reasonable accommodations for persons with disabilities will be made if requested at least 72 hours in advance of this event. Send an email with the subject line ACCOMMODATION REQUEST to [center / program contact email and phone].</p>
+      </article>
+    </div>
+
+    <!-- Where to apply — [+] disclosure with full context detail -->
+    <details class="disclose">
+      <summary><span class="plus"></span> WHERE TO APPLY</summary>
+      <div class="body">
+        <p><strong>Events &amp; workshops.</strong> Add the ADA accommodation to every flyer, registration page, and event-related send. Pair with the SBDC center name and the SBA logo + disclaimer. Use the standard 72-hour-notice ADA copy &mdash; replace the bracketed contact placeholder with the host center&rsquo;s name, email, and phone.</p>
+
+        <p><strong>Web &amp; email newsletters.</strong> Carry the funder logos (SBA + CAOSBA) and the combined funder disclaimer in the footer of every newsletter and major web page. If a newsletter promotes a workshop or event, add the ADA accommodation directly under the event details.</p>
+
+        <p><strong>Regional slide decks.</strong> The closing slide carries the full combined funder acknowledgment &mdash; paste as-is, do not retypeset. On regionally-funded decks, add the Cal Poly Humboldt logo and disclaimer alongside the funder block on the closing slide.</p>
+
+        <p><strong>Internal memos &mdash; exempt.</strong> Compliance kicks in only when a piece reaches a client or partner. Internal-only memos and team docs do not require either acknowledgment.</p>
+
+        <p><strong>SBA logo placement.</strong> The SBA mark cannot be placed adjacent to a sponsor or partner logo on the same piece. Keep the SBA logo visually separate &mdash; place it in its own zone, not in a row of partner marks.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<div class="wrap">
+
+  <!-- §07 MISUSE -->
+  <section class="section">
+    <div class="section-split">
+      <div class="split-head">
+        <h2>Four things to <span class="never-do">never do</span>.</h2>
+        <p class="lede">These are the compliance risks people can see immediately. Use the official files instead of fixing a logo by hand.</p>
+      </div>
+      <div class="split-body">
+
+        <div class="misuse-grid">
+          <article class="misuse">
+            <img class="distort" src="https://www.norcalsbdc.org/wp-content/uploads/2024/08/NCN_ColorBand_Logo.png" alt="">
+          </article>
+          <article class="misuse hot">
+            <img src="https://www.norcalsbdc.org/wp-content/uploads/2021/02/SBDC-Norcal-Network-Logo-White-with-Band.png" alt="">
+          </article>
+          <article class="misuse">
+            <span class="dot" aria-hidden="true"></span>
+            <img src="https://www.norcalsbdc.org/wp-content/uploads/2024/08/NCN_ColorBand_Logo.png" alt="">
+          </article>
+          <article class="misuse">
+            <img class="rotate" src="https://www.norcalsbdc.org/wp-content/uploads/2024/08/NCN_ColorBand_Logo.png" alt="">
+          </article>
+        </div>
+
+        <div class="misuse-rules">
+          <div class="misuse-rule">
+            <h3>Do not stretch or condense.</h3>
+            <p>Keep the logo proportions exactly as provided.</p>
+          </div>
+          <div class="misuse-rule">
+            <h3>Do not place on unapproved colors.</h3>
+            <p>Use approved backgrounds with enough contrast.</p>
+          </div>
+          <div class="misuse-rule">
+            <h3>Do not add graphics.</h3>
+            <p>No badges, circles, outlines, decorations, or effects.</p>
+          </div>
+          <div class="misuse-rule">
+            <h3>Do not rotate.</h3>
+            <p>Keep the orientation fixed and horizontal.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="wrap">
+
+  <!-- WHY · DISCLOSURE -->
+  <section class="section">
+    <details class="disclose">
+      <summary><span class="plus"></span> &nbsp; WHY · LOGO RULES</summary>
+      <div class="disclose-body">
+        <p>The network logo earns trust by repeating exactly the same way across every channel. A retyped name is not the logo. A screenshot is not the logo. The official file is the logo.</p>
+        <p>Reverse marks exist so the logo stays legible on Navy, photography, and dark color fields. If contrast is uncertain, switch versions before adjusting the file.</p>
+        <p>Funder acknowledgments are a compliance requirement, not a style choice. Use the chart. When a piece could be read as program-funded, include the full acknowledgment.</p>
+        <p>Center, program, and partner marks are pulled from official sources. We do not redraw, retypeset, or color-shift partner logos under any circumstance.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- COLOPHON -->
+  <div class="colophon">
+    <div class="left">NorCal SBDC · Brand House · Chapter 03</div>
+    <div class="center">Logos · Identity System</div>
+    <div class="right">v01 · April 2026</div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NorCal SBDC · Brand House · Glossary</title>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin />
+<link rel="stylesheet" href="https://use.typekit.net/pkl5rjs.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0F1C2D;
+    --slate: #2C3240;
+    --cobalt: #1B5FAF;
+    --steel: #5582B9;
+    --fog: #84A2C6;
+    --berry: #A53C43;
+    --evergreen: #00675C;
+    --silver: #D8D8D8;
+    --white: #FDFDFD;
+    --page: #F2F1ED;
+    --ink: #0F1C2D;
+    --mute: #4A5260;
+    --hair: #D4D2CC;
+
+    --sans:  "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+    --serif: "proxima-sera", Georgia, "Times New Roman", serif;
+    --mono:  "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    --col: 1320px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap { max-width: var(--col); margin: 0 auto; padding: 0 56px; }
+
+  /* HEADER */
+  .head {
+    padding: 28px 0 0;
+    display: flex; align-items: baseline; justify-content: space-between;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .head .brand { color: var(--cobalt); font-weight: 500; }
+
+  /* HERO — giant "Glossary." sans, dek tucked under at restraint. */
+  .hero-mark {
+    padding: 88px 0 200px;
+  }
+  .hero-mark h1 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(160px, 21vw, 320px);
+    line-height: 0.86;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+  }
+
+  /* INTRO — single editorial sentence, room to breathe. */
+  .intro {
+    padding: 0 0 200px;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .intro p {
+    grid-column: 4 / span 8;
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(28px, 2.8vw, 40px);
+    line-height: 1.18;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+  }
+  .intro p .intro-em { color: var(--mute); }
+
+  /* DIRECTORY — 3col sticky rail + 9col content, generous gutter. */
+  .directory {
+    padding: 0 0 160px;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+  }
+  .rail {
+    grid-column: 1 / span 3;
+    position: sticky;
+    top: 96px;
+    align-self: start;
+  }
+  .rail ul {
+    list-style: none; margin: 0; padding: 0;
+  }
+  .rail li { padding: 0; }
+  .rail a {
+    display: block;
+    padding: 8px 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 15px; letter-spacing: -0.005em;
+    color: var(--mute);
+    text-decoration: none;
+    transition: color 0.18s ease, opacity 0.18s ease;
+    opacity: 0.55;
+  }
+  .rail a:hover { color: var(--ink); opacity: 1; }
+  .rail a.is-active { color: var(--ink); opacity: 1; }
+
+  /* SECTIONS — display name only, hairline rule beneath. */
+  .content { grid-column: 5 / span 8; }
+  .gloss-section { padding: 0 0 144px; scroll-margin-top: 96px; }
+  .gloss-section h2 {
+    margin: 0 0 56px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--ink);
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(56px, 6.2vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -0.032em; color: var(--ink);
+  }
+
+  /* TERM ENTRY — Pentagram-style: short term column, single body column,
+     no heavy borders. Just a hairline above each entry, plenty of air. */
+  .term {
+    padding: 32px 0 36px;
+    border-top: 1px solid var(--hair);
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 40px;
+    align-items: baseline;
+  }
+  .term:first-of-type { border-top: none; padding-top: 8px; }
+  .term .t-key {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 24px; line-height: 1.05;
+    letter-spacing: -0.018em; color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    word-break: break-word;
+  }
+  .term .t-key.is-long {
+    font-size: 20px;
+    letter-spacing: -0.012em;
+    line-height: 1.15;
+  }
+  .term .t-body { padding-top: 1px; }
+  .term .t-expand {
+    margin: 0 0 12px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 22px; line-height: 1.25; color: var(--ink);
+    letter-spacing: -0.012em;
+    max-width: 640px;
+  }
+  .term .t-def {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 16px; line-height: 1.55; color: var(--mute);
+    letter-spacing: -0.002em;
+    max-width: 640px;
+  }
+  .term .t-def strong { color: var(--ink); font-weight: 600; }
+
+  /* QUICK LINKS — clean two-row table, no badges, no chrome. */
+  .quick-links {
+    padding: 96px 0 80px;
+    border-top: 1px solid var(--ink);
+  }
+  .quick-links h2 {
+    margin: 0 0 80px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(56px, 6.2vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -0.032em;
+    color: var(--ink);
+  }
+
+  .ql-grid {
+    display: grid; grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 40px 24px;
+  }
+  .ql-col { grid-column: span 4; }
+  .ql-col h3 {
+    margin: 0 0 24px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 15px; color: var(--mute);
+    letter-spacing: -0.003em;
+  }
+  .ql-col ul { list-style: none; margin: 0; padding: 0; }
+  .ql-col li { padding: 6px 0; }
+  .ql-col a {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 18px; color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.008em;
+    transition: color 0.15s ease;
+  }
+  .ql-col a:hover { color: var(--cobalt); }
+  .ql-col.pdf-col li {
+    padding: 6px 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 18px; color: var(--mute);
+    letter-spacing: -0.008em;
+  }
+
+  /* COLOPHON */
+  .colophon {
+    margin-top: 56px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    padding: 24px 0 36px;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+    border-top: 1px solid var(--hair);
+  }
+  .colophon .c { text-align: center; }
+  .colophon .r { text-align: right; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1100px) {
+    .term { grid-template-columns: 140px 1fr; gap: 28px; }
+    .term .t-key { font-size: 22px; }
+    .term .t-key.is-long { font-size: 18px; }
+  }
+  @media (max-width: 960px) {
+    .wrap { padding: 0 28px; }
+    .hero-mark { padding: 48px 0 96px; }
+    .intro { padding: 0 0 96px; }
+    .intro p { grid-column: 1 / -1; }
+    .directory { grid-template-columns: 1fr; gap: 24px; padding: 0 0 64px; }
+    .rail { position: static; grid-column: 1; margin-bottom: 48px; }
+    .content { grid-column: 1; }
+    .term { grid-template-columns: 1fr; gap: 10px; padding: 24px 0 28px; }
+    .term .t-key { font-size: 22px; }
+    .ql-col { grid-column: 1 / -1; margin-bottom: 32px; }
+    .colophon { grid-template-columns: 1fr; gap: 8px; }
+    .colophon .c, .colophon .r { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+
+    <!-- HEADER TAB -->
+    <div class="head">
+      <span class="brand">NorCal SBDC · Brand House</span>
+      <span>Chapter 13 · Tools · Glossary · 13/13</span>
+    </div>
+
+    <!-- HERO -->
+    <header class="hero-mark">
+      <h1>Glossary.</h1>
+    </header>
+
+    <!-- INTRO — single editorial sentence -->
+    <section class="intro">
+      <p>A shared vocabulary for the NorCal SBDC network. <span class="intro-em">Terms, acronyms, and definitions used across centers, advisors, and partners — so we speak with one voice.</span></p>
+    </section>
+
+    <!-- DIRECTORY — sticky rail + sections -->
+    <section class="directory">
+
+      <!-- STICKY RAIL — quiet plain-text index -->
+      <aside class="rail" aria-label="Glossary sections">
+        <ul id="rail-list">
+          <li><a href="#stakeholder" class="rail-link">Stakeholders</a></li>
+          <li><a href="#grants" class="rail-link">Grants</a></li>
+          <li><a href="#program-terms" class="rail-link">Program terms</a></li>
+          <li><a href="#regional" class="rail-link">Regional</a></li>
+          <li><a href="#finance" class="rail-link">Finance</a></li>
+          <li><a href="#loans" class="rail-link">Loans</a></li>
+          <li><a href="#tools" class="rail-link">Tools</a></li>
+        </ul>
+      </aside>
+
+      <!-- CONTENT -->
+      <div class="content">
+
+        <!-- 01 STAKEHOLDER ACRONYMS -->
+        <article class="gloss-section" id="stakeholder">
+          <h2>Stakeholder acronyms.</h2>
+
+          <div class="term">
+            <div class="t-key">SBA</div>
+            <div class="t-body">
+              <p class="t-expand">U.S. Small Business Administration</p>
+              <p class="t-def">Federal funding agency of the SBDC.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">SBDC</div>
+            <div class="t-body">
+              <p class="t-expand">Small Business Development Center</p>
+              <p class="t-def">A service center providing no-cost business advising.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">OSBDC</div>
+            <div class="t-body">
+              <p class="t-expand">Office of Small Business Development Centers</p>
+              <p class="t-def">Federal oversight of SBDCs within the SBA.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">ASBDC</div>
+            <div class="t-body">
+              <p class="t-expand">America’s Small Business Development Center</p>
+              <p class="t-def">A membership organization of <strong>62 SBDC networks</strong> nationwide that provides collective professional development and a national voice in Washington, D.C.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key is-long">Cal Poly Humboldt–SPF</div>
+            <div class="t-body">
+              <p class="t-expand">Humboldt State University Sponsored Programs Foundation</p>
+              <p class="t-def">Grant and research foundation that serves as fiscal host to the NorCal SBDC Network.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key is-long">GO-Biz</div>
+            <div class="t-body">
+              <p class="t-expand">Governor’s Office of Business and Economic Development</p>
+              <p class="t-def">State agency that funds the SBDC Program through CIP and TAEP grants.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 GRANT PROGRAMS -->
+        <article class="gloss-section" id="grants">
+          <h2>Grant programs.</h2>
+
+          <div class="term">
+            <div class="t-key">CIP</div>
+            <div class="t-body">
+              <p class="t-expand">Capital Infusion Program</p>
+              <p class="t-def">A GO-Biz grant that funds direct one-on-one consulting for clients seeking capital or laying groundwork for future capital plans.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">TAP</div>
+            <div class="t-body">
+              <p class="t-expand">Technical Assistance Program</p>
+              <p class="t-def">A GO-Biz grant that extends the federal investment in California by expanding technical assistance funds — covers one-on-one advising, research, and a small percentage for marketing.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03 SBDC PROGRAM TERMS -->
+        <article class="gloss-section" id="program-terms">
+          <h2>SBDC program terms.</h2>
+
+          <div class="term">
+            <div class="t-key">EI</div>
+            <div class="t-body">
+              <p class="t-expand">Economic Impact</p>
+              <p class="t-def">The measurable effect of SBDC services on client businesses and the broader economy.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">KPI</div>
+            <div class="t-body">
+              <p class="t-expand">Key Performance Indicator</p>
+              <p class="t-def">Another way to reference economic impacts within SBDC reporting.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key is-long">Attribution</div>
+            <div class="t-body">
+              <p class="t-expand">National accreditation standard</p>
+              <p class="t-def">A national SBDC accreditation standard required to claim economic impact. Consists of written proof that <strong>there was a change to the client business</strong> and that <strong>the SBDC played a role in the change</strong>.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key is-long">Third-Party Verification</div>
+            <div class="t-body">
+              <p class="t-expand">CIP reporting requirement</p>
+              <p class="t-def">A GO-Biz reporting requirement for CIP grant milestones of capital infusion or equity investment. Typically a copy of the first page of a loan or contract verifying the funder, business name, and dollar amount. <strong>Does not replace the need for Attribution.</strong></p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 REGIONAL PROGRAM ACRONYMS -->
+        <article class="gloss-section" id="regional">
+          <h2>Regional program acronyms.</h2>
+
+          <div class="term">
+            <div class="t-key">TFG</div>
+            <div class="t-body">
+              <p class="t-expand">Tech Futures Group</p>
+              <p class="t-def">Specialty program serving high-growth and tech-enabled businesses across the network.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">FC</div>
+            <div class="t-body">
+              <p class="t-expand">Finance Center</p>
+              <p class="t-def">Specialty program focused on capital readiness, lender relationships, and loan packaging.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">RP</div>
+            <div class="t-body">
+              <p class="t-expand">Restaurant Program</p>
+              <p class="t-def">Specialty program supporting independent food and beverage operators.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">CAHCC</div>
+            <div class="t-body">
+              <p class="t-expand">California Hispanic Chambers of Commerce</p>
+              <p class="t-def">Statewide partner organization extending the SBDC reach into Hispanic-owned business communities.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 05 FINANCE TERMS -->
+        <article class="gloss-section" id="finance">
+          <h2>Finance terms.</h2>
+
+          <div class="term">
+            <div class="t-key">FDIC</div>
+            <div class="t-body">
+              <p class="t-expand">Federal Deposit Insurance Corporation</p>
+              <p class="t-def">Independent federal agency that insures deposits at member banks.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">FDC</div>
+            <div class="t-body">
+              <p class="t-expand">Financial Disclosure Agreement</p>
+              <p class="t-def">Document outlining a client’s financial position, used in capital readiness work.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">FDI</div>
+            <div class="t-body">
+              <p class="t-expand">Foreign Direct Investment</p>
+              <p class="t-def">Investment made by a firm or individual in one country into business interests located in another.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">CC</div>
+            <div class="t-body">
+              <p class="t-expand">Cash Credit</p>
+              <p class="t-def">Short-term financing arrangement allowing a business to draw funds up to a set limit.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">IRA</div>
+            <div class="t-body">
+              <p class="t-expand">Individual Retirement Account</p>
+              <p class="t-def">Tax-advantaged personal retirement savings vehicle, sometimes referenced in business succession planning.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 06 LOAN TERMS -->
+        <article class="gloss-section" id="loans">
+          <h2>Loan terms.</h2>
+
+          <div class="term">
+            <div class="t-key">EIDL</div>
+            <div class="t-body">
+              <p class="t-expand">Economic Injury Disaster Loan</p>
+              <p class="t-def">Federal loan program that provides working capital to small businesses suffering economic injury after a declared disaster.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">PPP</div>
+            <div class="t-body">
+              <p class="t-expand">Paycheck Protection Program</p>
+              <p class="t-def">Pandemic-era forgivable loan program aimed at keeping employees on payroll.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">PUA</div>
+            <div class="t-body">
+              <p class="t-expand">Pandemic Unemployment Assistance</p>
+              <p class="t-def">Federal program that extended unemployment benefits to self-employed workers and others not covered by traditional UI.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">7(a)</div>
+            <div class="t-body">
+              <p class="t-expand">SBA’s most common loan program</p>
+              <p class="t-def">Includes financial help for small businesses with special requirements — covers <strong>working capital, debt refinancing, and equipment purchases</strong>. Best option when real estate is part of a business purchase.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">504</div>
+            <div class="t-body">
+              <p class="t-expand">SBA 504 loan program</p>
+              <p class="t-def">Long-term, fixed-rate financing of <strong>up to $5 million</strong> for major fixed assets that promote business growth and job creation.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key is-long">SBA Microloan</div>
+            <div class="t-body">
+              <p class="t-expand">Loans up to $50,000</p>
+              <p class="t-def">Program providing loans up to $50,000 to help small businesses and certain not-for-profit childcare centers start up and expand. <strong>Average microloan is about $13,000.</strong></p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 07 SBDC TOOLS & PROGRAMS -->
+        <article class="gloss-section" id="tools">
+          <h2>SBDC tools &amp; programs.</h2>
+
+          <div class="term">
+            <div class="t-key">IMS</div>
+            <div class="t-body">
+              <p class="t-expand">Information Management System</p>
+              <p class="t-def">Internal intranet for SBDC operations.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">CMS</div>
+            <div class="t-body">
+              <p class="t-expand">Content Management System</p>
+              <p class="t-def">The platform used to publish and maintain web content across the network’s sites.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key">CRM</div>
+            <div class="t-body">
+              <p class="t-expand">Client Relationship Management</p>
+              <p class="t-def">A database with client records to understand and manage the lifecycle of a business relationship.</p>
+            </div>
+          </div>
+          <div class="term">
+            <div class="t-key is-long">Neoserra</div>
+            <div class="t-body">
+              <p class="t-expand">Network CRM platform</p>
+              <p class="t-def">The NorCal SBDC network’s CRM platform for client records and session tracking.</p>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /.content -->
+    </section>
+
+    <!-- QUICK LINKS -->
+    <section class="quick-links">
+      <h2>Quick links.</h2>
+
+      <div class="ql-grid">
+
+        <div class="ql-col">
+          <h3>Web</h3>
+          <ul>
+            <li><a href="https://norcalsbdc.org/">norcalsbdc.org</a></li>
+            <li><a href="https://californiasbdc.org/">californiasbdc.org</a></li>
+            <li><a href="https://techfuturesgroup.org/">techfuturesgroup.org</a></li>
+            <li><a href="https://techfuturesgroup.org/brand">techfuturesgroup.org/brand</a></li>
+            <li><a href="https://learn.norcalsbdc.org/home">learn.norcalsbdc.org</a></li>
+          </ul>
+        </div>
+
+        <div class="ql-col">
+          <h3>Social</h3>
+          <ul>
+            <li><a href="https://facebook.com/CaliforniaSBDC/">facebook.com/CaliforniaSBDC</a></li>
+            <li><a href="https://x.com/californiasbdc">x.com/californiasbdc</a></li>
+            <li><a href="https://linkedin.com/in/norcalsbdc">linkedin.com/in/norcalsbdc</a></li>
+            <li><a href="https://youtube.com/c/asksbdc">youtube.com/c/asksbdc</a></li>
+            <li><a href="https://www.instagram.com/asksbdc/">instagram.com/asksbdc</a></li>
+          </ul>
+        </div>
+
+        <div class="ql-col pdf-col">
+          <h3>PDFs — forthcoming</h3>
+          <ul>
+            <li>Milestone API Collection Guide</li>
+            <li>Constant Contact Email Newsletter Guide</li>
+            <li>Network Map + Services Overview</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COLOPHON -->
+    <div class="colophon">
+      <span class="l">© 2026 NorCal SBDC</span>
+      <span class="c">All Rights Reserved</span>
+      <span class="r">norcalsbdc.org · californiasbdc.org</span>
+    </div>
+
+  </div>
+
+<script>
+  // Scrollspy: highlight the rail link whose section is most prominent in viewport.
+  (function () {
+    var sections = document.querySelectorAll('.gloss-section');
+    var links = document.querySelectorAll('.rail-link');
+    if (!sections.length || !links.length) return;
+
+    var byId = {};
+    links.forEach(function (a) {
+      var id = a.getAttribute('href').slice(1);
+      byId[id] = a;
+    });
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          links.forEach(function (l) { l.classList.remove('is-active'); });
+          var id = e.target.id;
+          if (byId[id]) byId[id].classList.add('is-active');
+        }
+      });
+    }, {
+      rootMargin: '-30% 0px -60% 0px',
+      threshold: 0
+    });
+
+    sections.forEach(function (s) { io.observe(s); });
+  })();
+</script>
+
+</body>
+</html>

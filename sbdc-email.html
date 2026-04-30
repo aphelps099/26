@@ -1,0 +1,1311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NorCal SBDC · Brand House · Email</title>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin />
+<link rel="stylesheet" href="https://use.typekit.net/pkl5rjs.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<!-- Serif: proxima-sera (Adobe Fonts via Typekit kit pkl5rjs) — used ONLY inside mock email designs -->
+<style>
+  :root {
+    --navy: #0F1C2D;
+    --slate: #2C3240;
+    --cobalt: #1B5FAF;
+    --pool: #8FC5D9;
+    --berry: #C23C3C;
+    --evergreen: #00675C;
+    --silver: #D8D8D8;
+    --white: #FDFDFD;
+    --page: #F2F1ED;
+    --ink: #0F1C2D;
+    --mute: #4A5260;
+    --hair: #D4D2CC;
+
+    --sans:  "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+    --serif: "proxima-sera", Georgia, "Times New Roman", serif;
+    --mono:  "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    --col: 1320px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap { max-width: var(--col); margin: 0 auto; padding: 0 56px; }
+
+  /* HEADER */
+  .head {
+    padding: 32px 0 0;
+    display: flex; align-items: baseline; justify-content: space-between;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .head .brand { color: var(--ink); font-weight: 500; }
+
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--cobalt);
+  }
+
+  /* HERO — side-by-side: eyebrow + h1 left, accent-bar + deck right.
+     Email is a short word; we don't need the calendar-style stack. */
+  .hero-mark {
+    padding: 140px 0 112px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 460px;
+    gap: 80px;
+    align-items: end;
+  }
+  .hero-mark .eyebrow {
+    display: block;
+    margin-bottom: 22px;
+  }
+  .hero-mark h1 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(140px, 17vw, 240px);
+    line-height: 0.88;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+  }
+  .hero-mark .hero-sub {
+    display: block;
+    padding-bottom: 14px;
+  }
+  .hero-mark .accent-bar {
+    display: block;
+    width: 100%; height: 4px;
+    background: var(--navy);
+    margin: 0 0 22px;
+  }
+  .hero-mark p {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 22px; line-height: 1.45; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 520px;
+  }
+
+  /* THE $500 RULE — disclose body, berry pull-line, checks list */
+  .five-hundred-wrap { margin-top: 64px; }
+  details.disclose.five-hundred > .disclose-summary {
+    color: var(--berry);
+  }
+  details.disclose.five-hundred > .disclose-summary .disclose-toggle {
+    color: var(--berry);
+  }
+  .five-hundred-pull {
+    font-family: var(--sans); font-weight: 500;
+    font-size: 22px; line-height: 1.45;
+    color: var(--berry);
+    letter-spacing: -0.005em;
+    max-width: 720px;
+    margin: 0 0 18px !important;
+  }
+  .five-hundred-pull em {
+    font-family: var(--serif); font-style: italic; font-weight: 300;
+    margin: 0 0.02em;
+  }
+  .five-hundred-checks {
+    list-style: none;
+    padding: 16px 0 0;
+    margin: 16px 0 0;
+    border-top: 1px solid var(--hair);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 32px;
+    max-width: 560px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--ink);
+  }
+  .five-hundred-checks li::before {
+    content: "✓";
+    margin-right: 10px;
+    color: var(--berry);
+  }
+
+  /* SECTION HEAD — XL editorial scale, matching the screenshot */
+  .section { padding: 120px 0 0; }
+  .section-head {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+    align-items: end; margin-bottom: 56px;
+  }
+  .section-head h2 {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(56px, 6.4vw, 92px);
+    line-height: 0.95;
+    letter-spacing: -0.03em; color: var(--ink);
+    max-width: 520px;
+  }
+  .section-head .lede {
+    margin: 0 0 8px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 19px; line-height: 1.5; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 460px;
+  }
+
+  /* DISCLOSURE PATTERN — [+]/[-] accordion, Evergreen mono eyebrow, hairline rules */
+  details.disclose {
+    border-top: 1px solid var(--hair);
+    border-bottom: 1px solid var(--hair);
+    padding: 22px 0;
+  }
+  details.disclose + details.disclose { border-top: none; margin-top: -1px; }
+  details.disclose .disclose-summary {
+    display: flex; align-items: center; gap: 24px;
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--evergreen);
+    cursor: pointer; user-select: none;
+    list-style: none;
+  }
+  details.disclose .disclose-summary::-webkit-details-marker { display: none; }
+  details.disclose .disclose-toggle {
+    display: inline-block; min-width: 28px;
+    color: var(--evergreen); font-weight: 500;
+  }
+  details.disclose[open] > .disclose-summary .disclose-toggle::before { content: "[ – ]"; }
+  details.disclose:not([open]) > .disclose-summary .disclose-toggle::before { content: "[ + ]"; }
+  details.disclose .disclose-body {
+    padding: 0 0 28px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 760px;
+  }
+  details.disclose[open] > .disclose-summary { margin-bottom: 22px; }
+  details.disclose .disclose-body p { margin: 0 0 14px; }
+  details.disclose .disclose-body p:last-child { margin-bottom: 0; }
+  details.disclose .disclose-body .ada-row {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding-top: 14px; margin-top: 14px;
+    border-top: 1px solid var(--hair);
+  }
+  details.disclose .disclose-body .ada-row .ada-svg {
+    flex: 0 0 22px; width: 22px; height: 22px;
+    color: var(--cobalt); margin-top: 2px;
+  }
+  details.disclose .disclose-body .ada-row p { margin: 0; }
+
+  /* Group wrap so newsletter disclaimer + howtos read as a paired stack */
+  .disclose-stack { margin-top: 64px; }
+
+  /* §01b SBA & ADA — half-width, reversed (ink on cream), 2px dashed border */
+  .disclaim-wrap {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .disclaim {
+    grid-column: 1 / span 7;
+    border: 2px dashed var(--navy);
+    background: transparent;
+    padding: 36px 40px;
+    display: grid;
+    grid-template-columns: 140px 1fr 60px;
+    gap: 32px;
+    align-items: start;
+  }
+  .disclaim-rail {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+    line-height: 1.5;
+  }
+  .disclaim-body p {
+    margin: 0 0 16px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 14px; line-height: 1.6; color: var(--ink);
+    max-width: 640px;
+  }
+  .disclaim-body p:last-child { margin-bottom: 0; }
+  .disclaim-body .ada-row {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding-top: 14px; margin-top: 6px;
+    border-top: 1px solid var(--hair);
+  }
+  .disclaim-body .ada-row .ada-svg {
+    flex: 0 0 22px; width: 22px; height: 22px;
+    color: var(--cobalt); margin-top: 2px;
+  }
+  .disclaim-body .ada-row p { margin: 0; }
+  .disclaim-copy {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+    text-align: right; cursor: pointer; user-select: none;
+    transition: color 120ms ease;
+  }
+  .disclaim-copy:hover { color: var(--cobalt); }
+
+  /* INBOX RESPECT NOTE — steel blue card, narrower, structured callout + rule list */
+  .inbox-wrap {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .inbox-note {
+    grid-column: 1 / span 8;
+    background: var(--cobalt);
+    color: var(--white);
+    padding: 36px 40px 32px;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+  .inbox-note .in-rail {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+  }
+  .inbox-note .in-rail strong { display: block; color: var(--white); font-weight: 500; margin-bottom: 4px; }
+  .inbox-note .in-body .pull {
+    margin: 0 0 14px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 22px; line-height: 1.25;
+    letter-spacing: -0.012em; color: var(--white);
+  }
+  .inbox-note .in-body .pull em { font-style: italic; font-weight: 600; }
+  .inbox-note .in-body p {
+    margin: 0 0 14px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 14px; line-height: 1.55; color: rgba(255,255,255,0.92);
+    letter-spacing: -0.003em;
+  }
+  .inbox-note .in-body p:last-child { margin-bottom: 0; }
+  .inbox-note .in-body strong { color: var(--white); font-weight: 700; }
+  .inbox-note .in-checks {
+    list-style: none; padding: 14px 0 0; margin: 14px 0 0;
+    border-top: 1px solid rgba(255,255,255,0.22);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: rgba(255,255,255,0.85);
+  }
+  .inbox-note .in-checks li { padding: 0; }
+  .inbox-note .in-checks li::before {
+    content: "\2713\00a0\00a0";
+    color: var(--white);
+  }
+
+  /* §01 WELCOME DRIP — accordion list, one row per email */
+  .drips { /* no top rule on first row */ }
+  .drip { border-bottom: 1px solid var(--hair); }
+  .drip > summary {
+    list-style: none; cursor: pointer;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 24px;
+    gap: 28px;
+    align-items: center;
+    padding: 24px 0;
+  }
+  .drip > summary::-webkit-details-marker { display: none; }
+  .drip-tag {
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(20px, 2.0vw, 26px); line-height: 1.2;
+    letter-spacing: -0.015em; color: var(--ink);
+  }
+  .drip.d-1 .drip-tag { color: var(--cobalt); }
+  .drip.d-2 .drip-tag { color: var(--evergreen); }
+  .drip.d-3 .drip-tag { color: var(--cobalt); }
+  .drip-chev {
+    justify-self: end; align-self: center;
+    color: var(--ink);
+    transition: transform 180ms ease;
+  }
+  .drip[open] .drip-chev { transform: rotate(180deg); }
+
+  /* Open body — meta col left (with watermark), email mock right */
+  .drip-body {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 64px;
+    padding: 12px 0 64px;
+    align-items: start;
+  }
+  .drip-meta {
+    position: relative;
+    padding-top: 40px;
+  }
+  .drip-bg {
+    position: absolute;
+    top: -30px; left: -10px;
+    z-index: 0;
+    pointer-events: none; user-select: none;
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(220px, 22vw, 360px);
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    color: rgba(15, 28, 45, 0.10);
+    -webkit-mask-image: linear-gradient(180deg, #000 30%, rgba(0,0,0,0.15) 90%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 30%, rgba(0,0,0,0.15) 90%, transparent 100%);
+  }
+  .drip-meta-block { position: relative; z-index: 1; }
+  .drip-day {
+    font-family: var(--sans); font-weight: 700;
+    font-size: 36px; line-height: 1.0;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .drip-pillar {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+  .drip.d-1 .drip-pillar { color: var(--cobalt); }
+  .drip.d-2 .drip-pillar { color: var(--evergreen); }
+  .drip.d-3 .drip-pillar { color: var(--cobalt); }
+  .drip-fact { margin-bottom: 22px; }
+  .drip-fact:last-child { margin-bottom: 0; }
+  .drip-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+    margin-bottom: 6px;
+  }
+  .drip-value {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 14px; line-height: 1.4; color: var(--ink);
+  }
+
+  /* Email mock — production-quality envelope, capped at newsletter mock width */
+  .email-mock {
+    position: relative;
+    background: var(--white);
+    padding: 36px 36px 28px;
+    max-width: 540px;
+    overflow: hidden;
+    box-shadow:
+      0 1px 0 rgba(15,28,45,0.04),
+      0 18px 40px -24px rgba(15,28,45,0.18);
+  }
+  /* Soft pillar-coded wash at the top, fading to white */
+  .email-mock::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 140px;
+    background: linear-gradient(180deg, rgba(2, 65, 144, 0.16) 0%, rgba(2, 65, 144, 0) 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .drip.d-2 .email-mock::before {
+    background: linear-gradient(180deg, rgba(0, 103, 92, 0.16) 0%, rgba(0, 103, 92, 0) 100%);
+  }
+  .drip.d-3 .email-mock::before {
+    background: linear-gradient(180deg, rgba(85, 130, 185, 0.20) 0%, rgba(85, 130, 185, 0) 100%);
+  }
+  .email-mock > * { position: relative; z-index: 1; }
+  .email-header {
+    border-bottom: 1px solid var(--hair);
+    padding-bottom: 14px;
+    margin-bottom: 24px;
+    display: flex; flex-direction: column; gap: 4px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .email-header strong { color: var(--ink); font-weight: 500; letter-spacing: 0.18em; }
+  .email-content h3 {
+    margin: 0 0 16px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 28px; line-height: 1.1; letter-spacing: -0.022em;
+    color: var(--ink);
+  }
+  .email-hero {
+    margin: 0 0 22px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 17px; line-height: 1.5; color: var(--ink);
+  }
+  .email-list {
+    margin: 0 0 28px; padding-left: 20px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 15px; line-height: 1.65; color: var(--ink);
+  }
+  .email-list li { margin-bottom: 4px; }
+  .email-cta {
+    display: inline-flex; align-items: center; gap: 14px;
+    margin-bottom: 22px;
+    padding: 12px 18px;
+    border: 1px solid var(--cobalt);
+  }
+  .drip.d-2 .email-cta { border-color: var(--evergreen); }
+  .drip.d-3 .email-cta { border-color: var(--cobalt); }
+  .email-cta-tag {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--cobalt);
+  }
+  .drip.d-2 .email-cta-tag { color: var(--evergreen); }
+  .drip.d-3 .email-cta-tag { color: var(--cobalt); }
+  .email-cta-text {
+    font-family: var(--sans); font-weight: 700;
+    font-size: 15px; color: var(--ink);
+  }
+  .email-signoff {
+    margin: 0; padding-top: 18px;
+    border-top: 1px solid var(--hair);
+    font-family: var(--sans); font-weight: 500;
+    font-size: 13px; color: var(--mute); letter-spacing: -0.003em;
+  }
+
+  /* §02 NEWSLETTERS — sticky-stack parallax. Each row is its own grid so its
+     sticky children scope to that row's height (true sticky-stack behaviour). */
+  .news-stage {
+    position: relative;
+    margin-top: 16px;
+  }
+  .news-row {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+    min-height: 90vh; /* gives the sticky children scroll runway within the row */
+    padding-bottom: 12vh;
+  }
+  .news-row:last-of-type { padding-bottom: 0; min-height: auto; }
+  .news-spacer { display: none; }
+
+  /* Meta panel — left side, sticky. Utilitarian: bold sans heading + bold sans body, ink only. */
+  .news-row .news-meta {
+    grid-column: 1 / span 5;
+    position: sticky;
+    top: 96px;
+    align-self: start;
+    padding: 24px 32px 32px 0;
+  }
+  .news-row .news-meta h3 {
+    margin: 0 0 24px;
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(40px, 3.8vw, 52px); line-height: 1.02;
+    letter-spacing: -0.025em; color: var(--ink);
+    max-width: 440px;
+  }
+  .news-row .news-meta .nm-lede {
+    margin: 0;
+    font-family: var(--sans); font-weight: 700;
+    font-size: 19px; line-height: 1.45; color: var(--ink);
+    letter-spacing: -0.006em;
+    max-width: 440px;
+  }
+
+  /* Mock email — right side, sticky within its row */
+  .news-row .mock-email {
+    grid-column: 7 / span 6;
+    position: sticky;
+    top: 96px;
+    align-self: start;
+    margin-bottom: 0;
+    background: var(--white);
+    box-shadow:
+      0 1px 0 rgba(15,28,45,0.04),
+      0 24px 60px -28px rgba(15,28,45,0.22),
+      0 6px 14px -8px rgba(15,28,45,0.10);
+    max-width: 540px;
+    overflow: hidden;
+  }
+
+  /* Browser-chrome top bar with grey pill (matches reference screenshots) */
+  .mock-email .mock-chrome {
+    background: var(--navy);
+    height: 44px;
+    padding: 0 22px;
+    display: flex; align-items: center;
+  }
+  .mock-email .mock-chrome::before {
+    content: "";
+    display: block;
+    width: 56px; height: 6px;
+    background: rgba(255,255,255,0.28);
+    border-radius: 4px;
+  }
+  .mock-email .mock-rail {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+    padding: 18px 28px 14px;
+    border-bottom: 1px solid var(--hair);
+  }
+  .mock-email .masthead {
+    background: var(--navy); color: var(--white);
+    padding: 56px 32px 52px;
+    text-align: center;
+  }
+  .mock-email .masthead h4 {
+    margin: 0 0 14px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 30px; line-height: 1.1; letter-spacing: -0.022em;
+    color: var(--white);
+  }
+  .mock-email .masthead .meta {
+    font-family: var(--sans); font-style: italic; font-weight: 500;
+    font-size: 14px; letter-spacing: 0;
+    color: rgba(255,255,255,0.65); text-transform: none;
+  }
+  .mock-email .masthead .meta .sep {
+    display: inline-block; padding: 0 6px;
+    font-style: normal; opacity: 0.6;
+  }
+  .mock-email .body-pad { padding: 28px 28px 30px; }
+  .mock-email .greet {
+    margin: 0 0 14px; font-family: var(--sans); font-weight: 600;
+    font-size: 15px; color: var(--ink); line-height: 1.4;
+  }
+  .mock-email .body p {
+    margin: 0 0 18px; font-family: var(--sans); font-weight: 500;
+    font-size: 14px; line-height: 1.7; color: var(--mute);
+  }
+  .mock-email .body p strong { color: var(--ink); font-weight: 700; }
+  .mock-email .agenda-label {
+    margin: 22px 0 14px; font-family: var(--sans); font-weight: 700;
+    font-size: 16px; color: var(--ink); line-height: 1.3;
+    letter-spacing: -0.005em;
+  }
+  .mock-email .agenda {
+    margin: 0 0 26px; padding: 0;
+    list-style: none;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 14px; line-height: 1.45; color: var(--mute);
+  }
+  .mock-email .agenda li {
+    position: relative;
+    padding: 6px 0 6px 22px;
+  }
+  .mock-email .agenda li::before {
+    content: ""; position: absolute;
+    left: 4px; top: 13px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--pool);
+  }
+  .mock-email .cta-btn {
+    display: block; text-align: center;
+    background: var(--cobalt); color: var(--white);
+    padding: 18px 16px; margin: 6px 0 24px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 16px; letter-spacing: 0;
+    text-decoration: none;
+  }
+  .mock-email .closing {
+    margin: 0; font-family: var(--sans); font-weight: 500;
+    font-size: 14px; line-height: 1.6; color: var(--mute);
+  }
+  .mock-email .closing strong { font-weight: 600; color: var(--ink); }
+  .mock-email .closing em {
+    font-style: italic; color: var(--ink); font-weight: 600;
+    font-size: 14px;
+  }
+
+  /* WORKSHOP INVITE mock variant */
+  .mock-email .mw-body { padding: 28px 30px 26px; }
+  .mock-email .mw-title {
+    margin: 0 0 6px; font-family: var(--sans); font-weight: 700;
+    font-size: 22px; line-height: 1.2; letter-spacing: -0.012em;
+    color: var(--ink);
+  }
+  .mock-email .mw-subtitle {
+    margin: 0 0 18px; font-family: var(--sans); font-weight: 500;
+    font-size: 13px; line-height: 1.5; color: var(--mute);
+    letter-spacing: -0.003em;
+  }
+  .mock-email .mw-when {
+    background: #E9EFF7;
+    padding: 14px 18px; margin-bottom: 18px;
+    display: grid; grid-template-columns: 18px 1fr;
+    column-gap: 12px; row-gap: 8px;
+    align-items: center;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 13px; color: var(--ink); letter-spacing: -0.003em;
+  }
+  .mock-email .mw-when svg {
+    width: 16px; height: 16px; color: var(--cobalt);
+  }
+  .mock-email .mw-lede {
+    margin: 0 0 16px; font-family: var(--sans); font-weight: 500;
+    font-size: 13px; line-height: 1.6; color: var(--mute);
+    letter-spacing: -0.003em;
+  }
+  .mock-email .mw-eyebrow {
+    margin: 0 0 8px; font-family: var(--sans); font-weight: 700;
+    font-size: 11px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink);
+  }
+  .mock-email .mw-learn {
+    list-style: none; margin: 0 0 18px; padding: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 13px; line-height: 1.6; color: var(--ink);
+  }
+  .mock-email .mw-learn li { padding: 3px 0; }
+  .mock-email .mw-advisor {
+    border-top: 1px solid var(--hair);
+    padding: 14px 0 18px;
+    display: grid; grid-template-columns: 36px 1fr;
+    gap: 14px; align-items: center;
+  }
+  .mock-email .mw-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: #ECEAE3;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--mute);
+  }
+  .mock-email .mw-avatar svg { width: 18px; height: 18px; }
+  .mock-email .mw-name {
+    font-family: var(--sans); font-weight: 700; font-size: 13px;
+    color: var(--ink); letter-spacing: -0.003em;
+  }
+  .mock-email .mw-title-sm {
+    font-family: var(--sans); font-weight: 500; font-size: 12px;
+    color: var(--mute); margin-top: 1px;
+  }
+
+  /* IMPACT REPORT mock variant — serif headline allowed */
+  .mock-email .mr-body { padding: 30px 30px 26px; }
+  .mock-email .mr-eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--berry);
+    margin: 0 0 18px; font-weight: 500;
+  }
+  .mock-email .mr-title {
+    margin: 0 0 24px;
+    font-family: var(--serif); font-weight: 500;
+    font-size: 30px; line-height: 1.15; letter-spacing: -0.008em;
+    color: var(--ink);
+  }
+  .mock-email .mr-title em { font-style: italic; font-weight: 500; }
+  .mock-email .mr-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+  .mock-email .mr-stat { border-top: 1px solid var(--ink); padding: 10px 0 0; }
+  .mock-email .mr-stat .num {
+    display: block;
+    font-family: var(--serif); font-weight: 500;
+    font-size: 24px; line-height: 1; letter-spacing: -0.008em;
+    color: var(--ink); margin-bottom: 8px;
+    font-variant-numeric: tabular-nums;
+  }
+  .mock-email .mr-stat .lbl {
+    display: block;
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--mute);
+    line-height: 1.4;
+  }
+  .mock-email .mr-body p {
+    margin: 0 0 20px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 13px; line-height: 1.6; color: var(--mute);
+  }
+
+  /* Mock-email footer — small mono left, link right */
+  .mock-email .mock-foot {
+    border-top: 1px solid var(--hair);
+    padding: 14px 30px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .mock-email .mock-foot a {
+    color: var(--cobalt); text-decoration: none;
+    text-transform: none; letter-spacing: 0;
+    font-family: var(--sans); font-weight: 500; font-size: 12px;
+  }
+
+
+  /* §04 SIGNATURE — half-and-half, label left, signature right */
+  .sig-section { padding: 140px 0 0; }
+  .sig-frame {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 24px;
+    align-items: center;
+    padding: 72px 0 96px;
+    border-top: 1px solid var(--hair);
+    border-bottom: 1px solid var(--hair);
+  }
+  .sig-frame .sf-rail {
+    grid-column: 1 / span 4;
+    padding-right: 24px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .sig-frame .sf-rail .lbl {
+    display: block; color: var(--cobalt); font-weight: 500;
+    margin-bottom: 14px;
+  }
+  .sig-frame .sf-rail .name {
+    font-family: var(--sans); font-weight: 600; font-size: 36px;
+    color: var(--ink); letter-spacing: -0.022em; text-transform: none;
+    line-height: 1.0; display: block; margin-bottom: 14px;
+    max-width: 420px;
+  }
+  .sig-frame .sf-rail .desc {
+    display: block;
+    font-family: var(--sans); font-weight: 600; font-size: 14px;
+    color: var(--mute); letter-spacing: -0.003em; text-transform: none;
+    line-height: 1.5;
+    max-width: 380px;
+  }
+  .sig-frame .sf-stage {
+    grid-column: 5 / span 4;
+  }
+
+  /* Inline signature — tight line-heights */
+  .sig-inline {
+    display: flex; align-items: center;
+    gap: 24px;
+    font-family: var(--sans);
+  }
+  .sig-inline .logo { flex: 0 0 auto; }
+  .sig-inline .logo img {
+    height: 56px; width: auto; display: block;
+  }
+  .sig-inline .divider-v {
+    width: 2px; height: 64px;
+    background: linear-gradient(180deg, var(--cobalt), var(--berry));
+    flex: 0 0 2px; align-self: center;
+  }
+  .sig-inline .info { line-height: 1.2; }
+  .sig-inline .info .name {
+    font-weight: 700; font-size: 16px; color: var(--ink);
+    letter-spacing: -0.005em;
+    line-height: 1.15;
+  }
+  .sig-inline .info .title {
+    font-size: 14px; color: var(--mute); font-weight: 500;
+    line-height: 1.2;
+    margin-top: 2px;
+  }
+  .sig-inline .info .contact {
+    margin-top: 8px;
+    font-size: 13px; color: var(--mute); font-weight: 500;
+    line-height: 1.2;
+  }
+  .sig-inline .info .contact a {
+    color: var(--cobalt); text-decoration: none;
+  }
+  .sig-inline .info .tagline {
+    margin-top: 8px;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.005em;
+    color: var(--berry);
+    line-height: 1.2;
+  }
+
+  /* COLOPHON */
+  .colophon {
+    margin-top: 56px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    padding: 24px 0 36px;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+  }
+  .colophon .c { text-align: center; }
+  .colophon .r { text-align: right; }
+
+  @media (max-width: 1100px) {
+    .drip-rail::before { display: none; }
+    .drip-row .drip-card { grid-column: 4 / -1 !important; }
+  }
+  /* Disable sticky-stack for users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .drip-row .drip-card, .drip-row .day-marker { position: static; }
+    .drip-spacer { height: 32px; }
+    .news-row { min-height: auto; padding-bottom: 32px; }
+    .news-row .news-meta, .news-row .mock-email { position: static; }
+  }
+  @media (max-width: 960px) {
+    .wrap { padding: 0 28px; }
+    .hero-mark { grid-template-columns: 1fr; gap: 32px; }
+    .section-head { grid-template-columns: 1fr; gap: 16px; }
+    .inbox-wrap { grid-template-columns: 1fr; }
+    .inbox-note { grid-column: 1; grid-template-columns: 1fr; gap: 18px; padding: 28px 24px; }
+    .inbox-note .in-checks { grid-template-columns: 1fr; }
+    .disclaim-wrap { grid-template-columns: 1fr; }
+    .disclaim { grid-column: 1; grid-template-columns: 1fr; gap: 20px; padding: 28px; }
+    .drip-stage { grid-template-columns: 1fr; gap: 12px; }
+    .drip-rail { display: none; }
+    .drip-spacer { display: none; }
+    .drip-row .drip-card { position: static; grid-column: 1 !important; margin-bottom: 40px; }
+    .drip-row .day-marker { position: static; grid-column: 1; padding-top: 0; }
+    .drip-row .day-marker::before { display: none; }
+    .drip-row .day-marker .day, .drip-row .day-marker .pillar { margin-left: 0; }
+    .news-row { grid-template-columns: 1fr; gap: 24px; min-height: auto; padding-bottom: 40px; }
+    .news-row .news-meta, .news-row .mock-email { position: static; grid-column: 1 !important; max-width: 100%; margin-bottom: 24px; padding: 0; }
+    .sig-frame { grid-template-columns: 1fr; gap: 32px; padding: 32px 0 56px; }
+    .sig-frame .sf-rail, .sig-frame .sf-stage { grid-column: 1; padding-right: 0; }
+    .colophon { grid-template-columns: 1fr; gap: 8px; text-align: left; }
+    .colophon .c, .colophon .r { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <div class="head">
+    <div><span class="brand">NorCal SBDC</span> &middot; Brand House</div>
+    <span>08 / 13</span>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero-mark">
+    <div>
+      <span class="eyebrow">08 &middot; Templates</span>
+      <h1>Email</h1>
+    </div>
+    <div class="hero-sub">
+      <span class="accent-bar"></span>
+      <p>Our most direct digital connection with clients. Treat it as a privilege &mdash; keep it focused, make it mobile, stay compliant.</p>
+    </div>
+  </section>
+
+
+  <!-- §01 WELCOME DRIP — accordion list -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Welcome drip.</h2>
+      <p class="lede">Triggered by every 641 client signup. Three emails introduce one pillar each — People, Funded, Connected — so new clients understand the full scope of what they joined.</p>
+    </div>
+
+    <div class="drips">
+
+      <details class="drip d-1" open>
+        <summary>
+          <span class="drip-tag">You just gained a team.</span>
+          <svg class="drip-chev" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </summary>
+        <div class="drip-body">
+          <div class="drip-meta">
+            <span class="drip-bg" aria-hidden="true">01</span>
+            <div class="drip-meta-block">
+              <div class="drip-day">Day 1</div>
+              <div class="drip-pillar">People pillar.</div>
+              <div class="drip-fact">
+                <div class="drip-label">Trigger</div>
+                <div class="drip-value">Form 641 submitted</div>
+              </div>
+              <div class="drip-fact">
+                <div class="drip-label">Sequence</div>
+                <div class="drip-value">01 / 03</div>
+              </div>
+              <div class="drip-fact">
+                <div class="drip-label">Goal</div>
+                <div class="drip-value">Establish the relationship. Show what they joined.</div>
+              </div>
+            </div>
+          </div>
+          <article class="email-mock">
+            <header class="email-header">
+              <span>From <strong>NorCal SBDC</strong></span>
+              <span>Subject <strong>You just gained a team</strong></span>
+            </header>
+            <div class="email-content">
+              <h3>You just gained a team.<br>Here&rsquo;s who&rsquo;s in your corner.</h3>
+              <p class="email-hero">A real advisor. Real expertise. No fees, today or ever.</p>
+              <ul class="email-list">
+                <li>Every consultation is no-fee</li>
+                <li>Schedule follow-ups as often as needed</li>
+                <li>Advisor connects you to specialists across the network</li>
+              </ul>
+              <div class="email-cta">
+                <span class="email-cta-tag">CTA</span>
+                <span class="email-cta-text">Schedule your next session</span>
+              </div>
+              <p class="email-signoff">Welcome to the team &mdash; NorCal SBDC</p>
+            </div>
+          </article>
+        </div>
+      </details>
+
+      <details class="drip d-2">
+        <summary>
+          <span class="drip-tag">Capital access is part of the deal.</span>
+          <svg class="drip-chev" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </summary>
+        <div class="drip-body">
+          <div class="drip-meta">
+            <span class="drip-bg" aria-hidden="true">07</span>
+            <div class="drip-meta-block">
+              <div class="drip-day">Day 7</div>
+              <div class="drip-pillar">Funded pillar.</div>
+              <div class="drip-fact">
+                <div class="drip-label">Subject</div>
+                <div class="drip-value">Your business, funded</div>
+              </div>
+              <div class="drip-fact">
+                <div class="drip-label">Sequence</div>
+                <div class="drip-value">02 / 03</div>
+              </div>
+              <div class="drip-fact">
+                <div class="drip-label">Goal</div>
+                <div class="drip-value">Surface the capital pillar. Make the next move clear.</div>
+              </div>
+            </div>
+          </div>
+          <article class="email-mock">
+            <header class="email-header">
+              <span>From <strong>NorCal SBDC</strong></span>
+              <span>Subject <strong>Your business, funded</strong></span>
+            </header>
+            <div class="email-content">
+              <h3>Capital access is part of the deal.<br>Here&rsquo;s how it works.</h3>
+              <p class="email-hero">$547M accessed across 36 counties. Your advisor helps you get ready.</p>
+              <ul class="email-list">
+                <li>Review financials and identify gaps</li>
+                <li>Build loan packages lenders want</li>
+                <li>Intro to the right lender from 50+ partners</li>
+                <li>Navigate SBA, grants, and alternatives</li>
+              </ul>
+              <div class="email-cta">
+                <span class="email-cta-tag">CTA</span>
+                <span class="email-cta-text">Talk to your advisor about capital</span>
+              </div>
+              <p class="email-signoff">Invested in your growth &mdash; NorCal SBDC</p>
+            </div>
+          </article>
+        </div>
+      </details>
+
+      <details class="drip d-3">
+        <summary>
+          <span class="drip-tag">You didn&rsquo;t just get an advisor. You got a network.</span>
+          <svg class="drip-chev" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+        </summary>
+        <div class="drip-body">
+          <div class="drip-meta">
+            <span class="drip-bg" aria-hidden="true">14</span>
+            <div class="drip-meta-block">
+              <div class="drip-day">Day 14</div>
+              <div class="drip-pillar">Connected pillar.</div>
+              <div class="drip-fact">
+                <div class="drip-label">Subject</div>
+                <div class="drip-value">Your business, connected</div>
+              </div>
+              <div class="drip-fact">
+                <div class="drip-label">Sequence</div>
+                <div class="drip-value">03 / 03</div>
+              </div>
+              <div class="drip-fact">
+                <div class="drip-label">Goal</div>
+                <div class="drip-value">Open the door to the wider network. Convert curiosity to attendance.</div>
+              </div>
+            </div>
+          </div>
+          <article class="email-mock">
+            <header class="email-header">
+              <span>From <strong>NorCal SBDC</strong></span>
+              <span>Subject <strong>Your business, connected</strong></span>
+            </header>
+            <div class="email-content">
+              <h3>You didn&rsquo;t just get an advisor.<br>You got a network.</h3>
+              <p class="email-hero">16 centers. 150+ advisors. Hundreds of partners. You&rsquo;re part of it now.</p>
+              <ul class="email-list">
+                <li>200+ workshops every year, mostly no-fee</li>
+                <li>Chamber, city, and economic development partners</li>
+                <li>Intros to lenders and industry collaborators</li>
+                <li>Fellow entrepreneurs who&rsquo;ve been where you are</li>
+              </ul>
+              <div class="email-cta">
+                <span class="email-cta-tag">CTA</span>
+                <span class="email-cta-text">Browse upcoming events</span>
+              </div>
+              <p class="email-signoff">Better together &mdash; NorCal SBDC</p>
+            </div>
+          </article>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
+
+  <!-- §02 NEWSLETTERS -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Newsletters.</h2>
+      <p class="lede">Five production-quality newsletters across the network’s most-used sends. Click through to compare the framing from one to the next.</p>
+    </div>
+
+    <div class="news-stage">
+
+      <!-- Newsletter 01 — Welcome / NSBW kickoff (existing) -->
+      <div class="news-row">
+        <div class="news-meta">
+          <h3>Small Business Week.</h3>
+          <p class="nm-lede">Pre-week announcement. Navy masthead, bulleted what’s-on, one Cobalt CTA to the events page.</p>
+        </div>
+        <div class="mock-email">
+          <div class="mock-chrome"></div>
+          <div class="masthead">
+            <h4>National Small Business Week</h4>
+            <span class="meta">May 4–10<span class="sep">|</span>Celebrating Entrepreneurs &amp; Advisors</span>
+          </div>
+          <div class="body-pad">
+            <p class="greet">Hi [First Name],</p>
+            <div class="body">
+              <p>This week we’re celebrating something special: <strong>you</strong>. The entrepreneurs who dream big, who power Northern California’s economy.</p>
+            </div>
+            <p class="agenda-label">What’s happening</p>
+            <ul class="agenda">
+              <li>No-fee workshops on capital access and growth</li>
+              <li>Virtual networking mixer (Wednesday, 5pm PT)</li>
+              <li>Award ceremony honoring local entrepreneurs</li>
+              <li>Daily client spotlights across social</li>
+            </ul>
+            <a class="cta-btn" href="#">Learn About Events</a>
+            <p class="closing">In partnership,<br><strong>NorCal SBDC</strong><br><em>Your Business, Better.</em></p>
+          </div>
+          <div class="mock-foot"><span>NorCal SBDC</span><a href="#">norcalsbdc.org/sbw</a></div>
+        </div>
+      </div>
+
+      <div class="news-spacer" aria-hidden="true"></div>
+
+      <!-- Newsletter 02 — Workshop Invite -->
+      <div class="news-row">
+        <div class="news-meta">
+          <h3>Workshop invite.</h3>
+          <p class="nm-lede">Date, place, takeaway. Bulleted learning outcomes and a named advisor. Sent two weeks out with a 48-hour nudge.</p>
+        </div>
+        <div class="mock-email">
+          <div class="mock-chrome"></div>
+          <div class="mw-body">
+            <h4 class="mw-title">Cash Flow Masterclass</h4>
+            <p class="mw-subtitle">Building Financial Resilience for Small Business</p>
+            <div class="mw-when">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>Thursday, March 19, 2026</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>10:00 AM – 12:30 PM PT</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>NorCal SBDC — Sacramento Center</span>
+            </div>
+            <p class="mw-lede">Join our no-fee workshop on the fundamentals of cash flow. Learn to forecast revenue, manage expenses, and build financial resilience.</p>
+            <p class="mw-eyebrow">What you’ll learn</p>
+            <ul class="mw-learn">
+              <li>Cash flow forecasting and projection</li>
+              <li>Managing accounts receivable</li>
+              <li>Building a 90-day cash reserve plan</li>
+            </ul>
+            <div class="mw-advisor">
+              <div class="mw-avatar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </div>
+              <div>
+                <div class="mw-name">Maria Gonzalez, CPA</div>
+                <div class="mw-title-sm">Senior Business Advisor</div>
+              </div>
+            </div>
+            <a class="cta-btn" href="#">Register Now — It’s No-Fee</a>
+          </div>
+          <div class="mock-foot"><span>NorCal SBDC</span><a href="#">norcalsbdc.org</a></div>
+        </div>
+      </div>
+
+      <div class="news-spacer" aria-hidden="true"></div>
+
+      <!-- Newsletter 03 — Annual Impact Report -->
+      <div class="news-row">
+        <div class="news-meta">
+          <h3>Annual report.</h3>
+          <p class="nm-lede">Impact-forward teaser leading to the full report. Three tabular-nums, a serif headline, one CTA. Sent early Q1.</p>
+        </div>
+        <div class="mock-email">
+          <div class="mock-chrome"></div>
+          <div class="mr-body">
+            <p class="mr-eyebrow">2026 Impact Report</p>
+            <h4 class="mr-title">Twenty years, <em>still counting.</em></h4>
+            <div class="mr-stats">
+              <div class="mr-stat"><span class="num">8,500</span><span class="lbl">Businesses<br>Served</span></div>
+              <div class="mr-stat"><span class="num">3,723</span><span class="lbl">Jobs<br>Created</span></div>
+              <div class="mr-stat"><span class="num">36</span><span class="lbl">Counties<br>Reached</span></div>
+            </div>
+            <p>One network, thirty-six counties, one mission. Read the full report for the stories behind the numbers — the advisors, clients, and partnerships that make it possible.</p>
+            <a class="cta-btn" href="#">Read the Report</a>
+          </div>
+          <div class="mock-foot"><span>NorCal SBDC</span><a href="#">norcalsbdc.org/report</a></div>
+        </div>
+      </div>
+
+      <div class="news-spacer" aria-hidden="true"></div>
+
+      <!-- Newsletter 04 — Capital Spotlight -->
+      <div class="news-row">
+        <div class="news-meta">
+          <h3>Capital spotlight.</h3>
+          <p class="nm-lede">Monthly capital-access digest. Lender highlight, current grant windows, one client win, one CTA. First Tuesday of the month.</p>
+        </div>
+        <div class="mock-email">
+          <div class="mock-chrome"></div>
+          <div class="masthead">
+            <h4>Capital Spotlight</h4>
+            <span class="meta">March 2026<span class="sep">|</span>Lenders, Grants &amp; Wins</span>
+          </div>
+          <div class="body-pad">
+            <p class="greet">Hi [First Name],</p>
+            <div class="body">
+              <p>Three capital openings worth your time this month — and one Eureka client who just closed a <strong>$340K</strong> SBA 7(a) for a second-location buildout.</p>
+            </div>
+            <p class="agenda-label">This month</p>
+            <ul class="agenda">
+              <li>Featured lender: Tri Counties Bank — relationship-driven SBA</li>
+              <li>Open grants: CalOSBA Technical Assistance, USDA Rural</li>
+              <li>Client win: Humboldt Roastery — $340K, 8-week close</li>
+            </ul>
+            <a class="cta-btn" href="#">Schedule Capital Readiness</a>
+            <p class="closing">Invested in your growth,<br><strong>NorCal SBDC</strong><br><em>Your Business, Better.</em></p>
+          </div>
+          <div class="mock-foot"><span>NorCal SBDC</span><a href="#">norcalsbdc.org/capital</a></div>
+        </div>
+      </div>
+
+      <div class="news-spacer" aria-hidden="true"></div>
+
+      <!-- Newsletter 05 — Client Story -->
+      <div class="news-row">
+        <div class="news-meta">
+          <h3>Client story.</h3>
+          <p class="nm-lede">Quarterly client feature. Serif italic headline, three-bullet outcome, link to full story. Aligned with advisor recommendations.</p>
+        </div>
+        <div class="mock-email">
+          <div class="mock-chrome"></div>
+          <div class="mr-body">
+            <p class="mr-eyebrow">Client Story · Q1</p>
+            <h4 class="mr-title">From dining table <em>to 184 stores.</em></h4>
+            <p>When Lina Tran started bottling her grandmother’s chili crisp at her dining table in 2022, she had no kitchen, no broker, and no co-packer. Two years later, Tran’s Pantry ships to 184 stores across the West Coast.</p>
+            <p class="mw-eyebrow">What changed</p>
+            <ul class="mw-learn">
+              <li>Co-packing intro through the network</li>
+              <li>$120K SBA microloan, 6-week close</li>
+              <li>Brand &amp; label refresh with a network partner</li>
+            </ul>
+            <a class="cta-btn" href="#">Read Lina’s Story</a>
+          </div>
+          <div class="mock-foot"><span>NorCal SBDC</span><a href="#">norcalsbdc.org/stories</a></div>
+        </div>
+      </div>
+
+      <div class="news-spacer" aria-hidden="true" style="height: 18vh"></div>
+    </div>
+
+    <!-- THE $500 RULE — inbox-respect collapsed under [+] -->
+    <div class="five-hundred-wrap">
+      <details class="disclose five-hundred">
+        <summary class="disclose-summary">
+          <span class="disclose-toggle" aria-hidden="true"></span>
+          <span>The $500 rule</span>
+        </summary>
+        <div class="disclose-body">
+          <p class="five-hundred-pull">If a newsletter isn&rsquo;t worth <em>$500</em> to a client, don&rsquo;t send it.</p>
+          <p>The inbox is a privilege. Every send competes with their accountant, their kid&rsquo;s school, and their best customer &mdash; it has to earn the open.</p>
+          <p><strong>Before you send:</strong> does this save them time, make them money, unlock capital, or open a door?</p>
+          <ul class="five-hundred-checks">
+            <li>Saves time</li>
+            <li>Makes money</li>
+            <li>Unlocks capital</li>
+            <li>Opens a door</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+    <!-- DISCLOSURE STACK — SBA/ADA disclaimer collapsed by default -->
+    <div class="disclose-stack">
+      <details class="disclose">
+        <summary class="disclose-summary">
+          <span class="disclose-toggle" aria-hidden="true"></span>
+          <span>Required · SBA &amp; ADA Disclaimer</span>
+        </summary>
+        <div class="disclose-body">
+          <p>Funded in part through a cooperative agreement with the U.S. Small Business Administration (SBA). Funded in part through a grant with the Governor’s Office of Business and Economic Development. All opinions, conclusions, or recommendations expressed are those of the author(s) and do not necessarily reflect the views of the SBA, California Office of the Small Business Advocate, or Cal Poly Humboldt sponsored programs.</p>
+          <div class="ada-row">
+            <svg class="ada-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.5" r="1.6" fill="currentColor"/><path d="M7 8h10"/><path d="M9 8v4l-2.5 7"/><path d="M15 8v4l2.5 7"/><path d="M9 12h6"/></svg>
+            <p>Reasonable accommodations for persons with disabilities will be made if requested at least 72 hours in advance. Contact: [contact name] at [contact phone number] or email: [contact email].</p>
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+
+  <!-- §03 SIGNATURE — proper section, room to breathe, tight line-height -->
+  <section class="sig-section">
+    <div class="section-head">
+      <h2>Signature.</h2>
+      <p class="lede">One signature, used everywhere. Logo, gradient rule, contact stack. Tagline always Berry.</p>
+    </div>
+
+    <div class="sig-frame">
+      <div class="sf-rail">
+        <span class="lbl">Inline · Standard</span>
+        <span class="name">One signature, used everywhere.</span>
+        <span class="desc">Logo, gradient rule, contact stack. Tagline always Berry. Used in every send across the network.</span>
+      </div>
+      <div class="sf-stage">
+        <div class="sig-inline">
+          <div class="logo">
+            <img src="https://www.norcalsbdc.org/wp-content/uploads/2024/08/NCN_ColorBand_Logo.png" alt="NorCal SBDC">
+          </div>
+          <span class="divider-v"></span>
+          <div class="info">
+            <div class="name">Maria Santos</div>
+            <div class="title">Senior Business Advisor</div>
+            <div class="contact">530.898.4598 · <a href="mailto:msantos@norcalsbdc.org">msantos@norcalsbdc.org</a> · <a href="https://norcalsbdc.org">norcalsbdc.org</a></div>
+            <div class="tagline">Your Business People.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- WHY · EMAIL HOW-TOS — footer disclosure -->
+  <details class="disclose" open>
+    <summary class="disclose-summary">
+      <span class="disclose-toggle" aria-hidden="true"></span>
+      <span>Why · Email How-Tos</span>
+    </summary>
+    <div class="disclose-body">
+      <p>One clear call to action per send. Every email has one primary goal — schedule a session, register, apply, click through. Don’t split attention across five asks.</p>
+      <p>Mobile-first, always. Over 60% of NorCal SBDC emails are opened on mobile. Single-column layouts, large tap targets, concise copy, and pre-headers that tell the story before the body loads.</p>
+      <p>Every client and partner-facing mass email carries the SBA and ADA disclaimers. No exceptions — not for events, not for newsletters, not for one-off announcements.</p>
+      <p>Welcome drip first. Newsletters second. Promotional sends last. The client journey runs in that order — earn trust through the welcome sequence before you ask for anything.</p>
+      <p>Subject line is half the email. Lead with the value, not the brand. “Capital access is part of the deal” beats “April newsletter from NorCal SBDC” every time.</p>
+      <p>Use the standard signature on every send. Logo, gradient rule, contact stack, Berry tagline. Don’t reinvent it per advisor.</p>
+    </div>
+  </details>
+
+
+  <!-- COLOPHON -->
+  <div class="colophon">
+    <div>NorCal SBDC · Brand House · Chapter 07</div>
+    <div class="c">Email · Voice</div>
+    <div class="r">v01 · April 2026</div>
+  </div>
+
+</div>
+
+</body>
+</html>

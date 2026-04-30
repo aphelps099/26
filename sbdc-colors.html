@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NorCal SBDC · Brand House · Colors</title>
+<link rel="stylesheet" href="https://use.typekit.net/pkl5rjs.css" />
+<style>
+  :root {
+    --navy: #0F1C2D;
+    --slate: #2C3240;
+    --cobalt: #1B5FAF;
+    --pool: #8FC5D9;
+    --berry: #C23C3C;
+    --evergreen: #00675C;
+    --silver: #D8D8D8;
+    --white: #FDFDFD;
+    --page: #F2F1ED;
+    --ink: #0F1C2D;
+    --mute: #4A5260;
+    --hair: #D4D2CC;
+
+    --sans: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+    --serif: "proxima-sera", "Iowan Old Style", Georgia, serif;
+    --mono: "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    --col: 1320px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap { max-width: var(--col); margin: 0 auto; padding: 0 56px; }
+
+  /* HEADER */
+  .head {
+    padding: 28px 0 0;
+    display: flex; align-items: baseline; justify-content: space-between;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .head .brand { color: var(--ink); font-weight: 500; }
+
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--cobalt);
+  }
+
+  /* HERO WORDMARK — clean Nova only */
+  .hero-mark {
+    padding: 84px 0 36px;
+    display: grid;
+    grid-template-columns: 1fr 460px;
+    gap: 80px;
+    align-items: end;
+  }
+  .hero-mark .eyebrow { display: block; margin-bottom: 22px; }
+  .hero-mark h1 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(120px, 14vw, 200px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+  /* X-LARGE BODY — hero narration. Lighter Nova 500 reads as the long
+     narrative voice. Everything else on the page is heavier. */
+  .hero-mark .subtitle { display: block; }
+  .hero-mark .accent-bar {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: var(--navy);
+    margin: 0 0 22px;
+  }
+  .hero-mark p {
+    margin: 0 0 14px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 22px; line-height: 1.45; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 520px;
+  }
+
+  /* §01 SYSTEM — solid Navy field + stack */
+  .system {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 0;
+    height: 540px;
+  }
+  .field {
+    position: relative;
+    padding: 36px 40px;
+    background: var(--navy);
+    color: var(--white);
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .field .top {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; opacity: 0.7;
+  }
+  .field .name {
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(56px, 6vw, 92px); line-height: 0.95;
+    letter-spacing: -0.025em;
+  }
+  .field .hex {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em;
+    text-transform: uppercase; opacity: 0.7; margin-top: 8px;
+  }
+
+  .stack { display: grid; grid-template-rows: 1fr 1fr 1fr; }
+  .stack .row {
+    position: relative;
+    padding: 28px 36px;
+    display: grid; grid-template-columns: 1fr auto; align-items: end;
+  }
+  .stack .row .label-top {
+    position: absolute; top: 18px; left: 36px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .stack .row .name {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 36px; letter-spacing: -0.01em;
+  }
+  .stack .row .hex {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; align-self: end;
+  }
+  .row-cobalt    { background: var(--cobalt); color: var(--white); }
+  .row-cobalt .label-top, .row-cobalt .hex { color: rgba(255,255,255,0.78); }
+  .row-berry     { background: var(--berry); color: var(--white); }
+  .row-berry .label-top, .row-berry .hex { color: rgba(255,255,255,0.78); }
+  .row-evergreen { background: var(--evergreen); color: var(--white); }
+  .row-evergreen .label-top, .row-evergreen .hex { color: rgba(255,255,255,0.78); }
+
+  /* SECTIONS */
+  .section { padding: 100px 0 0; }
+  .section-head {
+    display: grid; grid-template-columns: 360px 1fr; gap: 48px;
+    align-items: end; margin-bottom: 32px;
+  }
+  .section-head h2 {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(40px, 4.4vw, 56px); line-height: 1.0;
+    letter-spacing: -0.02em; color: var(--ink);
+  }
+  /* MAIN BODY — section ledes, conduct notes, captions. Heavier 600
+     for clarity at the smaller working size. */
+  .section-head .lede {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 19px; line-height: 1.5; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 600px;
+  }
+
+  /* §02 PALETTE GRID */
+  .palette-layout {
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 56px;
+    align-items: start;
+  }
+  .palette-intro h2 {
+    margin: 0 0 16px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(40px, 4.4vw, 56px); line-height: 1.0;
+    letter-spacing: -0.02em; color: var(--ink);
+  }
+  .palette-intro .lede {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 17px; line-height: 1.5; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 280px;
+  }
+  .palette {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0;
+  }
+  .swatch {
+    position: relative;
+    aspect-ratio: 1.55 / 1;
+    padding: 22px 26px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .swatch .label-top {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; opacity: 0.78;
+  }
+  .swatch .name {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 28px; letter-spacing: -0.01em;
+  }
+  .swatch .hex {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; opacity: 0.78; margin-top: 6px;
+  }
+  .swatch .meta { display: flex; flex-direction: column; }
+
+  .sw-navy      { background: var(--navy);      color: var(--white); }
+  .sw-cobalt    { background: var(--cobalt);    color: var(--white); }
+  .sw-berry     { background: var(--berry);     color: var(--white); }
+  .sw-slate     { background: var(--slate);     color: var(--white); }
+  .sw-evergreen { background: var(--evergreen); color: var(--white); }
+  .sw-pool      { background: var(--pool);      color: var(--navy); }
+  .sw-silver    { background: var(--silver);    color: var(--navy); }
+  .sw-white     { background: var(--white);     color: var(--navy); }
+
+  /* §03b GRADIENT */
+  .grad-band {
+    height: 96px;
+    background: linear-gradient(90deg, #0F1C2D 0%, #0A3268 20%, #1B5FAF 40%, #3A7EAE 60%, #6BAFC8 80%, #8FC5D9 100%);
+    margin-top: 8px;
+  }
+  .grad-hr {
+    height: 4px;
+    background: linear-gradient(90deg, #0F1C2D 0%, #1B5FAF 40%, #6BAFC8 70%, #8FC5D9 100%);
+    margin-top: 32px;
+  }
+  .grad-warm {
+    background: linear-gradient(90deg, #2C3240 0%, #4A5260 40%, #9A9CA2 70%, #D8D8D8 100%);
+    margin-top: 32px;
+  }
+  .grad-band.grad-warm { margin-top: 48px; }
+
+  /* §03 SIX COMBINATIONS — pair card grid (Sera lives here) */
+  .pairs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .pair {
+    position: relative;
+    padding: 24px 28px 20px;
+    aspect-ratio: 2 / 1;
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+  .pair .tag { display: none; }
+  .pair .text {
+    align-self: center;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(24px, 2.6vw, 36px); line-height: 1.05;
+    letter-spacing: -0.015em;
+  }
+  .pair .text em { font-style: normal; font-weight: 500; margin: 0; }
+  .pair .foot {
+    display: flex; align-items: flex-end; justify-content: space-between;
+  }
+  .pair .ratio {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em;
+    line-height: 1.4;
+  }
+  .pair .ratio small {
+    display: block;
+    font-size: 10px; letter-spacing: 0.22em; opacity: 0.78;
+    margin-top: 2px;
+  }
+  .pair .grade {
+    font-family: var(--mono); font-weight: 500;
+    font-size: 14px; letter-spacing: 0.18em;
+  }
+
+  .p-navy   { background: var(--navy);   color: var(--white); }
+  .p-navy .text em { color: var(--berry); }
+  .p-navy .tag, .p-navy .foot { color: rgba(255,255,255,0.7); }
+  .p-navy .grade { color: var(--white); }
+
+  .p-cobalt { background: var(--cobalt); color: var(--white); }
+  .p-cobalt .text em { color: var(--pool); }
+  .p-cobalt .tag, .p-cobalt .foot { color: rgba(255,255,255,0.7); }
+  .p-cobalt .grade { color: var(--white); }
+
+  .p-berry  { background: var(--berry);  color: var(--white); }
+  .p-berry .text em { color: var(--white); opacity: 0.92; }
+  .p-berry .tag, .p-berry .foot { color: var(--white); opacity: 0.85; }
+  .p-berry .grade { color: var(--white); }
+
+  .p-cream  { background: var(--white);  color: var(--navy); }
+  .p-cream .text em { color: var(--berry); }
+  .p-cream .tag { color: var(--berry); }
+  .p-cream .foot { color: var(--mute); }
+  .p-cream .grade { color: var(--navy); }
+
+  .p-evergreen { background: var(--evergreen); color: var(--white); }
+  .p-evergreen .text em { color: var(--white); opacity: 0.92; }
+  .p-evergreen .tag, .p-evergreen .foot { color: var(--white); opacity: 0.85; }
+  .p-evergreen .grade { color: var(--white); }
+
+  .p-pool { background: var(--pool); color: var(--navy); }
+  .p-pool .text em { color: var(--cobalt); }
+  .p-pool .tag, .p-pool .foot { color: var(--cobalt); }
+  .p-pool .grade { color: var(--navy); }
+
+  /* DISCLOSURE — [+] reveal pattern for fine-print body */
+  details.disclose { margin-top: 24px; max-width: 920px; }
+  details.disclose > summary {
+    list-style: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--evergreen);
+    user-select: none;
+  }
+  details.disclose > summary::-webkit-details-marker { display: none; }
+  details.disclose > summary .plus {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 18px; height: 18px; border: 1px solid var(--evergreen);
+    color: var(--evergreen);
+    font-family: var(--sans); font-weight: 600; font-size: 13px; line-height: 1;
+  }
+  details.disclose[open] > summary .plus::before { content: "–"; }
+  details.disclose:not([open]) > summary .plus::before { content: "+"; }
+  details.disclose > .body {
+    margin-top: 14px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 15px; line-height: 1.65; color: var(--mute);
+    max-width: 760px;
+  }
+  details.disclose > .body strong { color: var(--ink); font-weight: 600; }
+  details.disclose > .body p { margin: 0 0 10px; }
+  details.disclose > .body p:last-of-type { margin-bottom: 0; }
+
+  /* SHADES — anchors only, surfaces only */
+  .shades { margin-top: 28px; }
+  .shade-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    height: 64px;
+  }
+  .shade-row + .shade-row { margin-top: 4px; }
+  .shade {
+    padding: 10px 14px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .shade .lab { opacity: 0.78; }
+  .shade .val { align-self: flex-end; opacity: 0.78; }
+  .s-navy-100 { background: rgba(15, 28, 45, 1.00); color: var(--white); }
+  .s-navy-70  { background: rgba(15, 28, 45, 0.70); color: var(--white); }
+  .s-navy-40  { background: rgba(15, 28, 45, 0.40); color: var(--ink); }
+  .s-navy-15  { background: rgba(15, 28, 45, 0.15); color: var(--ink); }
+  .s-cob-100  { background: rgba(27, 95, 175, 1.00); color: var(--white); }
+  .s-cob-70   { background: rgba(27, 95, 175, 0.70); color: var(--white); }
+  .s-cob-40   { background: rgba(27, 95, 175, 0.40); color: var(--ink); }
+  .s-cob-15   { background: rgba(27, 95, 175, 0.15); color: var(--ink); }
+  .s-ever-100 { background: rgba(0, 103, 92, 1.00); color: var(--white); }
+  .s-ever-70  { background: rgba(0, 103, 92, 0.70); color: var(--white); }
+  .s-ever-40  { background: rgba(0, 103, 92, 0.40); color: var(--ink); }
+  .s-ever-15  { background: rgba(0, 103, 92, 0.15); color: var(--ink); }
+  .shade-note {
+    margin: 14px 0 0;
+    font-family: var(--mono); font-weight: 500;
+    font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  details.disclose-shades { max-width: none; margin-top: 6px; border: none; }
+  details.disclose-shades > summary { padding: 4px 0; color: var(--evergreen); }
+  details.disclose-shades > .body {
+    margin-top: 6px;
+    padding: 0;
+    max-width: none;
+  }
+
+  /* §04 PROPORTION */
+  .bar {
+    display: grid;
+    grid-template-columns: 38fr 30fr 14fr 8fr 6fr 4fr;
+    height: 56px;
+    margin-top: 8px;
+  }
+  .bar > div { display: flex; align-items: center; padding: 0 14px; overflow: hidden; }
+  .bar > div span {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; white-space: nowrap;
+  }
+  .bar .b1 { background: var(--page); color: var(--mute); box-shadow: inset 0 0 0 1px var(--hair); }
+  .bar .b2 { background: var(--navy); color: rgba(255,255,255,0.85); }
+  .bar .b3 { background: var(--cobalt); color: rgba(255,255,255,0.85); }
+  .bar .b4 { background: var(--berry); color: rgba(255,255,255,0.85); }
+  .bar .b5 { background: var(--evergreen); color: rgba(255,255,255,0.85); }
+  .bar .b6 { background: var(--pool); color: var(--navy); }
+  .bar-legend {
+    margin-top: 16px;
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .bar-legend strong { display: block; color: var(--ink); font-family: var(--sans); font-weight: 600; font-size: 14px; letter-spacing: 0; text-transform: none; margin-bottom: 4px; }
+
+  /* §05 CONDUCT */
+  .rules { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .rule .demo {
+    aspect-ratio: 16 / 9;
+    padding: 28px 32px;
+    display: flex; align-items: center;
+    font-family: var(--serif); font-weight: 300;
+    font-size: 30px; line-height: 1.05; letter-spacing: 0;
+    word-spacing: 0.16em;
+  }
+  .rule .demo em { font-style: italic; margin: 0 0.12em; }
+  .rule .body { padding: 18px 0 0; }
+  .rule .verdict {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .rule .verdict .glyph {
+    width: 18px; height: 18px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-weight: 600; font-size: 11px;
+  }
+  .rule.do .verdict { color: var(--cobalt); }
+  .rule.do .verdict .glyph { background: var(--cobalt); color: var(--white); }
+  .rule.dont .verdict { color: var(--berry); }
+  .rule.dont .verdict .glyph { background: var(--berry); color: var(--white); }
+  /* Rule disclosure (per do/don't card) */
+  .rule details {
+    margin-top: 12px;
+  }
+  .rule details > summary {
+    list-style: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+    user-select: none;
+  }
+  .rule details > summary::-webkit-details-marker { display: none; }
+  .rule details > summary .plus {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 16px; height: 16px; border: 1px solid var(--mute);
+    color: var(--mute);
+    font-family: var(--sans); font-weight: 600; font-size: 12px; line-height: 1;
+  }
+  .rule details[open] > summary .plus::before { content: "–"; }
+  .rule details:not([open]) > summary .plus::before { content: "+"; }
+  .rule details > .note {
+    margin-top: 12px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 15px; line-height: 1.6; color: var(--mute); max-width: 540px;
+  }
+  .demo-do-1 { background: var(--navy); color: var(--white); }
+  .demo-do-1 em { color: var(--berry); }
+  .demo-dont-1 { background: var(--berry); color: var(--cobalt); }
+  .demo-do-2 { background: var(--white); color: var(--navy); }
+  .demo-do-2 em { color: var(--berry); }
+  .demo-dont-2 { background: var(--page); color: var(--silver); }
+  .demo-dont-2 em { color: var(--silver); }
+
+  /* §06 IN USE */
+  .wild {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 0;
+    margin-top: 8px;
+  }
+  .impact {
+    background: var(--navy); color: var(--white);
+    padding: 36px 40px;
+    display: grid; grid-template-rows: auto 1fr auto;
+    aspect-ratio: 1.05 / 1;
+  }
+  .impact .label-top {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
+  }
+  .impact .head-line {
+    align-self: start;
+    margin-top: 24px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(56px, 6vw, 92px); line-height: 0.95; letter-spacing: -0.025em;
+  }
+  .impact .stat {
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(72px, 7vw, 112px); line-height: 0.9; letter-spacing: -0.03em;
+  }
+  .impact .stat-cap {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--pool);
+    margin-top: 8px;
+  }
+
+  .wild-right { display: grid; grid-template-rows: 1fr 1fr; }
+  .story {
+    background: var(--white); color: var(--ink);
+    padding: 36px 40px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .story .label-top {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .story blockquote {
+    margin: 0;
+    font-family: var(--serif); font-style: italic; font-weight: 300;
+    font-size: clamp(28px, 3vw, 40px); line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+  }
+  .story cite {
+    font-style: normal;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .campaign {
+    background: var(--cobalt); color: var(--white);
+    padding: 36px 40px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .campaign .label-top {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
+  }
+  .campaign .line {
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(34px, 3.4vw, 48px); line-height: 1.0; letter-spacing: -0.02em;
+  }
+
+  /* COLOPHON */
+  .foot {
+    margin-top: 100px; padding: 36px 0 56px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .foot .center { text-align: center; }
+  .foot .right { text-align: right; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="head">
+    <div><span class="brand">NorCal SBDC</span> &middot; Brand House</div>
+    <div>Chapter 01</div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-mark">
+    <div>
+      <span class="eyebrow">01 &middot; Visual System</span>
+      <h1>Colors</h1>
+    </div>
+    <div class="subtitle">
+      <span class="accent-bar"></span>
+      <p>Nine colors. Three anchors, three supports, three surfaces. Each one has a defined role, contrast value, and proportion. Use them as specified.</p>
+    </div>
+  </section>
+
+  <!-- §01 SYSTEM HERO BLOCK -->
+  <section class="system">
+    <div class="field">
+      <div class="top">Primary Anchor</div>
+      <div>
+        <div class="name">SBDC Navy</div>
+        <div class="hex">#0F1C2D &middot; Headlines, primary text, dark surfaces</div>
+      </div>
+    </div>
+    <div class="stack">
+      <div class="row row-cobalt">
+        <div class="label-top">Action</div>
+        <div class="name">Signal</div>
+        <div class="hex">#1B5FAF</div>
+      </div>
+      <div class="row row-berry">
+        <div class="label-top">Emphasis</div>
+        <div class="name">Berry</div>
+        <div class="hex">#C23C3C</div>
+      </div>
+      <div class="row row-evergreen">
+        <div class="label-top">Growth</div>
+        <div class="name">Evergreen</div>
+        <div class="hex">#00675C</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- §02 FULL PALETTE -->
+  <section class="section">
+    <div class="palette-layout">
+      <div class="palette-intro">
+        <h2>The full palette.</h2>
+        <p class="lede">Four anchors, one secondary, one surface, two neutrals. Hex on every card so values can be copied directly into Figma, code, or print specs.</p>
+      </div>
+
+      <div class="palette">
+      <div class="swatch sw-navy">
+        <div class="label-top">Anchor &middot; Dark</div>
+        <div class="meta"><div class="name">SBDC Navy</div><div class="hex">#0F1C2D</div></div>
+      </div>
+      <div class="swatch sw-cobalt">
+        <div class="label-top">Anchor &middot; Action</div>
+        <div class="meta"><div class="name">Signal</div><div class="hex">#1B5FAF</div></div>
+      </div>
+      <div class="swatch sw-berry">
+        <div class="label-top">Anchor &middot; Emphasis</div>
+        <div class="meta"><div class="name">Berry</div><div class="hex">#C23C3C</div></div>
+      </div>
+      <div class="swatch sw-slate">
+        <div class="label-top">Secondary &middot; Deep neutral</div>
+        <div class="meta"><div class="name">Slate</div><div class="hex">#2C3240</div></div>
+      </div>
+      <div class="swatch sw-evergreen">
+        <div class="label-top">Anchor &middot; Growth</div>
+        <div class="meta"><div class="name">Evergreen</div><div class="hex">#00675C</div></div>
+      </div>
+      <div class="swatch sw-pool">
+        <div class="label-top">Surface &middot; Lift</div>
+        <div class="meta"><div class="name">Pool</div><div class="hex">#8FC5D9</div></div>
+      </div>
+      <div class="swatch sw-silver">
+        <div class="label-top">Quiet Utility</div>
+        <div class="meta"><div class="name">Silver</div><div class="hex">#D8D8D8</div></div>
+      </div>
+      <div class="swatch sw-white">
+        <div class="label-top">Surface</div>
+        <div class="meta"><div class="name">White</div><div class="hex">#FDFDFD</div></div>
+      </div>
+      </div><!-- /.palette -->
+    </div><!-- /.palette-layout -->
+  </section>
+
+  <!-- §03 SHADES — anchors only, surfaces only -->
+  <section class="section">
+    <div class="palette-layout">
+      <div class="palette-intro">
+        <h2>Shades.</h2>
+        <p class="lede">Anchors may step down for surfaces, dividers, and quiet UI states. Never shade berry. Never tint type.</p>
+      </div>
+      <div class="shades" style="margin-top:0;">
+        <div class="shade-row">
+          <div class="shade s-navy-100"><span class="lab">Navy</span><span class="val">100</span></div>
+          <div class="shade s-navy-70"><span class="lab">Navy</span><span class="val">70</span></div>
+          <div class="shade s-navy-40"><span class="lab">Navy</span><span class="val">40</span></div>
+          <div class="shade s-navy-15"><span class="lab">Navy</span><span class="val">15</span></div>
+        </div>
+        <div class="shade-row">
+          <div class="shade s-cob-100"><span class="lab">Signal</span><span class="val">100</span></div>
+          <div class="shade s-cob-70"><span class="lab">Signal</span><span class="val">70</span></div>
+          <div class="shade s-cob-40"><span class="lab">Signal</span><span class="val">40</span></div>
+          <div class="shade s-cob-15"><span class="lab">Signal</span><span class="val">15</span></div>
+        </div>
+        <div class="shade-row">
+          <div class="shade s-ever-100"><span class="lab">Evergreen</span><span class="val">100</span></div>
+          <div class="shade s-ever-70"><span class="lab">Evergreen</span><span class="val">70</span></div>
+          <div class="shade s-ever-40"><span class="lab">Evergreen</span><span class="val">40</span></div>
+          <div class="shade s-ever-15"><span class="lab">Evergreen</span><span class="val">15</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- §03b GRADIENT -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Gradient.</h2>
+      <p class="lede">Navy through cobalt to pool. Use as a full-bleed band or as a 4px rule between sections.</p>
+    </div>
+
+    <div class="grad-band"></div>
+    <div class="grad-hr"></div>
+
+    <div class="grad-band grad-warm"></div>
+    <div class="grad-hr grad-warm"></div>
+  </section>
+
+  <!-- §03 SIX COMBINATIONS -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Six approved combinations.</h2>
+      <p class="lede">Each pair carries its measured WCAG 2.1 contrast ratio and grade. All primary-text pairs clear AA at body size; editorial defaults clear AAA.</p>
+    </div>
+
+    <div class="pairs">
+      <div class="pair p-navy">
+        <div class="tag">01 &middot; Editorial</div>
+        <div class="text">Build <em>where</em> you live.</div>
+        <div class="foot">
+          <div class="ratio">16.86 : 1<small>Navy &middot; White</small></div>
+          <div class="grade">AAA</div>
+        </div>
+      </div>
+      <div class="pair p-cobalt">
+        <div class="tag">02 &middot; Action</div>
+        <div class="text">Find <em>your</em> center today.</div>
+        <div class="foot">
+          <div class="ratio">5.90 : 1<small>Cobalt &middot; White</small></div>
+          <div class="grade">AAA</div>
+        </div>
+      </div>
+      <div class="pair p-berry">
+        <div class="tag">03 &middot; Voice</div>
+        <div class="text">The voice <em>made</em> visible.</div>
+        <div class="foot">
+          <div class="ratio">5.15 : 1<small>Berry &middot; White</small></div>
+          <div class="grade">AA</div>
+        </div>
+      </div>
+      <div class="pair p-cream">
+        <div class="tag">04 &middot; Default</div>
+        <div class="text">A <em>network</em> of support.</div>
+        <div class="foot">
+          <div class="ratio">15.18 : 1<small>Cream &middot; Navy</small></div>
+          <div class="grade">AAA</div>
+        </div>
+      </div>
+      <div class="pair p-evergreen">
+        <div class="tag">05 &middot; Growth</div>
+        <div class="text">Things <em>grow</em> here.</div>
+        <div class="foot">
+          <div class="ratio">6.67 : 1<small>Evergreen &middot; White</small></div>
+          <div class="grade">AA</div>
+        </div>
+      </div>
+      <div class="pair p-pool">
+        <div class="tag">06 &middot; Surface</div>
+        <div class="text">A <em>network</em> of support.</div>
+        <div class="foot">
+          <div class="ratio">9.11 : 1<small>Pool &middot; Navy</small></div>
+          <div class="grade">AAA</div>
+        </div>
+      </div>
+    </div>
+
+    <details class="disclose">
+      <summary><span class="plus"></span> Accessibility &middot; WCAG 2.1 &middot; ADA notes</summary>
+      <div class="body">Ratios measured against <strong>WCAG 2.1</strong>, the legal floor for ADA digital compliance under <strong>Title II</strong> (state and local governments) and <strong>Title III</strong> (places of public accommodation). <strong>AAA</strong> = &ge; 7:1. <strong>AA</strong> = &ge; 4.5:1 for body text and &ge; 3:1 for large text (18pt+ / 14pt bold). Default to <strong>Cream + Navy</strong> or <strong>Navy + White</strong> when contrast is in doubt.</div>
+    </details>
+  </section>
+
+  <!-- §04 PROPORTION -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Proportion in use.</h2>
+      <p class="lede">Most pages are mostly cream and navy. Cobalt and berry appear where they signal action or emphasis — never as decoration.</p>
+    </div>
+    <div class="bar">
+      <div class="b1"><span>Cream &middot; 38%</span></div>
+      <div class="b2"><span>Navy &middot; 30%</span></div>
+      <div class="b3"><span>Signal &middot; 14%</span></div>
+      <div class="b4"><span>8%</span></div>
+      <div class="b5"><span>6%</span></div>
+      <div class="b6"><span>4%</span></div>
+    </div>
+  </section>
+
+  <!-- §06 IN USE -->
+  <section class="section">
+    <div class="section-head">
+      <h2>In use.</h2>
+      <p class="lede">The same eight colors across an impact report, a client story, and a campaign tile. Same system, different jobs.</p>
+    </div>
+    <div class="wild">
+      <div class="impact">
+        <div class="label-top">Impact Report Cover</div>
+        <div class="head-line">36<br/>Counties.<br/>One<br/>Mission.</div>
+        <div>
+          <div class="stat">$547M</div>
+          <div class="stat-cap">Capital Infused &middot; FY24</div>
+        </div>
+      </div>
+      <div class="wild-right">
+        <div class="story">
+          <div class="label-top">Client Story</div>
+          <blockquote>&ldquo;The SBDC helped us see the next move.&rdquo;</blockquote>
+          <cite>&mdash; Maria Reyes &middot; Reyes Coffee Roasters &middot; Redding</cite>
+        </div>
+        <div class="campaign">
+          <div class="label-top">Campaign Tile</div>
+          <div class="line">Your business, better.</div>
+          <div class="label-top" style="color:rgba(255,255,255,0.7);">norcalsbdc.org</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY · COLOR RULES — chapter footer -->
+  <section class="section">
+    <details class="disclose">
+      <summary><span class="plus"></span> WHY &middot; COLOR RULES</summary>
+      <div class="body">
+        <p><strong>Berry: two per section, max.</strong> One italic-serif word in a headline and one inline emphasis. Berry on a button is a bug. Never adjacent to signal at large scale.</p>
+        <p><strong>Signal: the action color.</strong> Live links, action eyebrows, the manifesto field. If something on the page is asking the reader to act, it&rsquo;s signal.</p>
+        <p><strong>Evergreen: affirmation only.</strong> &ldquo;We say&rdquo; labels, success states, accordion eyebrows. Never action. Never emphasis.</p>
+        <p><strong>Cream: the default canvas.</strong> White is reserved for inverted blocks. Never put a white card on cream.</p>
+        <p><strong>No new hex values.</strong> If a design needs a tone we don&rsquo;t have, that&rsquo;s a brief to revise the palette &mdash; not a one-off override.</p>
+        <p><strong>Shades: anchors only.</strong> Step down for surfaces, dividers, and quiet UI states. Never shade berry. Never tint type.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- COLOPHON -->
+  <footer class="foot">
+    <div class="left">NorCal SBDC &middot; Brand House &middot; Chapter 01</div>
+    <div class="center">Colors &middot; Visual System</div>
+    <div class="right">v05 &middot; April 2026</div>
+  </footer>
+
+</div>
+
+</body>
+</html>

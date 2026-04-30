@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NorCal SBDC · Brand House · Calendar</title>
+<link rel="stylesheet" href="https://use.typekit.net/pkl5rjs.css" />
+<style>
+  :root {
+    --navy: #0F1C2D;
+    --slate: #2C3240;
+    --cobalt: #1B5FAF;
+    --pool: #8FC5D9;
+    --berry: #C23C3C;
+    --evergreen: #00675C;
+    --silver: #D8D8D8;
+    --white: #FDFDFD;
+    --page: #F2F1ED;
+    --ink: #0F1C2D;
+    --mute: #4A5260;
+    --hair: #D4D2CC;
+
+    --sans: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+    --serif: "proxima-sera", "Iowan Old Style", Georgia, serif;
+    --mono: "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    --col: 1320px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap { max-width: var(--col); margin: 0 auto; padding: 0 56px; }
+
+  /* HEADER BAR */
+  .head {
+    padding: 32px 0 0;
+    display: flex; align-items: baseline; justify-content: space-between;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .head .brand { color: var(--ink); font-weight: 500; }
+  .head .head-num { color: var(--mute); }
+
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--cobalt);
+  }
+
+  /* HERO — eyebrow on top, h1 below, deck right-aligned beneath */
+  .hero-mark {
+    padding: 140px 0 112px;
+  }
+  .hero-mark .eyebrow {
+    display: block;
+    margin-bottom: 22px;
+  }
+  .hero-mark h1 {
+    margin: 0 0 64px;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(140px, 17vw, 240px);
+    line-height: 0.88;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+  }
+  .hero-mark .hero-deck {
+    display: block;
+    margin-left: auto;
+    max-width: 600px;
+  }
+  .hero-mark .accent-bar {
+    display: block;
+    width: 100%; height: 4px;
+    background: var(--navy);
+    margin: 0 0 22px;
+  }
+  .hero-mark p {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 22px; line-height: 1.45; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 600px;
+  }
+
+  /* QUARTERS */
+  .quarters {
+    /* no top rule — first row sits clean */
+  }
+  .quarter {
+    border-bottom: 1px solid var(--hair);
+  }
+  .quarter > summary {
+    list-style: none; cursor: pointer;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 24px;
+    gap: 28px;
+    align-items: center;
+    padding: 22px 0;
+  }
+  .quarter > summary::-webkit-details-marker { display: none; }
+  .q-tag {
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(22px, 2.2vw, 28px); line-height: 1.15;
+    letter-spacing: -0.015em; color: var(--ink);
+  }
+  .q-chev {
+    justify-self: end;
+    color: var(--ink);
+    transition: transform 180ms ease;
+  }
+  .quarter[open] .q-chev { transform: rotate(180deg); }
+
+  /* QUARTER OPEN BODY */
+  .q-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 24px;
+    gap: 28px;
+    padding: 12px 0 64px;
+  }
+  .q-body-content {
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 80px;
+    align-items: start;
+  }
+  .q-body-left {
+    position: relative;
+    padding-top: 40px;
+  }
+  .q-bg {
+    position: absolute;
+    top: -30px;
+    left: -10px;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: clamp(260px, 28vw, 460px);
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    color: rgba(15, 28, 45, 0.10);
+    -webkit-mask-image: linear-gradient(180deg, #000 30%, rgba(0, 0, 0, 0.15) 90%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 30%, rgba(0, 0, 0, 0.15) 90%, transparent 100%);
+  }
+  .q-body-left h3,
+  .q-body-left .q-deck {
+    position: relative;
+    z-index: 1;
+  }
+  .q-body-left h3 {
+    margin: 0 0 28px;
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(48px, 5.2vw, 76px); line-height: 0.95;
+    letter-spacing: -0.03em; color: var(--ink);
+  }
+  .q-body-left h3 em {
+    font-family: var(--serif); font-weight: 300; font-style: italic;
+    margin-left: 0.02em;
+  }
+  .quarter.q-1 .q-body-left h3 em { color: var(--cobalt); }
+  .quarter.q-2 .q-body-left h3 em { color: var(--evergreen); }
+  .quarter.q-3 .q-body-left h3 em { color: var(--berry); }
+  .quarter.q-4 .q-body-left h3 em { color: var(--ink); }
+
+  .q-body-left .q-deck {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 16px; line-height: 1.55; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 460px;
+  }
+
+  /* EVENTS (right column) */
+  .event {
+    padding: 22px 0;
+    border-top: 1px solid var(--hair);
+  }
+  .event:first-child { border-top: none; padding-top: 0; }
+  .event-date {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+    margin-bottom: 10px;
+  }
+  .event-name {
+    font-family: var(--sans); font-weight: 700;
+    font-size: 16px; line-height: 1.3; letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .event-quote {
+    font-family: var(--serif); font-weight: 300; font-style: italic;
+    font-size: 16px; line-height: 1.5; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 480px;
+  }
+
+  /* TENTPOLES — title block left, content rows right */
+  .tentpoles { border-top: 1px solid var(--ink); }
+  .tentpole {
+    display: grid;
+    grid-template-columns: 360px minmax(0, 1fr);
+    gap: 80px;
+    padding: 64px 0;
+    border-bottom: 1px solid var(--hair);
+    align-items: start;
+  }
+  .tentpole:last-child { border-bottom: 1px solid var(--ink); }
+  .t-block-left { display: flex; flex-direction: column; position: relative; overflow: hidden; }
+  .t-bg {
+    position: absolute;
+    top: -20px; left: -8px;
+    z-index: 0;
+    pointer-events: none; user-select: none;
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(160px, 18vw, 280px);
+    line-height: 0.85; letter-spacing: -0.05em;
+    color: rgba(15, 28, 45, 0.07);
+  }
+  .t-block-left .t-name,
+  .t-block-left .t-meta,
+  .t-block-left .t-deck { position: relative; z-index: 1; }
+  .t-name {
+    margin: 0 0 18px;
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(36px, 4vw, 56px); line-height: 1.0;
+    letter-spacing: -0.025em; color: var(--ink);
+  }
+  .t-meta {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+    margin-bottom: 32px;
+  }
+  .t-deck {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 16px; line-height: 1.55; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 320px;
+  }
+  .t-rows { display: flex; flex-direction: column; }
+  .t-row {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 48px;
+    padding: 22px 0;
+    border-top: 1px solid var(--hair);
+    align-items: baseline;
+  }
+  .t-row:first-child { border-top: none; padding-top: 0; }
+  .t-row:last-child { padding-bottom: 0; }
+  .t-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .t-row p {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 15px; line-height: 1.55; color: var(--ink);
+    letter-spacing: -0.002em;
+    max-width: 640px;
+  }
+
+  /* SECTIONS */
+  .section { padding: 120px 0 0; }
+  .section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 72px;
+  }
+  .section-head h2 {
+    margin: 0;
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(44px, 4.8vw, 72px); line-height: 0.95;
+    letter-spacing: -0.03em; color: var(--ink);
+  }
+  .section-head h2 em {
+    font-family: var(--serif); font-weight: 300; font-style: italic;
+    color: var(--ink); margin: 0 0.02em;
+  }
+  .section-head .lede {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 22px; line-height: 1.45; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 520px;
+  }
+
+  /* ALWAYS-ON RHYTHM — 5-col grid, gradient wash */
+  .rhythm {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    position: relative;
+    background: linear-gradient(90deg, var(--navy) 0%, var(--cobalt) 40%, var(--pool) 100%);
+  }
+  .rhythm::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: var(--page);
+    opacity: 0.88;
+  }
+  .rhythm-cell {
+    padding: 28px 28px 32px;
+    display: flex; flex-direction: column;
+    position: relative; z-index: 1;
+  }
+  .r-cadence {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+    margin-bottom: 18px;
+  }
+  .r-name {
+    font-family: var(--sans); font-weight: 700;
+    font-size: 22px; line-height: 1.15; letter-spacing: -0.018em;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .r-desc {
+    font-family: var(--sans); font-weight: 500;
+    font-size: 14px; line-height: 1.55; color: var(--mute);
+    letter-spacing: -0.002em;
+  }
+
+  /* DISCLOSE */
+  details.disclose { margin-top: 24px; max-width: 920px; }
+  details.disclose > summary {
+    list-style: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--evergreen);
+    user-select: none;
+  }
+  details.disclose > summary::-webkit-details-marker { display: none; }
+  details.disclose > summary .plus {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 18px; height: 18px; border: 1px solid var(--evergreen);
+    color: var(--evergreen);
+    font-family: var(--sans); font-weight: 600; font-size: 13px; line-height: 1;
+  }
+  details.disclose[open] > summary .plus::before { content: "–"; }
+  details.disclose:not([open]) > summary .plus::before { content: "+"; }
+  details.disclose > .body {
+    margin-top: 14px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 15px; line-height: 1.65; color: var(--mute);
+    max-width: 760px;
+  }
+  details.disclose > .body p { margin: 0 0 10px; }
+  details.disclose > .body p:last-of-type { margin-bottom: 0; }
+  details.disclose > .body strong { color: var(--ink); font-weight: 600; }
+
+  /* COLOPHON */
+  .foot {
+    margin-top: 120px; padding: 36px 0 56px;
+    border-top: 1px solid var(--hair);
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .foot .center { text-align: center; }
+  .foot .right { text-align: right; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="head">
+    <div><span class="brand">NorCal SBDC</span> &middot; Brand House</div>
+    <div class="head-num">12 / 13</div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-mark">
+    <span class="eyebrow">12 &middot; Tools</span>
+    <h1>Calendar</h1>
+    <div class="hero-deck">
+      <span class="accent-bar"></span>
+      <p>Campaign themes and key dates &mdash; a coordinated messaging framework so all 16 centers move together. When we speak together, we&rsquo;re louder.</p>
+    </div>
+  </section>
+
+  <!-- QUARTERS -->
+  <section class="quarters">
+
+    <details class="quarter q-1" open>
+      <summary>
+        <span class="q-tag">New year, new business.</span>
+        <svg class="q-chev" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+      </summary>
+      <div class="q-body">
+        <div class="q-body-content">
+          <div class="q-body-left">
+            <span class="q-bg" aria-hidden="true">Q1</span>
+            <h3>New year, <em>new business.</em></h3>
+            <p class="q-deck">Q1 opens every year on intent. Clients are making resolutions, the state is finalizing budgets, and every chamber is planning its calendar. Our job: meet that energy with one clear invitation.</p>
+          </div>
+          <div class="q-body-right">
+            <div class="event">
+              <div class="event-date">January</div>
+              <div class="event-name">New Year Resolution Campaign</div>
+              <div class="event-quote">&ldquo;Start the business you&rsquo;ve been thinking about. We&rsquo;ll show you how.&rdquo;</div>
+            </div>
+            <div class="event">
+              <div class="event-date">February &ndash; March</div>
+              <div class="event-name">Tax Season Prep</div>
+              <div class="event-quote">&ldquo;Free workshops on small business tax planning and financial readiness.&rdquo;</div>
+            </div>
+            <div class="event">
+              <div class="event-date">March 18</div>
+              <div class="event-name">SBDC Day</div>
+              <div class="event-quote">&ldquo;A nationwide celebration of the SBDC network. 16 centers, one drumbeat &mdash; client stories, advisor shoutouts, and the impact behind the numbers.&rdquo;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="quarter q-2">
+      <summary>
+        <span class="q-tag">Growth season.</span>
+        <svg class="q-chev" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+      </summary>
+      <div class="q-body">
+        <div class="q-body-content">
+          <div class="q-body-left">
+            <span class="q-bg" aria-hidden="true">Q2</span>
+            <h3>Growth <em>season.</em></h3>
+            <p class="q-deck">Our loudest quarter. SBA National Small Business Week is the flagship, seasonal businesses are gearing up, capital is moving. Every center on the same drumbeat.</p>
+          </div>
+          <div class="q-body-right">
+            <div class="event">
+              <div class="event-date">Early May</div>
+              <div class="event-name">SBA National Small Business Week</div>
+              <div class="event-quote">&ldquo;Celebrate small business. Free workshops, networking, and advisor meetups.&rdquo;</div>
+            </div>
+            <div class="event">
+              <div class="event-date">May &ndash; June</div>
+              <div class="event-name">Summer Prep for Seasonal Businesses</div>
+              <div class="event-quote">&ldquo;Get your business ready for the summer rush. Free planning sessions available.&rdquo;</div>
+            </div>
+            <div class="event">
+              <div class="event-date">April &ndash; June</div>
+              <div class="event-name">Access to Capital Drive</div>
+              <div class="event-quote">&ldquo;Need funding? Our advisors have helped clients raise $547M in the last year alone.&rdquo;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="quarter q-3">
+      <summary>
+        <span class="q-tag">Back to business.</span>
+        <svg class="q-chev" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+      </summary>
+      <div class="q-body">
+        <div class="q-body-content">
+          <div class="q-body-left">
+            <span class="q-bg" aria-hidden="true">Q3</span>
+            <h3>Back to <em>business.</em></h3>
+            <p class="q-deck">The course-correction quarter. Clients are halfway through the year and asking what&rsquo;s working. We lean into mid-year reviews, fall strategic planning, and Hispanic Heritage spotlights.</p>
+          </div>
+          <div class="q-body-right">
+            <div class="event">
+              <div class="event-date">July</div>
+              <div class="event-name">Mid-Year Business Health Check</div>
+              <div class="event-quote">&ldquo;Halfway through the year. Let&rsquo;s review your goals and course-correct.&rdquo;</div>
+            </div>
+            <div class="event">
+              <div class="event-date">August &ndash; September</div>
+              <div class="event-name">Back-to-Business Fall Push</div>
+              <div class="event-quote">&ldquo;Set your business up for a strong Q4. Free strategic planning sessions.&rdquo;</div>
+            </div>
+            <div class="event">
+              <div class="event-date">Sep 15 &ndash; Oct 15</div>
+              <div class="event-name">Hispanic Heritage Month Spotlights</div>
+              <div class="event-quote">&ldquo;Celebrating Hispanic and Latino-owned businesses and the advisors who serve them.&rdquo;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="quarter q-4">
+      <summary>
+        <span class="q-tag">Impact &amp; year-end.</span>
+        <svg class="q-chev" width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+      </summary>
+      <div class="q-body">
+        <div class="q-body-content">
+          <div class="q-body-left">
+            <span class="q-bg" aria-hidden="true">Q4</span>
+            <h3>Impact &amp; <em>year-end.</em></h3>
+            <p class="q-deck">Where the year&rsquo;s numbers become the story. Annual impact report lands in October. Small Business Saturday rallies the community. Less new &mdash; more evidence.</p>
+          </div>
+          <div class="q-body-right">
+            <div class="event">
+              <div class="event-date">October &ndash; November</div>
+              <div class="event-name">Annual Impact Report</div>
+              <div class="event-quote">&ldquo;Our numbers tell the story. $547M in capital accessed. 3,723 jobs created. Here&rsquo;s the full picture.&rdquo;</div>
+            </div>
+            <div class="event">
+              <div class="event-date">Late November</div>
+              <div class="event-name">Small Business Saturday</div>
+              <div class="event-quote">&ldquo;Shop local. Support the businesses that make our communities what they are.&rdquo;</div>
+            </div>
+            <div class="event">
+              <div class="event-date">December</div>
+              <div class="event-name">New Year Planning</div>
+              <div class="event-quote">&ldquo;Close the year, set the next one. Tax prep, financial review, and the goals that carry into January.&rdquo;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </details>
+
+  </section>
+
+  <!-- THREE TENTPOLES -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Three big moments.</h2>
+      <p class="lede">Three weeks each year carry the loudest message and the most outside eyes. Coordinate four weeks ahead. Localize the audience, never the headline.</p>
+    </div>
+
+    <div class="tentpoles">
+
+      <article class="tentpole">
+        <div class="t-block-left">
+          <span class="t-bg" aria-hidden="true">Q1</span>
+          <h3 class="t-name">SBDC Day</h3>
+          <div class="t-meta">Q1 &middot; March 18</div>
+          <p class="t-deck">A nationwide celebration of the SBDC network. 16 centers, one drumbeat &mdash; the day we all post in unison and tag everyone who matters.</p>
+        </div>
+        <div class="t-rows">
+          <div class="t-row">
+            <div class="t-label">Audience</div>
+            <p>Small business owners considering advising. Partner institutions and program sponsors.</p>
+          </div>
+          <div class="t-row">
+            <div class="t-label">What we share</div>
+            <p>Client success stories pulled from every SBDC program &mdash; capital, technology, exporting, advising. America&rsquo;s SBDC national impact stats card.</p>
+          </div>
+          <div class="t-row">
+            <div class="t-label">Who we tag</div>
+            <p>@AmericasSBDC &middot; @CaliforniaSBDC &middot; partner CDFIs &middot; host institutions.</p>
+          </div>
+          <div class="t-row">
+            <div class="t-label">Call to action</div>
+            <p>&ldquo;Find your center.&rdquo; Link to the center finder &mdash; the highest-converting CTA we run all year.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="tentpole">
+        <div class="t-block-left">
+          <span class="t-bg" aria-hidden="true">Q2</span>
+          <h3 class="t-name">Small Business Week</h3>
+          <div class="t-meta">Q2 &middot; Early May</div>
+          <p class="t-deck">SBA&rsquo;s flagship week and our loudest legislative moment. Client stories travel up to district offices; impact sheets travel out to the press.</p>
+        </div>
+        <div class="t-rows">
+          <div class="t-row">
+            <div class="t-label">Audience</div>
+            <p>California legislators and their staff. Press. Small business community statewide.</p>
+          </div>
+          <div class="t-row">
+            <div class="t-label">What we share</div>
+            <p>Client success stories tagged to CA congressional districts. District-level impact sheets &mdash; capital deployed, jobs created, businesses advised, by district.</p>
+          </div>
+          <div class="t-row">
+            <div class="t-label">Who we tag</div>
+            <p>CA Senators and House delegation by district. @SBAgov. @SenSmallBiz. Local chambers and EDCs.</p>
+          </div>
+          <div class="t-row">
+            <div class="t-label">Call to action</div>
+            <p>&ldquo;Tell your story. We&rsquo;ll amplify it.&rdquo; Link to the client testimonial form.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="tentpole">
+        <div class="t-block-left">
+          <span class="t-bg" aria-hidden="true">Q4</span>
+          <h3 class="t-name">Annual Impact Report</h3>
+          <div class="t-meta">Q4 &middot; October</div>
+          <p class="t-deck">The year, told in numbers and stories. The partner audience reads this one closest &mdash; it sets the next year&rsquo;s funding conversations.</p>
+        </div>
+        <div class="t-rows">
+          <div class="t-row">
+            <div class="t-label">Audience</div>
+            <p>Partner institutions, foundation funders, board members, state agencies. The people who fund the next year.</p>
+          </div>
+          <div class="t-row">
+            <div class="t-label">What we share</div>
+            <p>Network stories. Year impact &mdash; capital, jobs, businesses, advisors. Vision and priorities for the next twelve months.</p>
+          </div>
+          <div class="t-row">
+            <div class="t-label">Who we tag</div>
+            <p>Host universities &middot; lending partners &middot; foundation funders &middot; state agencies &middot; board.</p>
+          </div>
+          <div class="t-row">
+            <div class="t-label">Call to action</div>
+            <p>&ldquo;Read the year. Help us write the next.&rdquo; Link to the partner inquiry form.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ALWAYS-ON RHYTHM -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Always-on rhythm.</h2>
+      <p class="lede">Between the quarterly campaigns, five series keep our channels alive and on-brand. The heartbeats &mdash; small, reliable, unmistakably us.</p>
+    </div>
+
+    <div class="rhythm">
+      <div class="rhythm-cell">
+        <div class="r-cadence">Bi-weekly</div>
+        <div class="r-name">Client Spotlight</div>
+        <div class="r-desc">A client success story with photo, quote, and one impact stat. Uses the Success Story template.</div>
+      </div>
+      <div class="rhythm-cell">
+        <div class="r-cadence">Weekly</div>
+        <div class="r-name">Advisor Tip</div>
+        <div class="r-desc">A short, actionable piece of advice from an advisor. Under 200 words. Name and headshot included.</div>
+      </div>
+      <div class="rhythm-cell">
+        <div class="r-cadence">Monthly</div>
+        <div class="r-name">By the Numbers</div>
+        <div class="r-desc">One compelling stat with context &mdash; $12M in capital accessed by NorCal businesses in March alone.</div>
+      </div>
+      <div class="rhythm-cell">
+        <div class="r-cadence">Rolling</div>
+        <div class="r-name">Event Promotion</div>
+        <div class="r-desc">Starts two weeks before every event. Frequency steps up in the final three days. Date, time, registration.</div>
+      </div>
+      <div class="rhythm-cell">
+        <div class="r-cadence">Monthly</div>
+        <div class="r-name">Partner Shoutout</div>
+        <div class="r-desc">A thank-you to lending partners, host institutions, and community organizations. Extends our reach.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY · CALENDAR RULES — chapter footer -->
+  <section class="section">
+    <details class="disclose">
+      <summary><span class="plus"></span> WHY &middot; CALENDAR RULES</summary>
+      <div class="body">
+        <p><strong>One drumbeat, sixteen centers.</strong> When 16 centers post the same week, the network is louder than the sum of the parts. Localize the audience, not the message.</p>
+        <p><strong>Two weeks before. Three days hot.</strong> Every event launches messaging two weeks ahead. Frequency steps up in the final three days. Below that floor you&rsquo;re shouting into the void.</p>
+        <p><strong>Quarters lock four weeks out.</strong> Once a quarter is locked, the campaign assets are final. Center comms can localize beneath the headline &mdash; audience cut, host venue, language, registration link. The anchor message stays fixed.</p>
+        <p><strong>Heartbeats run between.</strong> Always-on series fill the weeks the calendar isn&rsquo;t shouting. They build the relationships campaigns convert.</p>
+        <p><strong>Numbers refresh quarterly.</strong> Capital deployed, businesses advised, jobs created &mdash; pulled fresh on the first business day of each quarter. Stale numbers are a credibility leak.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- COLOPHON -->
+  <footer class="foot">
+    <div class="left">NorCal SBDC &middot; Brand House &middot; Chapter 12</div>
+    <div class="center">Calendar &middot; Tools</div>
+    <div class="right">v02 &middot; April 2026</div>
+  </footer>
+
+</div>
+
+</body>
+</html>

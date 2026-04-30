@@ -1,0 +1,1342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NorCal SBDC · Brand House · Stories</title>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin />
+<link rel="stylesheet" href="https://use.typekit.net/pkl5rjs.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0F1C2D;
+    --slate: #2C3240;
+    --cobalt: #1B5FAF;
+    --steel: #5582B9;
+    --fog: #84A2C6;
+    --pool: #8FC5D9;
+    --berry: #C23C3C;
+    --evergreen: #00675C;
+    --silver: #D8D8D8;
+    --white: #FDFDFD;
+    --page: #F2F1ED;
+    --ink: #0F1C2D;
+    --mute: #4A5260;
+    --hair: #D4D2CC;
+
+    --sans:  "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+    --serif: "proxima-sera", Georgia, "Times New Roman", serif;
+    --mono:  "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    --col: 1320px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap { max-width: var(--col); margin: 0 auto; padding: 0 56px; }
+
+  /* HEADER */
+  .head {
+    padding: 32px 0 0;
+    display: flex; align-items: baseline; justify-content: space-between;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute); font-weight: 500;
+  }
+  .head .brand { color: var(--ink); }
+
+  /* HERO */
+  .hero-mark {
+    padding: 84px 0 64px;
+    display: grid;
+    grid-template-columns: 1fr 460px;
+    gap: 80px;
+    align-items: end;
+  }
+  .hero-mark .eyebrow {
+    display: block;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--cobalt);
+    margin-bottom: 22px;
+  }
+  .hero-mark h1 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(120px, 14vw, 200px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+  .hero-mark .accent-bar {
+    display: block; width: 100%; height: 4px;
+    background: var(--navy); margin: 0 0 22px;
+  }
+  .hero-mark p {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    max-width: 520px;
+  }
+
+  /* ============================================================
+     TIER BLOCK — repeating pattern for each story tier
+     Preview card + explainer + [+] examples
+     ============================================================ */
+  .tier {
+    padding: 56px 0 0;
+  }
+  .tier:first-child {
+    border-top: 1px solid var(--hair);
+  }
+  .tier-head {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .tier-label {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+  }
+  .tier-label::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--berry);
+    margin-bottom: 22px;
+  }
+  .tier-h2 {
+    margin: 0 0 16px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(48px, 5.4vw, 80px);
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+  }
+  .tier-h2 em {
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .tier-desc {
+    margin: 0 0 6px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--slate);
+    max-width: 640px;
+  }
+  .tier-meta {
+    margin: 14px 0 0;
+    font-family: var(--sans);
+    font-size: 15px; font-weight: 500;
+    color: var(--mute);
+    line-height: 1.55;
+  }
+
+  /* ============================================================
+     PREVIEW CARD — the featured example for each tier
+     Navy photo left, white body right
+     ============================================================ */
+  .preview {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 0;
+    margin-top: 28px;
+    border-top: 1px solid var(--ink);
+  }
+  .preview-photo {
+    background: var(--navy);
+    min-height: 480px;
+    padding: 36px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .preview-hook {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(26px, 2.8vw, 38px);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    margin: 0 0 24px;
+    max-width: 420px;
+  }
+  .preview-biz {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--white);
+    margin: 0 0 6px;
+  }
+  .preview-loc {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin: 0;
+  }
+
+  .preview-body {
+    background: var(--white);
+    padding: 48px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .preview-body p {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink);
+    margin: 0 0 24px;
+    max-width: 400px;
+  }
+  .preview-body blockquote {
+    margin: 0;
+    padding: 0 0 0 24px;
+    border-left: 3px solid var(--berry);
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 400px;
+  }
+  .preview-body .preview-num {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(72px, 8vw, 120px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    margin: 0 0 6px;
+  }
+  .preview-body .preview-num-label {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+    margin: 0;
+  }
+
+  /* Growth / Spotlight — smaller preview, no white body panel */
+  .preview-compact {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 0;
+    margin-top: 28px;
+    border-top: 1px solid var(--ink);
+  }
+  .preview-compact .preview-photo {
+    min-height: 360px;
+    padding: 28px 32px;
+  }
+  .preview-compact .preview-hook {
+    font-size: clamp(22px, 2.4vw, 30px);
+    margin-bottom: 18px;
+  }
+  .preview-compact .preview-biz { font-size: 16px; }
+  .preview-compact-body {
+    padding: 32px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .preview-compact-body .preview-num {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(48px, 5vw, 72px);
+    line-height: 0.88;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin: 0 0 4px;
+  }
+  .preview-compact-body .preview-num-label {
+    font-family: var(--mono);
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+    margin: 0 0 24px;
+  }
+  .preview-compact-body > p {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--mute);
+    margin: 0;
+    max-width: 480px;
+  }
+
+  /* Spotlight — no metric, even simpler */
+  .preview-compact-body.no-metric > p:first-child {
+    margin-top: auto;
+  }
+
+  /* ============================================================
+     EXAMPLES — [+] disclosure with story rows
+     ============================================================ */
+  .tier-examples {
+    margin-top: 24px;
+    border-top: 1px solid var(--hair);
+  }
+  .tier-examples summary {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    align-items: center;
+    padding: 18px 0;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--evergreen);
+  }
+  .tier-examples summary::-webkit-details-marker { display: none; }
+  .tier-examples summary::marker { content: ''; }
+  .tier-examples .pm {
+    font-family: var(--mono);
+    font-size: 14px; font-weight: 500;
+    color: var(--evergreen);
+  }
+  .tier-examples .pm::before { content: '[+]'; }
+  .tier-examples[open] .pm::before { content: '[\2212]'; }
+
+  .ex-list {
+    padding: 0 0 28px;
+  }
+  a.ex-row {
+    display: grid;
+    grid-template-columns: 1fr 160px;
+    gap: 40px;
+    align-items: start;
+    padding: 18px 0 18px 48px;
+    border-top: 1px solid var(--hair);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.12s;
+  }
+  a.ex-row:hover { background: rgba(15,28,45,0.025); }
+  .ex-hook {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--ink);
+    margin: 0 0 6px;
+  }
+  .ex-biz {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ink);
+    margin: 0 0 3px;
+  }
+  .ex-loc {
+    font-family: var(--mono);
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--mute);
+    margin: 0;
+  }
+  .ex-num {
+    font-family: var(--mono);
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-align: right;
+    margin: 0 0 3px;
+  }
+  .ex-num-label {
+    font-family: var(--mono);
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--mute);
+    text-align: right;
+    margin: 0;
+  }
+
+  /* ============================================================
+     DISCLOSURE — general [+] accordion
+     ============================================================ */
+  .disc {
+    padding: 0;
+    margin-top: 64px;
+  }
+  .disclose {
+    border-bottom: 1px solid var(--hair);
+  }
+  .disclose:last-child {
+    border-bottom: none;
+  }
+  .disclose summary {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    align-items: center;
+    padding: 18px 0;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--evergreen);
+  }
+  .disclose summary::-webkit-details-marker { display: none; }
+  .disclose summary::marker { content: ''; }
+  .disclose .pm {
+    font-family: var(--mono);
+    font-size: 14px; font-weight: 500;
+    color: var(--evergreen);
+  }
+  .disclose .pm::before { content: '[+]'; }
+  .disclose[open] .pm::before { content: '[\2212]'; }
+  .disclose-body {
+    padding: 0 0 28px 80px;
+    max-width: 880px;
+  }
+  .disclose-body p {
+    margin: 0 0 14px;
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--ink);
+  }
+  .disclose-body p:last-child { margin-bottom: 0; }
+  .disclose-body strong { font-weight: 600; color: var(--ink); }
+  .disclose-body em {
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 500;
+    color: var(--berry);
+  }
+
+  /* ============================================================
+     TOOLKIT — story anatomy & writing rules
+     ============================================================ */
+  .toolkit {
+    padding: 80px 0 0;
+    margin-top: 56px;
+  }
+  .toolkit-eyebrow {
+    display: block;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--cobalt);
+    margin-bottom: 22px;
+  }
+  .toolkit-h2 {
+    margin: 0 0 16px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: clamp(48px, 5.4vw, 80px);
+    line-height: 1.04; letter-spacing: -0.025em;
+    color: var(--ink);
+  }
+  .toolkit-deck {
+    margin: 0 0 72px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 17px; line-height: 1.55;
+    color: var(--slate); max-width: 640px;
+  }
+  .toolkit-sub-label {
+    display: block;
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--berry); margin-bottom: 14px;
+  }
+  .toolkit-sub-h3 {
+    margin: 0 0 8px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.12; letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .toolkit-sub-deck {
+    margin: 0 0 48px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 15px; line-height: 1.55; color: var(--mute);
+  }
+
+  /* anatomy grid: labels | lines | card */
+  .toolkit-anatomy {
+    display: grid;
+    grid-template-columns: 260px 1fr 440px;
+    gap: 0;
+    position: relative;
+    margin-bottom: 80px;
+  }
+
+  /* left labels column */
+  .toolkit-labels { align-self: start; }
+  .toolkit-field + .toolkit-field { border-top: 1px solid var(--hair); }
+  .toolkit-field-head {
+    display: flex; align-items: center;
+    justify-content: space-between;
+    padding: 14px 0; cursor: pointer;
+    -webkit-user-select: none; user-select: none;
+  }
+  .toolkit-field-name {
+    font-family: var(--mono); font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink); transition: color 0.15s;
+  }
+  .toolkit-field-btn {
+    width: 26px; height: 26px;
+    border: 1px solid var(--hair); background: none;
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    color: var(--mute); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: all 0.15s;
+    line-height: 1;
+  }
+  .toolkit-field.is-open .toolkit-field-btn {
+    background: var(--berry); border-color: var(--berry);
+    color: var(--white);
+  }
+  .toolkit-field.is-active .toolkit-field-name { color: var(--berry); }
+
+  /* expanded detail */
+  .toolkit-field-detail {
+    display: none;
+    padding: 0 0 20px;
+  }
+  .toolkit-field.is-open .toolkit-field-detail { display: block; }
+  .toolkit-field-desc {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 15px; line-height: 1.5;
+    color: var(--ink); margin: 0 0 14px;
+  }
+  .toolkit-field-slabel {
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute); margin: 14px 0 8px;
+  }
+  .toolkit-field-text {
+    font-family: var(--sans); font-weight: 500;
+    font-size: 14px; line-height: 1.55;
+    color: var(--slate); margin: 0;
+  }
+  .toolkit-field-rules {
+    list-style: none; padding: 0; margin: 0;
+  }
+  .toolkit-field-rules li {
+    font-family: var(--sans); font-weight: 500;
+    font-size: 14px; line-height: 1.55;
+    color: var(--slate); padding: 2px 0 2px 16px;
+    position: relative;
+  }
+  .toolkit-field-rules li::before {
+    content: '\2013'; position: absolute; left: 0; color: var(--mute);
+  }
+  .toolkit-field-example {
+    margin: 10px 0 0; padding: 10px 14px;
+    border-left: 3px solid var(--berry);
+    font-family: var(--sans); font-weight: 600;
+    font-size: 14px; line-height: 1.5; color: var(--ink);
+  }
+  .toolkit-field-example-note {
+    display: block; margin-top: 6px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 12px; color: var(--mute);
+  }
+
+  /* SVG connector lines */
+  .toolkit-lines-col { position: relative; }
+  .toolkit-lines {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: visible; pointer-events: none;
+  }
+  .toolkit-line {
+    fill: none; stroke: var(--hair); stroke-width: 1;
+  }
+  .toolkit-line.is-active { stroke: var(--berry); stroke-width: 1.5; }
+  .toolkit-dot-label {
+    fill: var(--silver); transition: fill 0.15s;
+  }
+  .toolkit-dot-label.is-active { fill: var(--berry); }
+  .toolkit-dot-card {
+    fill: var(--berry); opacity: 0.3; transition: opacity 0.15s;
+  }
+  .toolkit-dot-card.is-active { opacity: 1; }
+
+  /* right card mockup */
+  .toolkit-card {
+    background: var(--white);
+    border: 1px solid var(--hair);
+    align-self: start;
+  }
+  .toolkit-card-sec {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--hair);
+    position: relative;
+    transition: background 0.15s;
+  }
+  .toolkit-card-sec:last-child { border-bottom: none; }
+  .toolkit-card-sec.is-active { background: rgba(194,60,60,0.05); }
+  .toolkit-card-dot {
+    position: absolute; top: 7px; left: 7px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--berry); opacity: 0.3;
+    transition: opacity 0.15s;
+  }
+  .toolkit-card-sec.is-active .toolkit-card-dot { opacity: 1; }
+
+  /* card content */
+  .toolkit-card-kicker {
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--berry);
+  }
+  .toolkit-card-biz {
+    display: block;
+    font-family: var(--serif); font-weight: 400;
+    font-size: 42px; line-height: 1.05;
+    letter-spacing: -0.01em; color: var(--ink);
+    margin: 4px 0 2px;
+  }
+  .toolkit-card-owner {
+    display: block;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 13px; color: var(--mute);
+  }
+  .toolkit-card-tagline {
+    font-family: var(--serif); font-style: italic; font-weight: 400;
+    font-size: 18px; line-height: 1.4; color: var(--ink); margin: 0;
+  }
+  .toolkit-card-metric {
+    font-family: var(--serif); font-weight: 400;
+    font-size: 64px; line-height: 0.92;
+    letter-spacing: -0.03em; color: var(--ink); margin: 0 0 6px;
+  }
+  .toolkit-card-metric-label {
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute); margin: 0;
+  }
+  .toolkit-card-quote {
+    margin: 0; padding: 0 0 0 16px;
+    border-left: 3px solid var(--berry);
+    font-family: var(--serif); font-style: italic; font-weight: 400;
+    font-size: 15px; line-height: 1.5; color: var(--ink);
+  }
+  .toolkit-card-pair {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    border-bottom: 1px solid var(--hair);
+  }
+  .toolkit-card-pair .toolkit-card-sec {
+    border-bottom: none;
+  }
+  .toolkit-card-pair .toolkit-card-sec:first-child {
+    border-right: 1px solid var(--hair);
+  }
+  .toolkit-card-col-label {
+    font-family: var(--mono); font-size: 9px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute); margin: 0 0 8px;
+  }
+  .toolkit-card-col-text {
+    font-family: var(--sans); font-weight: 500;
+    font-size: 13px; line-height: 1.5; color: var(--ink); margin: 0;
+  }
+  .toolkit-card-results {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  }
+  .toolkit-card-result-num {
+    font-family: var(--serif); font-weight: 400;
+    font-size: 28px; letter-spacing: -0.02em;
+    color: var(--ink); margin: 0 0 4px;
+  }
+  .toolkit-card-result-label {
+    font-family: var(--mono); font-size: 9px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute); margin: 0;
+  }
+  .toolkit-card-cta {
+    display: inline-block;
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--berry); text-decoration: none;
+    border-bottom: 2px solid var(--berry);
+    padding-bottom: 4px;
+  }
+
+  /* CHAPTER NAV */
+  .ch-nav {
+    padding: 36px 0;
+    border-top: 1px solid var(--hair);
+  }
+  .ch-nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .ch-nav-label {
+    font-family: var(--mono);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--mute);
+  }
+  .ch-nav-link {
+    font-family: var(--sans);
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    color: var(--cobalt);
+    text-decoration: none;
+  }
+  .ch-nav-link:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="wrap">
+  <div class="head">
+    <div><span class="brand">NorCal SBDC</span> &middot; Brand House</div>
+    <div>08 / 14</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero-mark">
+    <div>
+      <span class="eyebrow">08 &middot; Stories</span>
+      <h1>Stories.</h1>
+    </div>
+    <div>
+      <span class="accent-bar"></span>
+      <p>Real businesses. Measurable impact. Three tiers &mdash; signature, growth, community &mdash; so you always reach for the right one.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     TIER 01 — SIGNATURE
+     ============================================================ -->
+<div class="wrap">
+  <div class="tier">
+    <div class="tier-head">
+      <div>
+        <div class="tier-label">Tier 01</div>
+      </div>
+      <div>
+        <h2 class="tier-h2">Signature stories.</h2>
+        <p class="tier-desc">The highest-impact narratives in the network. Full arc, professional photography, verified metrics. These are strategic assets &mdash; built for annual reports, board presentations, lender pitches, and press. ~10&ndash;12 per year &middot; PDF one-pagers, website features, press, stakeholder emails, event talking points.</p>
+      </div>
+    </div>
+
+    <!-- Preview -->
+    <div class="preview">
+      <div class="preview-photo">
+        <p class="preview-hook">She rewired how we talk about unit economics.</p>
+        <p class="preview-biz">ReJoule</p>
+        <p class="preview-loc">Zora Chung, CFO &middot; Tech Futures Group</p>
+      </div>
+      <div class="preview-body">
+        <div>
+          <p>Battery diagnostics startup using AI to evaluate used EV batteries for second-life applications. NorCal SBDC advisors helped navigate SBIR grants, refine investor materials, and secure a pilot with a major automaker.</p>
+          <blockquote>&ldquo;Our advisor didn&rsquo;t just review the deck &mdash; she rewired how we talk about unit economics. That clarity closed the round.&rdquo;</blockquote>
+        </div>
+        <div>
+          <p class="preview-num">$27M</p>
+          <p class="preview-num-label">Capital Accessed</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- [+] More examples -->
+    <details class="tier-examples">
+      <summary><span class="pm"></span> See examples</summary>
+      <div class="ex-list">
+        <a href="#" class="ex-row">
+          <div>
+            <p class="ex-hook">Classic car shop doubled revenue in year one.</p>
+            <p class="ex-biz">Marin Auto Works</p>
+            <p class="ex-loc">Chris Aguirre &middot; Marin SBDC</p>
+          </div>
+          <div>
+            <p class="ex-num">$559K</p>
+            <p class="ex-num-label">Capital</p>
+          </div>
+        </a>
+        <a href="#" class="ex-row">
+          <div>
+            <p class="ex-hook">New dental practice, full patient load by month six.</p>
+            <p class="ex-biz">Seal Rock Dental</p>
+            <p class="ex-loc">Dr. Joshua Sanchez &middot; San Francisco SBDC</p>
+          </div>
+          <div>
+            <p class="ex-num">21</p>
+            <p class="ex-num-label">Jobs</p>
+          </div>
+        </a>
+        <a href="#" class="ex-row">
+          <div>
+            <p class="ex-hook">Fitness brand scaled from garage to national distribution.</p>
+            <p class="ex-biz">Rep It Out</p>
+            <p class="ex-loc">David Cruz &middot; Silicon Valley SBDC</p>
+          </div>
+          <div>
+            <p class="ex-num">$713K</p>
+            <p class="ex-num-label">Capital</p>
+          </div>
+        </a>
+      </div>
+    </details>
+  </div>
+
+
+  <!-- ============================================================
+       TIER 02 — GROWTH
+       ============================================================ -->
+  <div class="tier">
+    <div class="tier-head">
+      <div>
+        <div class="tier-label">Tier 02</div>
+      </div>
+      <div>
+        <h2 class="tier-h2">Growth stories.</h2>
+        <p class="tier-desc">Strong narratives with real results, but not trophy level. A working library that fuels regular content across social, newsletters, and partner updates. No PDFs, no dedicated web pages &mdash; these travel as posts and snippets. ~40&ndash;50 per year &middot; social posts, newsletter snippets, blog updates, internal library for center teams.</p>
+      </div>
+    </div>
+
+    <!-- Preview -->
+    <div class="preview-compact">
+      <div class="preview-photo">
+        <p class="preview-hook">Local bakery became a global education hub.</p>
+        <p class="preview-biz">The Early Rise</p>
+        <p class="preview-loc">Laila O&rsquo;Boyle &middot; San Francisco SBDC</p>
+      </div>
+      <div class="preview-compact-body">
+        <div>
+          <p class="preview-num">3x</p>
+          <p class="preview-num-label">Revenue growth</p>
+        </div>
+        <p>From local sourdough bakery to global education hub with 500K+ followers and 4,000 Substack subscribers. Advisor helped restructure pricing and digital strategy.</p>
+      </div>
+    </div>
+
+    <!-- [+] More examples -->
+    <details class="tier-examples">
+      <summary><span class="pm"></span> See examples</summary>
+      <div class="ex-list">
+        <a href="#" class="ex-row">
+          <div>
+            <p class="ex-hook">Ethical tee brand pivoted online during COVID.</p>
+            <p class="ex-biz">Yarrow Goods</p>
+            <p class="ex-loc">Oliver &amp; Grace Estrada &middot; Marin SBDC</p>
+          </div>
+          <div>
+            <p class="ex-num">$138K</p>
+            <p class="ex-num-label">Capital</p>
+          </div>
+        </a>
+        <a href="#" class="ex-row">
+          <div>
+            <p class="ex-hook">Non-toxic wellness bar opened in Pacifica.</p>
+            <p class="ex-biz">Thistle &amp; Tonic</p>
+            <p class="ex-loc">Yvette Cotter &middot; San Mateo SBDC</p>
+          </div>
+          <div>
+            <p class="ex-num">$40K</p>
+            <p class="ex-num-label">Loan</p>
+          </div>
+        </a>
+        <a href="#" class="ex-row">
+          <div>
+            <p class="ex-hook">Mother-daughter cafe launched fully staffed.</p>
+            <p class="ex-biz">Sweet Bean Coffee House</p>
+            <p class="ex-loc">Ronda Moore-Gambone &middot; Butte College SBDC</p>
+          </div>
+          <div>
+            <p class="ex-num">15</p>
+            <p class="ex-num-label">Jobs</p>
+          </div>
+        </a>
+      </div>
+    </details>
+  </div>
+
+
+  <!-- ============================================================
+       TIER 03 — COMMUNITY
+       ============================================================ -->
+  <div class="tier">
+    <div class="tier-head">
+      <div>
+        <div class="tier-label">Tier 03</div>
+      </div>
+      <div>
+        <h2 class="tier-h2">Community spotlights.</h2>
+        <p class="tier-desc">Human-interest stories that keep feeds warm and relatable. Not metrics-driven. About connection, community, and the human side of entrepreneurship. These are the stories that make the network feel real. Ongoing &middot; Instagram, Facebook, community engagement moments.</p>
+      </div>
+    </div>
+
+    <!-- Preview -->
+    <div class="preview-compact">
+      <div class="preview-photo">
+        <p class="preview-hook">Bedroom candy company hit six figures by eighteen.</p>
+        <p class="preview-biz">Cha-Cha Sweets</p>
+        <p class="preview-loc">Angel Rodriguez &middot; Solano-Napa SBDC</p>
+      </div>
+      <div class="preview-compact-body no-metric">
+        <p>18-year-old entrepreneur built a chamoy candy company from his bedroom. No capital metrics &mdash; this is a story about hustle, community, and a kid who figured it out with an advisor in his corner.</p>
+      </div>
+    </div>
+
+    <!-- [+] More examples -->
+    <details class="tier-examples">
+      <summary><span class="pm"></span> See examples</summary>
+      <div class="ex-list">
+        <a href="#" class="ex-row">
+          <div>
+            <p class="ex-hook">Eco-conscious consumer startup in patent phase.</p>
+            <p class="ex-biz">Glory Grove Organics</p>
+            <p class="ex-loc">Linda Allivato &middot; Silicon Valley SBDC</p>
+          </div>
+          <div></div>
+        </a>
+        <a href="#" class="ex-row">
+          <div>
+            <p class="ex-hook">In-home daycare hit full capacity within months.</p>
+            <p class="ex-biz">El Papalote Childcare</p>
+            <p class="ex-loc">Carmen Jimenez Martinez &middot; San Francisco SBDC</p>
+          </div>
+          <div></div>
+        </a>
+      </div>
+    </details>
+  </div>
+
+
+  <!-- ============================================================
+       TOOLKIT — story anatomy & writing rules
+       ============================================================ -->
+  <div class="toolkit">
+    <span class="toolkit-eyebrow">Templates</span>
+    <h2 class="toolkit-h2">Story toolkit.</h2>
+    <p class="toolkit-deck">Structure, rules, and metric priorities for writing new success stories to the Signature standard.</p>
+
+    <span class="toolkit-sub-label">A &middot; Structure</span>
+    <h3 class="toolkit-sub-h3">Every signature story, top to bottom.</h3>
+    <p class="toolkit-sub-deck">Hover any label or card element to highlight its match. Click + to expand writing rules and examples.</p>
+
+    <div class="toolkit-anatomy" id="toolkitAnatomy">
+
+      <!-- LEFT: labels -->
+      <div class="toolkit-labels">
+
+        <div class="toolkit-field" data-field="kicker">
+          <div class="toolkit-field-head">
+            <span class="toolkit-field-name">Kicker</span>
+            <button class="toolkit-field-btn">+</button>
+          </div>
+          <div class="toolkit-field-detail">
+            <p class="toolkit-field-desc">Short context label that appears above the headline.</p>
+            <p class="toolkit-field-slabel">What it is</p>
+            <p class="toolkit-field-text">A small all-caps tag that sets context before the reader sees the business name. Always references the SBDC center or program that ran the engagement.</p>
+            <p class="toolkit-field-slabel">Rules</p>
+            <ul class="toolkit-field-rules">
+              <li>All caps, letter-spaced, coral</li>
+              <li>2&ndash;4 words maximum</li>
+              <li>Names a program or regional center, never the business</li>
+            </ul>
+            <p class="toolkit-field-slabel">Example</p>
+            <div class="toolkit-field-example">
+              TECH FUTURES GROUP
+              <span class="toolkit-field-example-note">Other valid: MARIN SBDC &middot; SAN FRANCISCO SBDC &middot; NORTH COAST SBDC</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="toolkit-field" data-field="name">
+          <div class="toolkit-field-head">
+            <span class="toolkit-field-name">Business Name</span>
+            <button class="toolkit-field-btn">+</button>
+          </div>
+          <div class="toolkit-field-detail">
+            <p class="toolkit-field-desc">The headline &mdash; the business displayed prominently.</p>
+            <p class="toolkit-field-slabel">What it is</p>
+            <p class="toolkit-field-text">The legal or trade name of the business, set in the brand display serif at headline size.</p>
+            <p class="toolkit-field-slabel">Rules</p>
+            <ul class="toolkit-field-rules">
+              <li>Proxima Sera, 38&ndash;56px depending on layout</li>
+              <li>Use the name the business uses publicly &mdash; not the LLC suffix</li>
+              <li>Never abbreviate unless the business does</li>
+            </ul>
+            <p class="toolkit-field-slabel">Example</p>
+            <div class="toolkit-field-example">ReJoule</div>
+          </div>
+        </div>
+
+        <div class="toolkit-field" data-field="tagline">
+          <div class="toolkit-field-head">
+            <span class="toolkit-field-name">Tagline</span>
+            <button class="toolkit-field-btn">+</button>
+          </div>
+          <div class="toolkit-field-detail">
+            <p class="toolkit-field-desc">One sentence describing what the business does.</p>
+            <p class="toolkit-field-slabel">Rules</p>
+            <ul class="toolkit-field-rules">
+              <li>One sentence, 12&ndash;20 words</li>
+              <li>Lead with the verb or product, not the company name</li>
+              <li>Avoid jargon &mdash; write so a non-customer understands</li>
+            </ul>
+            <p class="toolkit-field-slabel">Example</p>
+            <div class="toolkit-field-example">Second-life battery diagnostics that keep EV packs out of landfills and on the road longer.</div>
+          </div>
+        </div>
+
+        <div class="toolkit-field" data-field="metric">
+          <div class="toolkit-field-head">
+            <span class="toolkit-field-name">Hero Metric</span>
+            <button class="toolkit-field-btn">+</button>
+          </div>
+          <div class="toolkit-field-detail">
+            <p class="toolkit-field-desc">The single most impressive number &mdash; the anchor of the story.</p>
+            <p class="toolkit-field-slabel">Rules</p>
+            <ul class="toolkit-field-rules">
+              <li>One number, displayed large in the brand serif</li>
+              <li>Pair with a 2&ndash;4 word small-caps label beneath</li>
+              <li>Prioritize: capital raised &gt; revenue &gt; jobs &gt; other</li>
+            </ul>
+            <p class="toolkit-field-slabel">Example</p>
+            <div class="toolkit-field-example">
+              $27M &mdash; In Capital Raised
+              <span class="toolkit-field-example-note">If no dollar figure exists, lead with jobs created or units shipped.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="toolkit-field" data-field="quote">
+          <div class="toolkit-field-head">
+            <span class="toolkit-field-name">Quote</span>
+            <button class="toolkit-field-btn">+</button>
+          </div>
+          <div class="toolkit-field-detail">
+            <p class="toolkit-field-desc">Direct quote from the business owner.</p>
+            <p class="toolkit-field-slabel">Rules</p>
+            <ul class="toolkit-field-rules">
+              <li>Must mention SBDC or the specific advisor by name</li>
+              <li>Specific over vague &mdash; name a deliverable, not a feeling</li>
+              <li>One to two sentences, 25&ndash;50 words</li>
+            </ul>
+            <p class="toolkit-field-slabel">Example</p>
+            <div class="toolkit-field-example">&ldquo;The Tech Futures Group at NorCal SBDC helped us refine our pitch and connect with the right investors at exactly the right time.&rdquo;</div>
+          </div>
+        </div>
+
+        <div class="toolkit-field" data-field="challenge">
+          <div class="toolkit-field-head">
+            <span class="toolkit-field-name">The Challenge</span>
+            <button class="toolkit-field-btn">+</button>
+          </div>
+          <div class="toolkit-field-detail">
+            <p class="toolkit-field-desc">Two to three sentences max &mdash; what was the obstacle?</p>
+            <p class="toolkit-field-slabel">Rules</p>
+            <ul class="toolkit-field-rules">
+              <li>Concrete obstacle, not a generic struggle</li>
+              <li>Include the stakes &mdash; what was at risk?</li>
+              <li>2&ndash;3 sentences, no more</li>
+            </ul>
+            <p class="toolkit-field-slabel">Example</p>
+            <div class="toolkit-field-example">Scaling a hardware-software platform required capital and credibility neither founder had access to alone.</div>
+          </div>
+        </div>
+
+        <div class="toolkit-field" data-field="solution">
+          <div class="toolkit-field-head">
+            <span class="toolkit-field-name">The Solution</span>
+            <button class="toolkit-field-btn">+</button>
+          </div>
+          <div class="toolkit-field-detail">
+            <p class="toolkit-field-desc">Two to three sentences max &mdash; what did SBDC do specifically?</p>
+            <p class="toolkit-field-slabel">Rules</p>
+            <ul class="toolkit-field-rules">
+              <li>Name the actual deliverables &mdash; model, deck, intros</li>
+              <li>Active verbs, owned by the SBDC advisor</li>
+              <li>2&ndash;3 sentences, no more</li>
+            </ul>
+            <p class="toolkit-field-slabel">Example</p>
+            <div class="toolkit-field-example">SBDC advisors restructured the financial model, prepared the deck, and warm-introduced strategic investors.</div>
+          </div>
+        </div>
+
+        <div class="toolkit-field" data-field="results">
+          <div class="toolkit-field-head">
+            <span class="toolkit-field-name">The Results</span>
+            <button class="toolkit-field-btn">+</button>
+          </div>
+          <div class="toolkit-field-detail">
+            <p class="toolkit-field-desc">Lead with numbers &mdash; three to four metrics displayed prominently.</p>
+            <p class="toolkit-field-slabel">Rules</p>
+            <ul class="toolkit-field-rules">
+              <li>Three to four metrics, displayed as a row</li>
+              <li>Number + 1&ndash;2 word label, no sentences</li>
+              <li>Order by impact: capital &rarr; jobs &rarr; growth &rarr; reach</li>
+            </ul>
+            <p class="toolkit-field-slabel">Example</p>
+            <div class="toolkit-field-example">$27M Raised &middot; 42 Jobs &middot; 3 New Markets</div>
+          </div>
+        </div>
+
+        <div class="toolkit-field" data-field="cta">
+          <div class="toolkit-field-head">
+            <span class="toolkit-field-name">Partner CTA</span>
+            <button class="toolkit-field-btn">+</button>
+          </div>
+          <div class="toolkit-field-detail">
+            <p class="toolkit-field-desc">Link back to the NorCal SBDC center that helped.</p>
+            <p class="toolkit-field-slabel">Rules</p>
+            <ul class="toolkit-field-rules">
+              <li>Always links to the partner center page, never a homepage</li>
+              <li>Coral, all-caps, with trailing arrow</li>
+              <li>Drives visitors back into the network</li>
+            </ul>
+            <p class="toolkit-field-slabel">Example</p>
+            <div class="toolkit-field-example">TECH FUTURES GROUP &rarr;</div>
+          </div>
+        </div>
+
+      </div><!-- /toolkit-labels -->
+
+      <!-- MIDDLE: SVG connector lines -->
+      <div class="toolkit-lines-col">
+        <svg class="toolkit-lines" id="toolkitLines"></svg>
+      </div>
+
+      <!-- RIGHT: card mockup -->
+      <div class="toolkit-card">
+
+        <div class="toolkit-card-sec" data-field="kicker">
+          <span class="toolkit-card-dot"></span>
+          <span class="toolkit-card-kicker">NorCal SBDC Success Story</span>
+        </div>
+
+        <div class="toolkit-card-sec" data-field="name">
+          <span class="toolkit-card-dot"></span>
+          <span class="toolkit-card-biz">ReJoule</span>
+          <span class="toolkit-card-owner">Chris Aguirre, Owner</span>
+        </div>
+
+        <div class="toolkit-card-sec" data-field="tagline">
+          <span class="toolkit-card-dot"></span>
+          <p class="toolkit-card-tagline">Second-life battery diagnostics that keep EV packs out of landfills and on the road longer.</p>
+        </div>
+
+        <div class="toolkit-card-sec" data-field="metric">
+          <span class="toolkit-card-dot"></span>
+          <p class="toolkit-card-metric">$27M</p>
+          <p class="toolkit-card-metric-label">In Capital Raised</p>
+        </div>
+
+        <div class="toolkit-card-sec" data-field="quote">
+          <span class="toolkit-card-dot"></span>
+          <blockquote class="toolkit-card-quote">&ldquo;The Tech Futures Group at NorCal SBDC helped us refine our pitch and connect with the right investors at exactly the right time.&rdquo;</blockquote>
+        </div>
+
+        <div class="toolkit-card-pair">
+          <div class="toolkit-card-sec" data-field="challenge">
+            <span class="toolkit-card-dot"></span>
+            <p class="toolkit-card-col-label">The Challenge</p>
+            <p class="toolkit-card-col-text">Scaling a hardware-software platform required capital and credibility neither founder had access to alone.</p>
+          </div>
+          <div class="toolkit-card-sec" data-field="solution">
+            <span class="toolkit-card-dot"></span>
+            <p class="toolkit-card-col-label">The Solution</p>
+            <p class="toolkit-card-col-text">SBDC advisors restructured the financial model, prepared the deck, and warm-introduced strategic investors.</p>
+          </div>
+        </div>
+
+        <div class="toolkit-card-sec" data-field="results">
+          <span class="toolkit-card-dot"></span>
+          <div class="toolkit-card-results">
+            <div>
+              <p class="toolkit-card-result-num">$27M</p>
+              <p class="toolkit-card-result-label">Raised</p>
+            </div>
+            <div>
+              <p class="toolkit-card-result-num">42</p>
+              <p class="toolkit-card-result-label">Jobs</p>
+            </div>
+            <div>
+              <p class="toolkit-card-result-num">3</p>
+              <p class="toolkit-card-result-label">New Markets</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="toolkit-card-sec" data-field="cta">
+          <span class="toolkit-card-dot"></span>
+          <a class="toolkit-card-cta" href="#">Tech Futures Group &rarr;</a>
+        </div>
+
+      </div><!-- /toolkit-card -->
+
+    </div><!-- /toolkit-anatomy -->
+  </div>
+
+
+  <!-- ============================================================
+       DISCLOSURES
+       ============================================================ -->
+  <div class="disc">
+    <details class="disclose">
+      <summary><span class="pm"></span> Conduct</summary>
+      <div class="disclose-body">
+        <p><strong>Lead with the metric.</strong> Capital accessed, jobs created, or revenue growth &mdash; in that order. Name the specific NorCal SBDC center. Name the advisor.</p>
+        <p><strong>Use Challenge &rarr; Solution &rarr; Results.</strong> Specific, attributed quotes that name the program. No generic praise.</p>
+        <p><strong>Never</strong> bury results at the bottom, use "SBDC" without "NorCal," publish without professional photography, or use quotes like <em>"great experience."</em></p>
+      </div>
+    </details>
+    <details class="disclose">
+      <summary><span class="pm"></span> Scoring rubric</summary>
+      <div class="disclose-body">
+        <p>Score across five criteria: <strong>Economic Impact</strong>, <strong>Narrative Structure</strong>, <strong>Quote Quality</strong>, <strong>Photography</strong>, <strong>Reusability</strong>. Each rated 0&ndash;5.</p>
+        <p><strong>Signature</strong> 20&ndash;25 pts. <strong>Growth</strong> 12&ndash;19. <strong>Community</strong> 0&ndash;11.</p>
+      </div>
+    </details>
+    <details class="disclose">
+      <summary><span class="pm"></span> Submit a story</summary>
+      <div class="disclose-body">
+        <p>Have a client story? Send it to <strong>marketing@norcalsbdc.org</strong> for review. We score it against the rubric and route it to the right tier and channel.</p>
+      </div>
+    </details>
+  </div>
+
+  <!-- Chapter nav -->
+  <nav class="ch-nav">
+    <div class="ch-nav-inner">
+      <div class="ch-nav-label">&larr; Templates</div>
+      <a class="ch-nav-link" href="#">Glossary &rarr;</a>
+    </div>
+  </nav>
+</div>
+
+<script>
+(function(){
+  /* ---- toolkit: expand / collapse ---- */
+  document.querySelectorAll('.toolkit-field-head').forEach(function(head){
+    head.addEventListener('click', function(){
+      var field = head.closest('.toolkit-field');
+      field.classList.toggle('is-open');
+      field.querySelector('.toolkit-field-btn').textContent =
+        field.classList.contains('is-open') ? '×' : '+';
+      requestAnimationFrame(drawLines);
+    });
+  });
+
+  /* ---- toolkit: hover highlight ---- */
+  var allFields = document.querySelectorAll('.toolkit-field');
+  var allSecs   = document.querySelectorAll('.toolkit-card-sec');
+
+  function activate(name){
+    allFields.forEach(function(f){ f.classList.toggle('is-active', f.dataset.field === name); });
+    allSecs.forEach(function(s){ s.classList.toggle('is-active', s.dataset.field === name); });
+    document.querySelectorAll('.toolkit-line').forEach(function(l){
+      l.classList.toggle('is-active', l.dataset.field === name);
+    });
+    document.querySelectorAll('.toolkit-dot-label, .toolkit-dot-card').forEach(function(d){
+      d.classList.toggle('is-active', d.dataset.field === name);
+    });
+  }
+  function deactivate(){
+    document.querySelectorAll('.is-active').forEach(function(el){
+      if(el.closest('.toolkit-anatomy')) el.classList.remove('is-active');
+    });
+  }
+
+  allFields.forEach(function(f){
+    f.addEventListener('mouseenter', function(){ activate(f.dataset.field); });
+    f.addEventListener('mouseleave', deactivate);
+  });
+  allSecs.forEach(function(s){
+    s.addEventListener('mouseenter', function(){ activate(s.dataset.field); });
+    s.addEventListener('mouseleave', deactivate);
+  });
+
+  /* ---- toolkit: SVG connector lines ---- */
+  var svg = document.getElementById('toolkitLines');
+  var ns  = 'http://www.w3.org/2000/svg';
+
+  function drawLines(){
+    if(!svg) return;
+    svg.innerHTML = '';
+    var anatomy = document.getElementById('toolkitAnatomy');
+    var aRect   = anatomy.getBoundingClientRect();
+    var col     = svg.parentElement.getBoundingClientRect();
+
+    allFields.forEach(function(f){
+      var name = f.dataset.field;
+      var sec  = document.querySelector('.toolkit-card-sec[data-field="'+name+'"]');
+      if(!sec) return;
+
+      var fHead = f.querySelector('.toolkit-field-head');
+      var fR    = fHead.getBoundingClientRect();
+      var sR    = sec.getBoundingClientRect();
+
+      /* positions relative to SVG container */
+      var x1 = fR.right  - col.left;
+      var y1 = fR.top + fR.height/2 - col.top;
+      var x2 = sR.left - col.left;
+      var y2 = sR.top + 14 - col.top;
+
+      var xM = x1 + (x2 - x1) * 0.35;
+
+      var path = document.createElementNS(ns,'path');
+      path.setAttribute('d','M'+x1+','+y1+' H'+xM+' V'+y2+' H'+x2);
+      path.setAttribute('class','toolkit-line');
+      path.dataset.field = name;
+      svg.appendChild(path);
+
+      var d1 = document.createElementNS(ns,'circle');
+      d1.setAttribute('cx',x1); d1.setAttribute('cy',y1); d1.setAttribute('r','4');
+      d1.setAttribute('class','toolkit-dot-label'); d1.dataset.field = name;
+      svg.appendChild(d1);
+
+      var d2 = document.createElementNS(ns,'circle');
+      d2.setAttribute('cx',x2); d2.setAttribute('cy',y2); d2.setAttribute('r','4');
+      d2.setAttribute('class','toolkit-dot-card'); d2.dataset.field = name;
+      svg.appendChild(d2);
+    });
+  }
+
+  drawLines();
+  window.addEventListener('resize', drawLines);
+})();
+</script>
+</body>
+</html>

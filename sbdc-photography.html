@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NorCal SBDC · Brand House · Photos</title>
+<link rel="stylesheet" href="https://use.typekit.net/pkl5rjs.css" />
+<style>
+  :root {
+    --navy: #0F1C2D;
+    --slate: #2C3240;
+    --cobalt: #1B5FAF;
+    --pool: #8FC5D9;
+    --berry: #C23C3C;
+    --evergreen: #00675C;
+    --silver: #D8D8D8;
+    --white: #FDFDFD;
+    --page: #F2F1ED;
+    --ink: #0F1C2D;
+    --mute: #4A5260;
+    --hair: #D4D2CC;
+
+    --sans: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+    --serif: "proxima-sera", "Iowan Old Style", Georgia, serif;
+    --mono: "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    --col: 1320px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  img, video { display: block; max-width: 100%; height: auto; }
+
+  .wrap { max-width: var(--col); margin: 0 auto; padding: 0 56px; }
+
+  /* HEADER */
+  .head {
+    padding: 32px 0 0;
+    display: flex; align-items: baseline; justify-content: space-between;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .head .brand { color: var(--ink); font-weight: 500; }
+
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--cobalt);
+  }
+
+  /* HERO — canonical pattern */
+  .hero-mark {
+    padding: 140px 0 96px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 460px;
+    gap: 80px;
+    align-items: end;
+  }
+  .hero-mark .eyebrow { display: block; margin-bottom: 22px; }
+  .hero-mark h1 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(120px, 13vw, 200px);
+    line-height: 0.88;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+  }
+  .hero-mark .hero-sub { display: block; padding-bottom: 14px; }
+  .hero-mark .accent-bar {
+    display: block;
+    width: 100%; height: 4px;
+    background: var(--navy);
+    margin: 0 0 22px;
+  }
+  .hero-mark p {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 22px; line-height: 1.45; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 520px;
+  }
+
+  /* SECTIONS */
+  .section { padding: 120px 0 0; }
+  .section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 56px;
+  }
+  .section-head h2 {
+    margin: 0;
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(48px, 5.4vw, 84px); line-height: 0.95;
+    letter-spacing: -0.03em; color: var(--ink);
+  }
+  .section-head .lede {
+    margin: 0 0 8px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 17px; line-height: 1.55; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 480px;
+  }
+
+  /* §01 THESIS — feature image with mono caption */
+  .thesis-frame {
+    margin-top: 8px;
+  }
+  .thesis-image {
+    aspect-ratio: 16 / 9;
+    background: var(--silver);
+    overflow: hidden;
+  }
+  .thesis-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+  .thesis-caption {
+    margin-top: 16px;
+    display: flex; justify-content: space-between; align-items: baseline; gap: 32px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .thesis-caption .caption-name { color: var(--ink); }
+
+  /* §02 LIBRARY — editorial 12-col tile grid */
+  .library-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-rows: 150px;
+    gap: 4px;
+  }
+  .photo-tile {
+    position: relative;
+    overflow: hidden;
+    background: var(--silver);
+    margin: 0;
+  }
+  .photo-tile img,
+  .photo-tile video {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .photo-tile::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 46%;
+    background: linear-gradient(to top, rgba(15, 28, 45, 0.72), rgba(15, 28, 45, 0));
+    pointer-events: none;
+  }
+  .photo-tile span {
+    position: absolute;
+    left: 18px;
+    bottom: 16px;
+    z-index: 2;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: rgba(253, 253, 253, 0.92);
+  }
+  .tile-a { grid-column: span 3; grid-row: span 2; }
+  .tile-b { grid-column: span 3; grid-row: span 2; }
+  .tile-c { grid-column: span 6; grid-row: span 2; }
+  .tile-d { grid-column: span 4; grid-row: span 2; }
+  .tile-e { grid-column: span 4; grid-row: span 2; }
+  .tile-f { grid-column: span 4; grid-row: span 2; }
+
+  /* §02b CATEGORIES — 3-up hairline grid below library */
+  .categories {
+    margin-top: 96px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+  .cat {
+    padding: 32px 32px 36px;
+    border-right: 1px solid var(--hair);
+  }
+  .cat:last-child { border-right: none; }
+  .cat-num {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+    margin-bottom: 24px;
+  }
+  .cat-name {
+    font-family: var(--sans); font-weight: 700;
+    font-size: 36px; line-height: 1.0; letter-spacing: -0.022em;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+  .cat-desc {
+    font-family: var(--sans); font-weight: 500;
+    font-size: 15px; line-height: 1.55; color: var(--mute);
+    letter-spacing: -0.002em;
+    max-width: 280px;
+  }
+
+  /* §03 LEXICON — single inline list, do flows into don't */
+  .lex-list {
+    list-style: none;
+    margin: 0; padding: 0;
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(22px, 2.2vw, 28px);
+    line-height: 1.5;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    max-width: 1100px;
+  }
+  .lex-list li { display: inline; }
+  .lex-list li:not(:last-child)::after {
+    content: " \2022 ";
+    color: var(--evergreen);
+    font-weight: 700;
+    margin: 0 0.18em;
+  }
+  .lex-list li.dont:not(:last-child)::after,
+  .lex-list li.do:has(+ li.dont)::after {
+    color: var(--berry);
+  }
+  .lex-list li.dont > span {
+    text-decoration: line-through;
+    text-decoration-color: var(--berry);
+    text-decoration-thickness: 2px;
+    text-decoration-skip-ink: none;
+  }
+
+  /* §04 HEADSHOTS — full steel band: section head + gallery + [+] + tip all inside */
+  .headshots-band {
+    margin-top: 24px;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background: var(--slate);
+    color: var(--pool);
+    padding: 96px 0 96px;
+  }
+  .headshots-band .section-head h2 { color: var(--pool); }
+  .headshots-band .section-head .lede { color: rgba(143, 197, 217, 0.78); }
+
+  /* Disclose — dark navy on steel */
+  .headshots-band details.disclose {
+    margin-top: 56px;
+    border-top-color: rgba(143, 197, 217, 0.25);
+    border-bottom-color: rgba(143, 197, 217, 0.25);
+  }
+  .headshots-band details.disclose > summary { color: var(--pool); }
+  .headshots-band details.disclose > summary .plus {
+    border-color: var(--pool);
+    color: var(--pool);
+  }
+  .headshots-band details.disclose > .body { color: rgba(143, 197, 217, 0.78); }
+  .headshots-band details.disclose > .body strong { color: var(--pool); }
+  .headshots-band details.disclose > .body em {
+    font-style: italic;
+    color: rgba(15, 28, 45, 0.72);
+  }
+  .headshots-band details.disclose > .body a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: rgba(15, 28, 45, 0.5);
+    text-underline-offset: 4px;
+  }
+  .headshots-band details.disclose > .body a:hover {
+    text-decoration-color: var(--ink);
+  }
+  .headshots-band-inner {
+    max-width: var(--col);
+    margin: 0 auto;
+    padding: 0 56px;
+  }
+  .headshots-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+  }
+  .headshot {
+    position: relative;
+    aspect-ratio: 1 / 1.06;
+    overflow: hidden;
+    background: var(--slate);
+    margin: 0;
+  }
+  .headshot img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 30%;
+    filter: grayscale(100%) brightness(0.94);
+  }
+  .headshot::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 56%;
+    background: linear-gradient(to top, rgba(44, 50, 64, 0.90) 6%, rgba(44, 50, 64, 0));
+    pointer-events: none;
+  }
+  .headshot-meta {
+    position: absolute;
+    left: 22px; right: 22px; bottom: 18px;
+    z-index: 2;
+    color: var(--white);
+  }
+  .headshot-name {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 16px; line-height: 1.2;
+    letter-spacing: -0.005em;
+    margin-bottom: 6px;
+  }
+  .headshot-role {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(253, 253, 253, 0.62);
+  }
+  .how-to .eyebrow {
+    display: block;
+    margin-bottom: 32px;
+    color: var(--pool);
+  }
+  .how-to-title {
+    margin: 0 0 8px;
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(56px, 6vw, 96px); line-height: 0.95;
+    letter-spacing: -0.03em; color: var(--white);
+  }
+  .how-to-deck {
+    margin: 0 0 56px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 17px; line-height: 1.5;
+    color: rgba(253, 253, 253, 0.7);
+    letter-spacing: -0.005em;
+    max-width: 520px;
+  }
+  /* 2-column numbered grid — six rules, big mono numbers, structured body */
+  .how-to-rules {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 96px;
+    row-gap: 0;
+    border-top: 1px solid rgba(253, 253, 253, 0.18);
+  }
+  .how-to-rule {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    column-gap: 28px;
+    align-items: start;
+    padding: 32px 0 36px;
+    border-bottom: 1px solid rgba(253, 253, 253, 0.18);
+  }
+  .how-to-rule .num {
+    font-family: var(--mono); font-weight: 500;
+    font-size: 28px; line-height: 0.9;
+    color: var(--pool);
+    letter-spacing: 0.04em;
+  }
+  .how-to-rule h3 {
+    margin: 0 0 10px;
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(24px, 2.4vw, 32px); line-height: 1.05;
+    letter-spacing: -0.022em;
+    color: var(--white);
+  }
+  .how-to-rule p {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 15px; line-height: 1.55;
+    color: rgba(253, 253, 253, 0.78);
+    max-width: 360px;
+  }
+
+  .already-have {
+    margin-top: 64px;
+    padding: 40px 0;
+    border-top: 1px solid var(--hair);
+    border-bottom: 1px solid var(--hair);
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 56px;
+    align-items: start;
+  }
+  .already-have-eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+    padding-top: 6px;
+  }
+  .already-have-body p {
+    margin: 0 0 14px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 18px; line-height: 1.55; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 720px;
+  }
+  .already-have-body p:last-child { margin-bottom: 0; }
+  .already-have-body .italic-note {
+    color: var(--mute);
+    font-size: 16px;
+  }
+  .already-have-body a {
+    color: var(--cobalt);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+  .already-have-body a:hover { color: var(--ink); }
+
+  /* §05 ACCESS — two-zone color split: navy (message) + cobalt (action) */
+  .access-strip {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    align-items: stretch;
+    min-height: 240px;
+  }
+  .access-content {
+    background: var(--navy);
+    color: var(--white);
+    padding: 48px 56px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .access-eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: rgba(253, 253, 253, 0.65);
+    margin-bottom: 18px;
+  }
+  .access-content h3 {
+    margin: 0 0 12px;
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(34px, 3.6vw, 48px); line-height: 1.0;
+    letter-spacing: -0.025em;
+  }
+  .access-content p {
+    margin: 0;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 17px; line-height: 1.5;
+    color: rgba(253, 253, 253, 0.78);
+    letter-spacing: -0.005em;
+    max-width: 480px;
+  }
+  .access-cta-zone {
+    background: var(--cobalt);
+    color: var(--white);
+    display: flex; align-items: center; justify-content: center;
+    padding: 32px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: background 200ms ease;
+  }
+  .access-cta-zone::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0;
+    width: 6px;
+    background: var(--evergreen);
+  }
+  .access-cta-zone:hover { background: #032f68; }
+  .access-cta-zone .cta-label {
+    font-family: var(--sans); font-weight: 700;
+    font-size: clamp(28px, 2.8vw, 36px); line-height: 1.0;
+    letter-spacing: -0.022em;
+    color: var(--white);
+  }
+  .access-cta-zone .cta-arrow {
+    margin-left: 16px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(28px, 2.8vw, 36px); line-height: 1.0;
+    transition: transform 180ms ease;
+    display: inline-block;
+  }
+  .access-cta-zone:hover .cta-arrow { transform: translateX(6px); }
+
+  /* DISCLOSE */
+  details.disclose {
+    margin-top: 24px;
+    max-width: 920px;
+    border-top: 1px solid var(--hair);
+    border-bottom: 1px solid var(--hair);
+    padding: 22px 0;
+  }
+  details.disclose > summary {
+    list-style: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--evergreen);
+    user-select: none;
+  }
+  details.disclose > summary::-webkit-details-marker { display: none; }
+  details.disclose > summary .plus {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 18px; height: 18px; border: 1px solid var(--evergreen);
+    color: var(--evergreen);
+    font-family: var(--sans); font-weight: 600; font-size: 13px; line-height: 1;
+  }
+  details.disclose[open] > summary .plus::before { content: "–"; }
+  details.disclose:not([open]) > summary .plus::before { content: "+"; }
+  details.disclose > .body {
+    margin-top: 14px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 15px; line-height: 1.65; color: var(--mute);
+    max-width: 760px;
+  }
+  details.disclose > .body p { margin: 0 0 10px; }
+  details.disclose > .body p:last-of-type { margin-bottom: 0; }
+  details.disclose > .body strong { color: var(--ink); font-weight: 600; }
+
+  /* COLOPHON */
+  .foot {
+    margin-top: 120px; padding: 36px 0 56px;
+    border-top: 1px solid var(--hair);
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .foot .center { text-align: center; }
+  .foot .right { text-align: right; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="head">
+    <div><span class="brand">NorCal SBDC</span> &middot; Brand House</div>
+    <span>06 / 13</span>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-mark">
+    <div>
+      <span class="eyebrow">06 &middot; Photos</span>
+      <h1>Photos.</h1>
+    </div>
+    <div class="hero-sub">
+      <span class="accent-bar"></span>
+      <p>Photography and video that put people first. Faces, not buildings. Real work, real moments, real light.</p>
+    </div>
+  </section>
+
+  <!-- §01 THESIS — People, not programs. -->
+  <section class="section">
+    <div class="section-head">
+      <h2>People, not programs.</h2>
+      <p class="lede">A person&rsquo;s face communicates the spirit of the network better than any logo, office exterior, or statistic. Show connection between people and energy in the work.</p>
+    </div>
+    <figure class="thesis-frame">
+      <div class="thesis-image">
+        <img src="./Photos_files/Dick-Taylor-Adam-Dick-and-Dustin-Taylor.jpg" alt="Adam, Dick, and Dustin Taylor at Dick Taylor Chocolates" />
+      </div>
+      <figcaption class="thesis-caption">
+        <span class="caption-name">Dick Taylor Chocolates</span>
+        <span>Arcata, CA &middot; Bean to Bar</span>
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- §02 LIBRARY — A working archive. -->
+  <section class="section">
+    <div class="section-head">
+      <h2>A working archive.</h2>
+      <p class="lede">Organize assets by what the network needs to publish: client images and event video. Make the useful image easy to find.</p>
+    </div>
+
+    <div class="library-grid">
+      <figure class="photo-tile tile-a">
+        <img src="./Photos_files/Michelle-8-1-2.jpeg" alt="After-School Snack Attack founder" />
+        <span>Client image</span>
+      </figure>
+      <figure class="photo-tile tile-b">
+        <img src="./Photos_files/thumbnail_Nivedita-in-lab-with-Takehiro-1200x675.jpg" alt="Kamet Automation lab" />
+        <span>Client image</span>
+      </figure>
+      <figure class="photo-tile tile-c">
+        <img src="./Photos_files/Dick-Taylor-Adam-Dick-and-Dustin-Taylor.jpg" alt="Dick Taylor Chocolates" />
+        <span>Client image</span>
+      </figure>
+      <figure class="photo-tile tile-d">
+        <video autoplay muted loop playsinline>
+          <source src="https://www.norcalsbdc.org/wp-content/uploads/2025/05/emerge-24-footage2.mp4" type="video/mp4" />
+        </video>
+        <span>Event video</span>
+      </figure>
+      <figure class="photo-tile tile-e">
+        <img src="./Photos_files/marin-auto.jpg" alt="Marin Auto Works" />
+        <span>Client image</span>
+      </figure>
+      <figure class="photo-tile tile-f">
+        <img src="./Photos_files/Angel-Cha-Cha-Sweets-1-970x1200.jpeg" alt="Cha-Cha Sweets founder" />
+        <span>Client image</span>
+      </figure>
+    </div>
+
+  </section>
+
+  <!-- §03 WHAT WE SHOW — single inline list, do → don't -->
+  <section class="section">
+    <div class="section-head">
+      <h2>What we show.</h2>
+      <p class="lede">The decisions that keep the page from looking like stock business software. Real people, real rooms, real stakes.</p>
+    </div>
+
+    <ul class="lex-list">
+      <li class="do"><span>People at work</span></li>
+      <li class="do"><span>Natural light</span></li>
+      <li class="do"><span>Advisor + client</span></li>
+      <li class="do"><span>Tight crops</span></li>
+      <li class="do"><span>Confidence, focus, laughter</span></li>
+      <li class="dont"><span>Suits shaking hands</span></li>
+      <li class="dont"><span>Posed group shots</span></li>
+      <li class="dont"><span>AI-generated people</span></li>
+      <li class="dont"><span>Empty office space</span></li>
+      <li class="dont"><span>Heavy brand-color filters</span></li>
+    </ul>
+  </section>
+
+  <!-- §04 HEADSHOTS — Every face, a headshot. -->
+  <section class="section">
+    <div class="headshots-band">
+      <div class="headshots-band-inner">
+
+        <div class="section-head">
+          <h2>Every face, a headshot.</h2>
+          <p class="lede">Every advisor and staff member should have a current professional headshot. It shows up on LinkedIn, in client introductions, and on social &mdash; the first face someone sees before they meet you.</p>
+        </div>
+
+        <div class="headshots-grid">
+          <figure class="headshot">
+            <img src="./Photos_files/headshot-paul-bozzo.jpg" alt="Paul Bozzo" />
+            <figcaption class="headshot-meta">
+              <div class="headshot-name">Paul Bozzo</div>
+              <div class="headshot-role">TFG Advisor</div>
+            </figcaption>
+          </figure>
+          <figure class="headshot">
+            <img src="./Photos_files/headshot-kristina-mcmillan.jpg" alt="Kristina McMillan" />
+            <figcaption class="headshot-meta">
+              <div class="headshot-name">Kristina McMillan</div>
+              <div class="headshot-role">TFG Advisor</div>
+            </figcaption>
+          </figure>
+          <figure class="headshot">
+            <img src="./Photos_files/headshot-scott-rogalski.jpg" alt="Scott Rogalski" />
+            <figcaption class="headshot-meta">
+              <div class="headshot-name">Scott Rogalski</div>
+              <div class="headshot-role">Deputy Director</div>
+            </figcaption>
+          </figure>
+          <figure class="headshot">
+            <img src="./Photos_files/headshot-shawn-walker-smith.jpg" alt="Shawn Walker-Smith" />
+            <figcaption class="headshot-meta">
+              <div class="headshot-name">Shawn Walker-Smith</div>
+              <div class="headshot-role">Business Advisor</div>
+            </figcaption>
+          </figure>
+          <figure class="headshot">
+            <img src="./Photos_files/headshot-kofo-domingo.jpg" alt="Kofo M. Domingo" />
+            <figcaption class="headshot-meta">
+              <div class="headshot-name">Kofo M. Domingo</div>
+              <div class="headshot-role">Business Advisor</div>
+            </figcaption>
+          </figure>
+          <figure class="headshot">
+            <img src="./Photos_files/headshot-bryan-rheem.jpg" alt="Bryan Rheem" />
+            <figcaption class="headshot-meta">
+              <div class="headshot-name">Bryan Rheem</div>
+              <div class="headshot-role">Business Advisor</div>
+            </figcaption>
+          </figure>
+          <figure class="headshot">
+            <img src="./Photos_files/headshot-randy-saffold.jpg" alt="Randy Saffold" />
+            <figcaption class="headshot-meta">
+              <div class="headshot-name">Randy Saffold</div>
+              <div class="headshot-role">Business Advisor</div>
+            </figcaption>
+          </figure>
+          <figure class="headshot">
+            <img src="./Photos_files/headshot-dorenda-haynes.jpg" alt="Dorenda Haynes" />
+            <figcaption class="headshot-meta">
+              <div class="headshot-name">Dorenda Haynes</div>
+              <div class="headshot-role">Business Advisor</div>
+            </figcaption>
+          </figure>
+        </div>
+
+        <details class="disclose">
+          <summary><span class="plus"></span> HOW TO HEADSHOT</summary>
+          <div class="body">
+            <p><strong>Shot with intent.</strong> Intended for LinkedIn, pitch decks, and press. Not a cropped selfie, not a conference badge photo.</p>
+            <p><strong>Eyes to the camera.</strong> Looking directly into the lens. No glance-offs, no candid angles.</p>
+            <p><strong>Business casual.</strong> Solid colors. A blazer or a collared shirt. Nothing loud, nothing branded.</p>
+            <p><strong>A clean background.</strong> Plain wall, seamless paper, or one flat color. Remove clutter before you shoot.</p>
+            <p><strong>Soft, even light.</strong> Window light works. Overhead fluorescents don&rsquo;t. Get the light on the face, not the ceiling.</p>
+            <p><strong>Framed for a square.</strong> Bust to lower shoulder, with room around the head. Deliver a 1:1 file &mdash; LinkedIn, Slack, and the site grid won&rsquo;t re-crop.</p>
+            <p><strong>Already have a photo?</strong> Use an AI background-removal tool to lift yourself out of a busy background and drop in a flat color. <a href="https://gemini.google.com" target="_blank" rel="noopener">Nano Banana</a> (inside Google Gemini) and <a href="https://remove.bg" target="_blank" rel="noopener">remove.bg</a> both do this in under a minute.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- §05 ACCESS — Shared asset library -->
+  <section class="section">
+    <div class="access-strip">
+      <div class="access-content">
+        <div class="access-eyebrow">Access &middot; Shared library</div>
+        <h3>The asset library.</h3>
+        <p>Client images and event video. Centralized, rights-cleared, and ready for the network to use.</p>
+      </div>
+      <a class="access-cta-zone" href="https://docs.google.com/document/d/1T7EDvFOQewsl_C_OowdFnfWjxIrBqQHvvg8Z2TZVuWo/edit" target="_blank" rel="noopener noreferrer">
+        <span class="cta-label">Open library</span>
+        <span class="cta-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- WHY · PHOTOGRAPHY RULES — chapter footer -->
+  <section class="section">
+    <details class="disclose">
+      <summary><span class="plus"></span> WHY &middot; PHOTOGRAPHY RULES</summary>
+      <div class="body">
+        <p><strong>Crop close.</strong> Make the person or the work unmistakable. Avoid empty office space and vague background texture.</p>
+        <p><strong>Keep light real.</strong> Natural light is preferred. Don&rsquo;t push every image into a heavy brand-color filter &mdash; it homogenizes the network and erases the room.</p>
+        <p><strong>Use quiet zones.</strong> If type sits on an image, place it over calm space. Never cover the face, hands, product, or action.</p>
+        <p><strong>Caption lightly.</strong> Short labels for names, places, or formats. The image carries the first read; the caption confirms.</p>
+        <p><strong>Rights and consent.</strong> Get a signed release before shooting. Network use only &mdash; never sublicense to third parties.</p>
+        <p><strong>File handling.</strong> Original RAW + a 2400px web export to the shared library. JPG quality 85+. Filename convention: client-name_year_format.</p>
+        <p><strong>Caption standard.</strong> First name + last initial, business name, location, date. Never publish a client image without naming the client.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- COLOPHON -->
+  <footer class="foot">
+    <div class="left">NorCal SBDC &middot; Brand House &middot; Chapter 06</div>
+    <div class="center">Photos &middot; Visual System</div>
+    <div class="right">v01 &middot; April 2026</div>
+  </footer>
+
+</div>
+
+</body>
+</html>

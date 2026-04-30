@@ -1,0 +1,596 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NorCal SBDC · Brand House · Fonts</title>
+<link rel="stylesheet" href="https://use.typekit.net/pkl5rjs.css" />
+<style>
+  :root {
+    --navy: #0F1C2D;
+    --slate: #2C3240;
+    --cobalt: #1B5FAF;
+    --pool: #8FC5D9;
+    --berry: #C23C3C;
+    --evergreen: #00675C;
+    --silver: #D8D8D8;
+    --white: #FDFDFD;
+    --page: #F2F1ED;
+    --ink: #0F1C2D;
+    --mute: #4A5260;
+    --hair: #D4D2CC;
+
+    --sans:  "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+    --serif: "proxima-sera", "Iowan Old Style", Georgia, serif;
+    --mono:  "Roboto Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    --col: 1320px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap { max-width: var(--col); margin: 0 auto; padding: 0 56px; }
+
+  /* HEADER */
+  .head {
+    padding: 28px 0 0;
+    display: flex; align-items: baseline; justify-content: space-between;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .head .brand { color: var(--ink); font-weight: 500; }
+
+  .eyebrow {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--cobalt);
+  }
+
+  /* HERO WORDMARK */
+  .hero-mark {
+    padding: 84px 0 36px;
+    display: grid;
+    grid-template-columns: 1fr 460px;
+    gap: 80px;
+    align-items: end;
+  }
+  .hero-mark .eyebrow { display: block; margin-bottom: 22px; }
+  .hero-mark h1 {
+    margin: 0;
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(140px, 16vw, 240px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+  .hero-mark .subtitle { display: block; }
+  .hero-mark .accent-bar {
+    display: block; width: 100%; height: 4px;
+    background: var(--navy); margin: 0 0 22px;
+  }
+  .hero-mark p {
+    margin: 0 0 14px;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 22px; line-height: 1.45; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 520px;
+  }
+
+  /* §01 SYSTEM SUMMARY — three solid fields, one per family */
+  .system {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    height: 360px;
+  }
+  .fam {
+    position: relative;
+    padding: 32px 36px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .fam .top {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; opacity: 0.78;
+  }
+  .fam .name {
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(40px, 4.4vw, 60px); line-height: 0.95;
+    letter-spacing: -0.025em;
+  }
+  .fam .role {
+    font-family: var(--sans); font-weight: 600;
+    font-size: 14px; letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-top: 6px;
+    opacity: 0.78;
+  }
+  .fam-nova   { background: var(--navy);  color: var(--white); }
+  .fam-sera   { background: var(--berry); color: var(--white); }
+  .fam-sera .name { font-family: var(--serif); font-weight: 300; font-style: italic; }
+  .fam-mono   { background: var(--white); color: var(--ink); box-shadow: inset 0 0 0 1px var(--hair); }
+  .fam-mono .name { font-family: var(--mono); font-weight: 500; font-size: clamp(34px, 3.6vw, 48px); letter-spacing: 0; }
+
+  /* SECTIONS */
+  .section { padding: 100px 0 0; }
+  .section-head {
+    display: grid; grid-template-columns: 360px 1fr; gap: 48px;
+    align-items: end; margin-bottom: 32px;
+  }
+  .section-head h2 {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(40px, 4.4vw, 56px); line-height: 1.0;
+    letter-spacing: -0.02em; color: var(--ink);
+  }
+  .section-head .lede {
+    margin: 0;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 19px; line-height: 1.5; color: var(--ink);
+    letter-spacing: -0.005em;
+    max-width: 600px;
+  }
+
+  /* §02 SPECIMENS — Pentagram-style: one hero letter as composition,
+     family name set in the family, quiet mono caption underneath. */
+  .specimens { display: grid; gap: 0; }
+  .spec {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: stretch;
+    min-height: 520px;
+  }
+  .spec .glyph {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    line-height: 0.78;
+    letter-spacing: -0.06em;
+  }
+  .spec .glyph span {
+    font-size: 460px;
+    line-height: 0.78;
+    display: block;
+    transform: translateY(-0.04em);
+  }
+  .spec .body {
+    padding: 56px 64px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 32px;
+  }
+  .spec .body .top {
+    display: flex; align-items: baseline; justify-content: space-between;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .spec .body .top .index { opacity: 0.6; }
+  .spec .fname {
+    align-self: end;
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    font-size: clamp(56px, 6vw, 96px);
+  }
+  .spec .pangram {
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: -0.005em;
+    max-width: 480px;
+    align-self: end;
+  }
+  .spec .caption {
+    align-self: end;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    padding-top: 20px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em;
+    text-transform: uppercase; line-height: 1.6;
+  }
+  .spec .caption .k { display: block; opacity: 0.6; margin-bottom: 4px; }
+  .spec .caption .v { display: block; }
+
+  /* Nova — Navy field, white glyph */
+  .spec.s-nova { background: var(--navy); color: var(--white); }
+  .spec.s-nova .glyph span { font-family: var(--sans); font-weight: 600; color: var(--white); }
+  .spec.s-nova .fname { font-family: var(--sans); font-weight: 600; }
+  .spec.s-nova .pangram { font-family: var(--sans); font-weight: 500; opacity: 0.92; }
+
+  /* Sera — Cream surface, berry glyph */
+  .spec.s-sera { background: var(--page); color: var(--ink); box-shadow: inset 0 0 0 1px var(--hair); }
+  .spec.s-sera .glyph span {
+    font-family: var(--serif); font-weight: 300; font-style: italic;
+    color: var(--berry);
+    font-size: 420px;
+  }
+  .spec.s-sera .fname { font-family: var(--serif); font-weight: 300; font-style: italic; }
+  .spec.s-sera .pangram { font-family: var(--serif); font-weight: 300; font-style: italic; font-size: 22px; }
+  .spec.s-sera .pangram em { font-style: italic; color: var(--berry); }
+
+  /* Mono — Fog field, navy glyph */
+  .spec.s-mono { background: var(--pool); color: var(--navy); }
+  .spec.s-mono .glyph span {
+    font-family: var(--mono); font-weight: 500; color: var(--navy);
+    font-size: 360px; letter-spacing: 0;
+  }
+  .spec.s-mono .fname { font-family: var(--mono); font-weight: 500; letter-spacing: 0; font-size: clamp(40px, 4.4vw, 64px); }
+  .spec.s-mono .pangram { font-family: var(--mono); font-weight: 500; font-size: 14px; letter-spacing: 0.04em; line-height: 1.65; }
+
+  /* §03 SCALE — clean table, no boxed cells */
+  .scale {
+    display: grid;
+    grid-template-columns: 120px 130px 90px minmax(0, 1fr);
+    column-gap: 32px;
+    row-gap: 0;
+  }
+  .scale .h, .scale .row {
+    grid-column: 1 / -1;
+    display: grid; grid-template-columns: subgrid;
+    align-items: baseline;
+    padding: 22px 0;
+  }
+  .scale .h {
+    padding: 14px 0;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--mute);
+    border-bottom: 1px solid var(--hair);
+  }
+  .scale .row + .row { border-top: 1px solid var(--hair); }
+  .scale .row .step {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--cobalt);
+  }
+  .scale .row .meta {
+    font-family: var(--mono); font-size: 12px; color: var(--mute);
+    line-height: 1.4;
+  }
+  .scale .row .lh {
+    font-family: var(--mono); font-size: 12px; color: var(--mute);
+  }
+  .scale .row .sample {
+    color: var(--ink); line-height: 1.0;
+    font-family: var(--sans); font-weight: 600;
+    letter-spacing: -0.02em;
+    min-width: 0;
+  }
+  .scale .row .sample.body-sample {
+    font-weight: 600; line-height: 1.5; max-width: 640px;
+  }
+  .scale .row .sample.lede-sample {
+    font-weight: 600; line-height: 1.5; max-width: 640px;
+  }
+  .scale .row .sample.mono-sample {
+    font-family: var(--mono); font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+  }
+
+  /* §04 IN USE — 4 type tiles using approved combinations */
+  .inuse {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .tile {
+    padding: 36px 40px;
+    aspect-ratio: 4 / 5;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+  .tile .tag {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .tile .head-text {
+    align-self: center;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(40px, 4.6vw, 64px); line-height: 0.98;
+    letter-spacing: -0.025em;
+  }
+  .tile .head-text em {
+    font-family: var(--serif); font-weight: 300; font-style: italic;
+    margin: 0 0.04em;
+  }
+  .tile .foot {
+    display: flex; justify-content: space-between; align-items: end;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* Story tile — client photo, grayscale, fog overlay */
+  .t-story {
+    position: relative;
+    overflow: hidden;
+    color: var(--white);
+    background: var(--navy);
+    padding: 36px 40px;
+    grid-template-rows: auto 1fr auto auto;
+  }
+  .t-story .head-text { align-self: end; }
+  .t-story .caption-line { align-self: end; }
+  .t-story .photo {
+    position: absolute; inset: 0;
+    background-image: url('https://www.norcalsbdc.org/wp-content/uploads/2020/07/Dick-Taylor-Adam-Dick-and-Dustin-Taylor.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    filter: grayscale(100%) contrast(1.05) brightness(0.92);
+    z-index: 0;
+  }
+  .t-story .veil {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg,
+        rgba(15, 28, 45, 0.30) 0%,
+        rgba(15, 28, 45, 0.45) 45%,
+        rgba(15, 28, 45, 0.78) 100%),
+      linear-gradient(180deg,
+        rgba(132, 162, 198, 0.18) 0%,
+        rgba(132, 162, 198, 0.05) 60%,
+        rgba(132, 162, 198, 0) 100%);
+    z-index: 1;
+  }
+  .t-story > .tag,
+  .t-story > .head-text,
+  .t-story > .foot { position: relative; z-index: 2; }
+  .t-story .tag { color: rgba(255, 255, 255, 0.82); }
+  .t-story .head-text {
+    font-family: var(--serif); font-weight: 300; font-style: italic;
+    color: var(--white); letter-spacing: -0.015em;
+    font-size: clamp(34px, 3.6vw, 50px); line-height: 1.02;
+  }
+  .t-story .head-text em {
+    font-style: italic; color: var(--white);
+  }
+  .t-story .caption-line {
+    position: relative; z-index: 2;
+    font-family: var(--sans); font-weight: 500;
+    font-size: 14px; line-height: 1.5;
+    color: rgba(255, 255, 255, 0.78);
+    max-width: 360px;
+    margin-top: 12px;
+  }
+  .t-story .foot { color: rgba(255, 255, 255, 0.7); }
+
+  .t-navy   { background: var(--navy); color: var(--white); }
+  .t-navy .head-text em { color: var(--berry); }
+  .t-navy .tag, .t-navy .foot { color: var(--pool); }
+
+  .t-cobalt { background: var(--cobalt); color: var(--white); }
+  .t-cobalt .head-text em { color: var(--pool); }
+  .t-cobalt .tag, .t-cobalt .foot { color: var(--pool); }
+
+  .t-cream  { background: var(--page); color: var(--ink); box-shadow: inset 0 0 0 1px var(--hair); }
+  .t-cream .head-text em { color: var(--berry); }
+  .t-cream .tag, .t-cream .foot { color: var(--mute); }
+
+  /* §05 CONDUCT — disclosure-driven do/don't pairs */
+  .conduct { display: grid; gap: 0; }
+  .conduct .pair-row {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+    padding: 28px 0;
+    border-top: 1px solid var(--hair);
+  }
+  .conduct .pair-row:first-child { border-top: none; }
+  .conduct .demo {
+    padding: 28px 32px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(28px, 3vw, 40px); line-height: 1.05;
+    letter-spacing: -0.02em;
+    background: var(--white);
+    box-shadow: inset 0 0 0 1px var(--hair);
+    display: flex; align-items: center;
+    min-height: 200px;
+    color: var(--ink);
+  }
+  .conduct .demo em {
+    font-family: var(--serif); font-weight: 300; font-style: italic;
+    color: var(--berry); margin: 0 0.12em;
+  }
+  .conduct .demo.dont em { color: var(--ink); }
+  .conduct .demo.dont {
+    opacity: 0.55;
+    text-decoration: line-through;
+    text-decoration-color: rgba(165, 60, 67, 0.6);
+    text-decoration-thickness: 2px;
+  }
+  .conduct .label {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .conduct .label.do   { color: var(--cobalt); }
+  .conduct .label.dont { color: var(--berry); }
+  .conduct .col { display: flex; flex-direction: column; }
+
+  /* DISCLOSURE */
+  details.disclose {
+    margin-top: 32px;
+    border-top: 1px solid var(--hair);
+    border-bottom: 1px solid var(--hair);
+  }
+  details.disclose summary {
+    list-style: none; cursor: pointer;
+    padding: 18px 0;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--evergreen);
+    display: flex; align-items: center; gap: 12px;
+  }
+  details.disclose summary::-webkit-details-marker { display: none; }
+  details.disclose .plus::before { content: "[+]"; }
+  details[open].disclose .plus::before { content: "[–]"; }
+  details.disclose .disclose-body {
+    padding: 0 0 28px;
+    font-family: var(--sans); font-weight: 600;
+    font-size: 16px; line-height: 1.55; color: var(--ink);
+    max-width: 760px;
+  }
+  details.disclose .disclose-body p { margin: 0 0 12px; }
+
+  /* COLOPHON */
+  .colophon {
+    margin-top: 120px;
+    padding: 36px 0 56px;
+    border-top: 1px solid var(--hair);
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--mute);
+  }
+  .colophon .center { text-align: center; }
+  .colophon .right  { text-align: right; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <div class="head">
+    <div class="brand">NorCal SBDC · Brand House</div>
+    <div>Chapter 02</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero-mark">
+    <div>
+      <span class="eyebrow">02 · Visual System</span>
+      <h1>Fonts</h1>
+    </div>
+    <div class="subtitle">
+      <span class="accent-bar"></span>
+      <p>Three families. Nova carries 95% of the page. Sera is reserved for emphasis. Mono handles labels and data. Use them as specified.</p>
+    </div>
+  </div>
+
+  <!-- §01 SPECIMENS — full-bleed asymmetric type compositions -->
+  <section class="section" style="padding-top: 64px;">
+    <div class="section-head">
+      <h2>Three families.</h2>
+      <p class="lede">Each family has one job. Pages are built almost entirely from Nova. Sera appears only inside reserved emphasis. Mono labels and numbers everything that needs to be precise.</p>
+    </div>
+
+    <div class="specimens">
+
+      <div class="spec s-nova">
+        <div class="glyph"><span>Aa</span></div>
+        <div class="body">
+          <div class="top">
+            <span>Primary</span>
+            <span class="index">01 / 03</span>
+          </div>
+          <div class="fname">Proxima<br>Nova</div>
+          <div class="pangram">A network of advisors across thirty-six Northern California counties. Capital, strategy, and operations support &mdash; without fees and without taking equity.</div>
+          <div class="caption">
+            <div><span class="k">Weights</span><span class="v">500 · 600</span></div>
+            <div><span class="k">Source</span><span class="v">Typekit pkl5rjs</span></div>
+            <div><span class="k">Job</span><span class="v">Body · UI · Heads</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec s-sera">
+        <div class="body">
+          <div class="top">
+            <span>Reserved</span>
+            <span class="index">02 / 03</span>
+          </div>
+          <div class="fname">Sera</div>
+          <div class="pangram">Build <em>where</em> you live. The <em>voice</em> made visible. A <em>network</em> of support.</div>
+          <div class="caption">
+            <div><span class="k">Weight</span><span class="v">300 italic</span></div>
+            <div><span class="k">Source</span><span class="v">Typekit pkl5rjs</span></div>
+            <div><span class="k">Job</span><span class="v">Emphasis only</span></div>
+          </div>
+        </div>
+        <div class="glyph"><span>Aa</span></div>
+      </div>
+
+      <div class="spec s-mono">
+        <div class="glyph"><span>Aa</span></div>
+        <div class="body">
+          <div class="top">
+            <span>Utility</span>
+            <span class="index">03 / 03</span>
+          </div>
+          <div class="fname">Roboto<br>Mono</div>
+          <div class="pangram">CAPITAL DEPLOYED · 2026-Q1<br>40.587° N, 122.391° W<br>NORTHERN CALIFORNIA</div>
+          <div class="caption">
+            <div><span class="k">Weights</span><span class="v">400 · 500</span></div>
+            <div><span class="k">Source</span><span class="v">Google Fonts</span></div>
+            <div><span class="k">Job</span><span class="v">Labels · Data</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- §03 IN USE -->
+  <section class="section">
+    <div class="section-head">
+      <h2>In use.</h2>
+      <p class="lede">The same recipe in four colorways. Mono tag above. Nova headline with one Sera word as emphasis. Mono coordinates below. Always flush left.</p>
+    </div>
+
+    <div class="inuse">
+      <div class="tile t-navy">
+        <div class="tag">01 · Editorial</div>
+        <div class="head-text">Build <em>where</em><br>you live.</div>
+        <div class="foot"><span>NorCal SBDC</span><span>Est. 1989</span></div>
+      </div>
+
+      <div class="tile t-cobalt">
+        <div class="tag">02 · Action</div>
+        <div class="head-text">Find <em>your</em><br>center today.</div>
+        <div class="foot"><span>norcalsbdc.org</span><span>→</span></div>
+      </div>
+
+      <div class="tile t-cream">
+        <div class="tag">03 · Default</div>
+        <div class="head-text">A <em>network</em><br>of support.</div>
+        <div class="foot"><span>36 Counties</span><span>$547M Deployed</span></div>
+      </div>
+
+      <div class="tile t-story">
+        <div class="photo" aria-hidden="true"></div>
+        <div class="veil" aria-hidden="true"></div>
+        <div class="tag">Client Story</div>
+        <div class="head-text">Dick Taylor Chocolates turned craft into capacity.</div>
+        <div class="caption-line">Use Sera for story headlines. Give the client a real narrative, not a placeholder.</div>
+        <div class="foot"><span>Arcata, CA</span><span>Bean to Bar</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- §03 RULES — standalone disclosure -->
+  <section class="section">
+    <details class="disclose">
+      <summary><span class="plus"></span> &nbsp; WHY · TYPOGRAPHY RULES</summary>
+      <div class="disclose-body">
+        <p>Sera italic is an accent, not a voice. Use it on one or two words inside a Nova headline — never the whole line. A full italic headline reads as a quote and loses its instruction.</p>
+        <p>Display type stacks in two or three short lines, broken at natural breath points. Set flush left. Never center. If a headline needs more words, drop one step in the scale and use H2 or body.</p>
+        <p>Sera never appears inside H2 section headings. H2 is always clean Nova 600. The reserved registers stay reserved.</p>
+        <p>Mono is the only family that uppercases by default. Nova headlines stay sentence case. Mono tracks 0.18–0.22em; Nova display tracks negative.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- COLOPHON -->
+  <div class="colophon">
+    <div class="left">NorCal SBDC · Brand House · Chapter 02</div>
+    <div class="center">Typography · Visual System</div>
+    <div class="right">v01 · April 2026</div>
+  </div>
+
+</div>
+
+</body>
+</html>
