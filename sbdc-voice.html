@@ -2591,6 +2591,105 @@
     .nx-wipe-right { text-align: left; }
     .nx-wipe-desc { max-width: none; }
     .nx-wipe-title { font-size: clamp(44px, 12vw, 64px) !important; }
+
+    /* ── VOICE-SPECIFIC GRID COLLAPSES ─────────────────── */
+    .ch-head, .fw-grid, .vt-head, .words-v2-grid, .pos-grid,
+    .km-head, .aud-head,
+    .sec-head, .hp-head, .tone-head, .camp-head, .proof-head,
+    .tags-head, .film-head, .traits-head, .line-head,
+    .signatures-head,
+    .ch-pillar-rows, .fw-panels, .strat-themes,
+    .pers-grid, .tag-panels,
+    .hp-row, .tone-row, .traits-row, .tag-row,
+    .words-layout, .words-cap, .words-row,
+    .camp-grid, .proof-grid, .tags-grid,
+    .vt-cards, .line-grid, .signatures-grid,
+    .km-rows, .samples-grid, .samples-row,
+    .disc-themes-words {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+    }
+
+    /* Pull-style heads with two-up content stay 2-up where it makes sense */
+    .pers-grid { grid-template-columns: repeat(2, 1fr) !important; }
+
+    /* Voice page hero — reduce padding & display type */
+    .hero-mark { padding: 56px 0 40px !important; }
+    .hero-mark h1 { font-size: clamp(72px, 18vw, 120px) !important; }
+
+    /* Section padding everywhere on voice */
+    section[class*="-section"] { padding: 48px 0 !important; }
+    .fw-section, .pos-section, .ch-section, .km-section,
+    .strat-section, .vt-section, .aud-section,
+    .words-v2-section, .samples-section { padding: 48px 0 !important; }
+
+    /* Strat rows — collapse all variants */
+    .strat-row.r1, .strat-row.r2, .strat-row.r3,
+    .strat-row { grid-template-columns: 1fr !important; gap: 16px !important; }
+
+    /* Words row — the cross-out "no" sticks left */
+    .words-row .no { grid-template-columns: 18px 1fr !important; }
+
+    /* Disclose summaries with multi-col layouts */
+    .aud-section details.disclose > summary {
+      grid-template-columns: 1fr !important;
+      gap: 8px !important;
+    }
+
+    /* Big display type inside cards — keep readable */
+    .ch-cards .card h3,
+    .pers-grid h3,
+    .strat-themes .theme h3 { font-size: clamp(20px, 5vw, 28px) !important; }
+
+    /* Reduce horizontal padding on every inner wrap that mirrors .wrap */
+    .ch-grid, .pos-grid, .promise-inner,
+    .manifesto-section .wrap-inner,
+    .km-head, .aud-grid,
+    .strat-rule, .vt-head, .vt-cards,
+    .words-v2-grid, .samples-grid, .samples-row,
+    .traits-grid, .line-grid, .signatures-grid,
+    .fw-grid, .ch-head { padding-left: 20px !important; padding-right: 20px !important; }
+
+    /* Full-bleed colored sections — reduce vertical padding */
+    .manifesto-section { padding: 64px 0 !important; }
+
+    /* Section heads and titles */
+    section [class*="head"] h2,
+    .ch-h2, .fw-h2, .pos-h2, .km-h2, .aud-h2,
+    .vt-h2, .words-v2-h2, .strat-h2 {
+      font-size: clamp(36px, 8vw, 56px) !important;
+    }
+
+    /* Generic full-bleed inner: any descendant with explicit 56px padding */
+    .wrap-inner { padding: 0 20px !important; }
+
+    /* Manifesto block — tighten the airy desktop spacing */
+    .manifesto-mark { padding: 0 0 56px !important; }
+    .manifesto-eyebrow { margin-bottom: 24px !important; }
+    .manifesto { max-width: none !important; }
+    .manifesto .beat { margin: 0 0 28px !important; font-size: 1.125rem !important; }
+    .manifesto .closer { margin-top: 32px !important; font-size: 1.125rem !important; }
+
+    /* Tag panels — display type cap */
+    .tag-panel { padding: 28px 22px !important; min-height: 0 !important; }
+    .tag-panel .display { font-size: clamp(28px, 8vw, 44px) !important; }
+
+    /* Persona tiles */
+    .pers-tile { padding: 28px 22px !important; min-height: 0 !important; }
+    .pers-tile h3 { font-size: clamp(24px, 6vw, 32px) !important; }
+
+    /* Strat themes — single column already, but pad */
+    .strat-themes .theme { padding: 22px 0 !important; }
+
+    /* Tone / Traits / HP rows — kill explicit pixel widths */
+    .hp-row, .tone-row, .traits-row, .tag-row {
+      gap: 12px !important;
+    }
+
+    /* Big editorial display */
+    .ch-h2, .fw-h2, .pos-h2, .km-h2, .aud-h2,
+    .vt-h2, .words-v2-h2, .strat-h2,
+    h2 { word-break: break-word; }
   }
 
 </style>
