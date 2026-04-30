@@ -726,6 +726,90 @@
     .nx-wipe-right { text-align: left; }
     .nx-wipe-desc { max-width: none; }
     .nx-wipe-title { font-size: clamp(44px, 12vw, 64px) !important; }
+
+    /* ── CONTENT-SPECIFIC ────────────────────────────────── */
+
+    /* Full-bleed colored panels — drop horizontal padding */
+    .generator-inner,
+    .response-inner { padding: 48px 20px !important; gap: 32px !important; }
+
+    /* Generator: stack left/right; pills justify left and shrink */
+    .generator-inner { grid-template-columns: 1fr !important; }
+    .generator h2 { font-size: clamp(36px, 8vw, 56px) !important; margin-bottom: 16px !important; }
+    .generator .lede { font-size: 17px !important; margin-bottom: 24px !important; max-width: none !important; }
+    .formats {
+      justify-content: flex-start !important;
+      gap: 10px !important;
+    }
+    .format-pill {
+      min-height: 48px !important;
+      padding: 10px 18px 11px !important;
+      font-size: 16px !important;
+      flex: 0 1 auto;
+    }
+    .gen-link-wrap { padding-top: 24px !important; }
+    .gen-link { font-size: 16px !important; }
+
+    /* AI Tool panel — single column body */
+    .tool { padding: 24px 22px !important; min-height: 0 !important; gap: 18px !important; }
+    .tool .body {
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+    }
+    .tool .input-row { padding: 12px 0 !important; }
+    .tool .head-row { flex-wrap: wrap !important; gap: 12px !important; }
+    .tool .head-row h3 { font-size: clamp(20px, 5.5vw, 26px) !important; }
+    .tool .output { padding: 18px 22px !important; min-height: 0 !important; }
+    .tool .output h4 { font-size: clamp(18px, 5vw, 22px) !important; }
+    .tool .ai-mark {
+      font-size: 140px !important;
+      right: -24px !important;
+      bottom: -36px !important;
+      opacity: 0.5;
+    }
+
+    /* Principles cards — stack */
+    .principles {
+      grid-template-columns: 1fr !important;
+      gap: 0 !important;
+    }
+    .principles .principle { padding: 24px 22px !important; }
+
+    /* Samples 12-col grid → single column */
+    .samples {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+    }
+    .samples > * { grid-column: 1 / -1 !important; }
+
+    /* Channel rows — stack name / desc / meta */
+    .channel-row {
+      grid-template-columns: 1fr !important;
+      gap: 8px !important;
+      padding: 18px 0 !important;
+    }
+    .channel-meta { text-align: left !important; }
+
+    /* Rhythm grid — turn into a stacked list */
+    .rhythm {
+      grid-template-columns: 1fr !important;
+      gap: 0 !important;
+    }
+    .rhythm .cell { padding: 14px 18px !important; border-right: none !important; }
+    .rhythm .cell.head { display: none !important; }
+
+    /* Response section (Navy panel with cards) */
+    .response-section { margin-top: 56px !important; }
+    .response-section h2 { font-size: clamp(36px, 8vw, 52px) !important; }
+    .response-section .lede { font-size: 17px !important; margin-bottom: 28px !important; }
+    .response-board {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+    }
+    .response-card { padding: 24px 22px !important; }
+
+    /* Section split overrides for content */
+    .section-split { gap: 16px !important; }
   }
 
 </style>
