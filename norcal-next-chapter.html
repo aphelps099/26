@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NorCal SBDC · Next Chapter Samples</title>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin />
+<link rel="stylesheet" href="https://use.typekit.net/pkl5rjs.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #0F1C2D;
+    --cobalt: #1B5FAF;
+    --slate: #2C3240;
+    --steel: #5582B9;
+    --fog: #84A2C6;
+    --pool: #8FC5D9;
+    --berry: #C23C3C;
+    --evergreen: #00675C;
+    --white: #FDFDFD;
+    --page: #F2F1ED;
+    --ink: #0F1C2D;
+    --mute: #4A5260;
+    --hair: #D4D2CC;
+    --sans: "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+    --serif: "proxima-sera", Georgia, "Times New Roman", serif;
+    --mono: "Roboto Mono", ui-monospace, monospace;
+    --col: 1320px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .wrap { max-width: var(--col); margin: 0 auto; padding: 0 56px; }
+
+  /* ── SAMPLE LABEL ─────────────────────────────────────── */
+  .sample-label {
+    padding: 80px 0 24px;
+    font-family: var(--mono);
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mute);
+    border-bottom: 1px solid var(--hair);
+    margin-bottom: 0;
+  }
+
+
+  /* ════════════════════════════════════════════════════════
+     SAMPLE 01 — THE LINE DRAW
+     Minimal. Hairline grows from left, title + desc fade up.
+     ════════════════════════════════════════════════════════ */
+  .nx1 {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+    padding: 72px 0 80px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .nx1-line {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 1px;
+    background: var(--ink);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .nx1-eyebrow {
+    font-family: var(--sans);
+    font-size: 14px; font-weight: 500;
+    color: var(--mute);
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  .nx1-body {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .nx1-title {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(48px, 5.5vw, 84px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .nx1-title em {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--berry);
+  }
+  .nx1-desc {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.45;
+    color: var(--mute);
+    max-width: 320px;
+    text-align: right;
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  .nx1-arrow {
+    font-size: 28px;
+    color: var(--hair);
+    opacity: 0;
+    transform: translateX(-12px);
+    transition: color 200ms;
+  }
+  .nx1:hover .nx1-arrow { color: var(--cobalt); }
+
+
+  /* ════════════════════════════════════════════════════════
+     SAMPLE 02 — NAVY CURTAIN
+     Navy panel slides up from bottom, white type inside.
+     ════════════════════════════════════════════════════════ */
+  .nx2-wrap {
+    position: relative;
+    overflow: hidden;
+    margin: 0 -56px;
+  }
+  .nx2 {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    align-items: end;
+    gap: 40px;
+    background: var(--navy);
+    color: var(--white);
+    text-decoration: none;
+    padding: 64px 56px 72px;
+    transform: translateY(100%);
+    cursor: pointer;
+  }
+  .nx2-num {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--slate);
+    opacity: 0;
+  }
+  .nx2-mid { }
+  .nx2-label {
+    font-family: var(--sans);
+    font-size: 13px; font-weight: 500;
+    color: var(--fog);
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  .nx2-title {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(40px, 4.5vw, 68px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  .nx2-desc {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.45;
+    color: rgba(253,253,253,0.6);
+    max-width: 300px;
+    text-align: right;
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  .nx2-arrow {
+    font-size: 28px;
+    color: var(--fog);
+    opacity: 0;
+    transition: transform 200ms;
+  }
+  .nx2:hover .nx2-arrow { transform: translateX(6px); }
+
+
+  /* ════════════════════════════════════════════════════════
+     SAMPLE 03 — THE WIPE
+     Berry accent bar wipes across, chapter slides in from right.
+     ════════════════════════════════════════════════════════ */
+  .nx3 {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+    padding: 64px 0 72px;
+    position: relative;
+    cursor: pointer;
+  }
+  .nx3-bar {
+    height: 4px;
+    background: var(--berry);
+    margin-bottom: 32px;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .nx3-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 40px;
+  }
+  .nx3-label {
+    font-family: var(--sans);
+    font-size: 14px; font-weight: 500;
+    color: var(--mute);
+    margin-bottom: 14px;
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  .nx3-title {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: clamp(56px, 6vw, 96px);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    margin: 0;
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  .nx3-right {
+    text-align: right;
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  .nx3-num {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.01em;
+    color: var(--berry);
+    margin-bottom: 8px;
+  }
+  .nx3-desc {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.45;
+    color: var(--mute);
+    max-width: 280px;
+  }
+
+
+  /* ════════════════════════════════════════════════════════
+     SAMPLE 04 — SPLIT REVEAL
+     Two halves slide apart like curtains, content centered.
+     ════════════════════════════════════════════════════════ */
+  .nx4 {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .nx4-label {
+    font-family: var(--sans);
+    font-size: 14px; font-weight: 500;
+    color: var(--mute);
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  .nx4-title {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(52px, 6vw, 100px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    margin: 0 0 20px;
+  }
+  .nx4-title .nx4-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  .nx4-desc {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--mute);
+    max-width: 400px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  .nx4-lines {
+    position: absolute;
+    top: 0; left: 50%;
+    width: 1px; height: 100%;
+    background: var(--hair);
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+
+  /* ════════════════════════════════════════════════════════
+     SAMPLE 05 — THE COUNTER
+     Large number counts up, title types in letter by letter.
+     ════════════════════════════════════════════════════════ */
+  .nx5 {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0;
+    text-decoration: none;
+    color: var(--ink);
+    border-top: 1px solid var(--ink);
+    cursor: pointer;
+  }
+  .nx5-left {
+    padding: 56px 0;
+    border-right: 1px solid var(--hair);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nx5-num {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--cobalt);
+    opacity: 0;
+  }
+  .nx5-right {
+    padding: 56px 0 56px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .nx5-label {
+    font-family: var(--sans);
+    font-size: 14px; font-weight: 500;
+    color: var(--mute);
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+    opacity: 0;
+  }
+  .nx5-title {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: clamp(44px, 4.5vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    margin: 0 0 14px;
+    overflow: hidden;
+  }
+  .nx5-title span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  .nx5-desc {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.45;
+    color: var(--mute);
+    max-width: 440px;
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  .nx5-arrow {
+    margin-left: auto;
+    align-self: center;
+    font-size: 28px;
+    color: var(--hair);
+    padding-right: 8px;
+    opacity: 0;
+    transition: color 200ms, transform 200ms;
+  }
+  .nx5:hover .nx5-arrow {
+    color: var(--cobalt);
+    transform: translateX(4px);
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── SAMPLE 01: THE LINE DRAW ──────────────────────── -->
+<div class="wrap">
+  <div class="sample-label">Sample 01 &mdash; The Line Draw</div>
+  <a class="nx1" href="norcal-voice.html">
+    <div class="nx1-line"></div>
+    <div class="nx1-eyebrow">Next chapter</div>
+    <div class="nx1-body">
+      <h2 class="nx1-title">Voice.</h2>
+      <span class="nx1-desc">How we sound. The words we use, the words we don't.</span>
+      <span class="nx1-arrow">&rarr;</span>
+    </div>
+  </a>
+</div>
+
+
+<!-- ─── SAMPLE 02: NAVY CURTAIN ───────────────────────── -->
+<div class="wrap">
+  <div class="sample-label">Sample 02 &mdash; Navy Curtain</div>
+  <div class="nx2-wrap">
+    <a class="nx2" href="norcal-colors.html">
+      <div class="nx2-num">03</div>
+      <div class="nx2-mid">
+        <div class="nx2-label">Next chapter</div>
+        <h2 class="nx2-title">Colors.</h2>
+      </div>
+      <div style="display:flex;align-items:end;gap:32px;">
+        <span class="nx2-desc">The palette, the pairings, and the rules that hold them together.</span>
+        <span class="nx2-arrow">&rarr;</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<!-- ─── SAMPLE 03: THE WIPE ───────────────────────────── -->
+<div class="wrap">
+  <div class="sample-label">Sample 03 &mdash; The Wipe</div>
+  <a class="nx3" href="sbdc-photography.html">
+    <div class="nx3-bar"></div>
+    <div class="nx3-row">
+      <div>
+        <div class="nx3-label">Next chapter</div>
+        <h2 class="nx3-title">Photos.</h2>
+      </div>
+      <div class="nx3-right">
+        <div class="nx3-num">Chapter 06</div>
+        <div class="nx3-desc">What we show, what we skip, and the moments that matter.</div>
+      </div>
+    </div>
+  </a>
+</div>
+
+
+<!-- ─── SAMPLE 04: SPLIT REVEAL ───────────────────────── -->
+<div class="wrap">
+  <div class="sample-label">Sample 04 &mdash; Split Reveal</div>
+  <a class="nx4" href="norcal-templates.html">
+    <div class="nx4-lines"></div>
+    <div class="nx4-label">Next chapter</div>
+    <h2 class="nx4-title">
+      <span class="nx4-word">Templates.</span>
+    </h2>
+    <div class="nx4-desc">Approved copy, production files, and the shared Canva workspace.</div>
+  </a>
+</div>
+
+
+<!-- ─── SAMPLE 05: THE COUNTER ────────────────────────── -->
+<div class="wrap">
+  <div class="sample-label">Sample 05 &mdash; The Counter</div>
+  <a class="nx5" href="norcal-generate.html">
+    <div class="nx5-left">
+      <div class="nx5-num">10</div>
+    </div>
+    <div class="nx5-right">
+      <div class="nx5-label">Next chapter</div>
+      <h2 class="nx5-title"><span>G</span><span>e</span><span>n</span><span>e</span><span>r</span><span>a</span><span>t</span><span>e</span><span>.</span></h2>
+      <div class="nx5-desc">On-brand drafts in seconds. Pick a format, answer a few questions, ship.</div>
+    </div>
+    <span class="nx5-arrow">&rarr;</span>
+  </a>
+</div>
+
+<div style="height: 120px;"></div>
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // ── 01: LINE DRAW ──
+  gsap.timeline({
+    scrollTrigger: { trigger: '.nx1', start: 'top 80%', once: true }
+  })
+  .to('.nx1-line', { scaleX: 1, duration: 0.8, ease: 'power3.inOut' })
+  .to('.nx1-eyebrow', { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.3')
+  .to('.nx1-title', { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3')
+  .to('.nx1-desc', { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.35')
+  .to('.nx1-arrow', { opacity: 1, x: 0, duration: 0.4, ease: 'power2.out' }, '-=0.3');
+
+
+  // ── 02: NAVY CURTAIN ──
+  gsap.timeline({
+    scrollTrigger: { trigger: '.nx2-wrap', start: 'top 85%', once: true }
+  })
+  .to('.nx2', { y: 0, duration: 0.7, ease: 'power3.out' })
+  .to('.nx2-num', { opacity: 1, duration: 0.6, ease: 'power2.out' }, '-=0.3')
+  .to('.nx2-label', { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, '-=0.4')
+  .to('.nx2-title', { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.3')
+  .to('.nx2-desc', { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, '-=0.25')
+  .to('.nx2-arrow', { opacity: 1, duration: 0.3, ease: 'power2.out' }, '-=0.2');
+
+
+  // ── 03: THE WIPE ──
+  gsap.timeline({
+    scrollTrigger: { trigger: '.nx3', start: 'top 80%', once: true }
+  })
+  .to('.nx3-bar', { scaleX: 1, duration: 0.6, ease: 'power3.inOut' })
+  .to('.nx3-label', { opacity: 1, x: 0, duration: 0.4, ease: 'power2.out' }, '-=0.15')
+  .to('.nx3-title', { opacity: 1, x: 0, duration: 0.6, ease: 'power3.out' }, '-=0.3')
+  .to('.nx3-right', { opacity: 1, x: 0, duration: 0.5, ease: 'power2.out' }, '-=0.4');
+
+
+  // ── 04: SPLIT REVEAL ──
+  gsap.timeline({
+    scrollTrigger: { trigger: '.nx4', start: 'top 80%', once: true }
+  })
+  .to('.nx4-lines', { scaleY: 1, duration: 0.5, ease: 'power2.inOut' })
+  .to('.nx4-label', { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' }, '-=0.1')
+  .to('.nx4-word', { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out', stagger: 0.08 }, '-=0.2')
+  .to('.nx4-desc', { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.3')
+  .to('.nx4-lines', { scaleY: 0, transformOrigin: 'bottom', duration: 0.4, ease: 'power2.in' }, '-=0.1');
+
+
+  // ── 05: THE COUNTER ──
+  const numEl = document.querySelector('.nx5-num');
+  const target = 10;
+  const tl5 = gsap.timeline({
+    scrollTrigger: { trigger: '.nx5', start: 'top 80%', once: true }
+  });
+
+  tl5.to('.nx5-num', {
+    opacity: 1,
+    duration: 0.3,
+    ease: 'power2.out',
+    onStart: function() {
+      let obj = { val: 0 };
+      gsap.to(obj, {
+        val: target,
+        duration: 0.8,
+        ease: 'power2.out',
+        onUpdate: () => { numEl.textContent = String(Math.round(obj.val)).padStart(2, '0'); }
+      });
+    }
+  })
+  .to('.nx5-label', { opacity: 1, duration: 0.4, ease: 'power2.out' }, '-=0.4')
+  .to('.nx5-title span', {
+    opacity: 1, y: 0,
+    duration: 0.4,
+    ease: 'power3.out',
+    stagger: 0.04
+  }, '-=0.3')
+  .to('.nx5-desc', { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.2')
+  .to('.nx5-arrow', { opacity: 1, duration: 0.3, ease: 'power2.out' }, '-=0.2');
+</script>
+
+</body>
+</html>
