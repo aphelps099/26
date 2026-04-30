@@ -645,6 +645,89 @@
   }
   .colophon .center { text-align: center; }
   .colophon .right  { text-align: right; }
+
+  /* ── MOBILE ─────────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .wrap { padding: 0 20px; }
+    body { font-size: 15px; }
+
+    /* HEADER STRIP */
+    .head { font-size: 9px; padding: 20px 0 0; gap: 12px; flex-wrap: wrap; }
+    .head .head-num { font-size: 9px; }
+
+    /* HERO */
+    .hero-mark {
+      grid-template-columns: 1fr !important;
+      gap: 24px;
+      padding: 48px 0 32px !important;
+      align-items: start;
+    }
+    .hero-mark h1 { font-size: clamp(56px, 13vw, 96px) !important; margin: 0 !important; }
+    .hero-mark .accent-bar { margin-bottom: 16px; }
+    .hero-mark p { font-size: 17px; max-width: none; }
+    .hero-mark .subtitle, .hero-mark .hero-sub, .hero-mark .hero-deck { max-width: none; padding-bottom: 0; }
+
+    /* SECTIONS */
+    .section { padding: 48px 0 0 !important; }
+    .section-head {
+      grid-template-columns: 1fr !important;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .section-head h2 { font-size: clamp(32px, 8vw, 52px) !important; max-width: none; }
+    .section-head .lede { font-size: 16px; max-width: none; }
+    .section-split { grid-template-columns: 1fr !important; gap: 24px; }
+
+    /* MULTI-COLUMN GRIDS — collapse */
+    .system, .palette-layout, .stack, .rules,
+    .logo-board, .choice-row,
+    .categories, .lex-list,
+    .disclaim-wrap, .disclaim,
+    .strat-row, .strat-row.r1, .strat-row.r2, .strat-row.r3,
+    .ch-cards, .ch-cards.col-3, .ch-cards.col-4,
+    .toolkit-anatomy, .toolkit-card,
+    .tpl-panels, .tpl-panels-3, .tpl-files,
+    .preview, .tier, .tier-head,
+    .gen-cards, .gen-grid,
+    .quarter > summary, .q-body, .q-body-content, .tentpole, .t-row,
+    .specimens, .spec, .scale,
+    .generator-inner, .tool {
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+    }
+    .generator-inner { padding: 48px 20px !important; gap: 32px !important; }
+
+    /* PALETTE / PARTNER / LIBRARY — keep as 2 cols on phone */
+    .palette { grid-template-columns: repeat(2, 1fr) !important; gap: 0 !important; }
+    .partner-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .library-grid { grid-template-columns: repeat(2, 1fr) !important; grid-auto-rows: 120px !important; }
+    .tile-a, .tile-b, .tile-c, .tile-d, .tile-e, .tile-f {
+      grid-column: span 2 !important; grid-row: auto !important;
+    }
+
+    /* GLOSSARY directory */
+    .directory { grid-template-columns: 1fr !important; }
+    .term { grid-template-columns: 1fr !important; gap: 8px !important; padding: 24px 0 28px !important; }
+
+    /* SPECIMEN GLYPHS — reduce huge type */
+    .spec .glyph span { font-size: 200px !important; }
+    .spec .body { padding: 36px 20px !important; }
+    .spec .fname { font-size: clamp(40px, 10vw, 64px) !important; }
+
+    /* HEADSHOT BAND, full-bleed sections */
+    .headshots-band { padding: 56px 0 !important; }
+
+    /* BIG DISPLAY type — keep readable */
+    h1, h2, h3 { word-wrap: break-word; overflow-wrap: break-word; }
+
+    /* NEXT CHAPTER */
+    .nx-wipe { padding: 40px 0 56px; }
+    .nx-wipe-row { grid-template-columns: 1fr !important; gap: 20px; }
+    .nx-wipe-right { text-align: left; }
+    .nx-wipe-desc { max-width: none; }
+    .nx-wipe-title { font-size: clamp(44px, 12vw, 64px) !important; }
+  }
+
 </style>
 </head>
 <body>
